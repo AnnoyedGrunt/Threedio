@@ -24,7 +24,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBOutlet weak var placerButton: UIButton!
     @IBOutlet weak var manipulatorButton: UIButton!
     
-    var tapGesture = UITapGestureRecognizer()
+    @IBOutlet weak var MenuView: UIView!
+    
+    @IBAction func menu(_ sender: Any) {
+       MenuView.isHidden = !MenuView.isHidden
+    }
+    
+    
+   
+    
+    
+    var tapGesture =
+        UITapGestureRecognizer()
     var builder : Builder?
     
     //for handling different anchors and different planes

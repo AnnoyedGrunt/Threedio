@@ -418,6 +418,20 @@
                                     <action selector="switchSelectors:" destination="kMr-r8-Bln" eventType="touchUpInside" id="OZR-tD-z4u"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-ch-MS7">
+                                <rect key="frame" x="325" y="364" width="87" height="30"/>
+                                <state key="normal" title="Impostazioni"/>
+                                <connections>
+                                    <action selector="menu:" destination="kMr-r8-Bln" eventType="touchUpInside" id="Cwq-9t-nEF"/>
+                                </connections>
+                            </button>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Pm-tBU" userLabel="MenuView">
+                                <rect key="frame" x="235" y="289" width="286" height="58"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="CCv-uY-pWE" kind="embed" id="zJZ-AO-p6J"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -459,6 +473,7 @@
                             <constraint firstItem="XLY-2y-2h7" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="20" id="F4L-Vp-qYN">
                                 <variation key="heightClass=compact-widthClass=compact" constant="5"/>
                             </constraint>
+                            <constraint firstItem="HRP-J3-sUc" firstAttribute="bottom" secondItem="9Tq-ch-MS7" secondAttribute="bottom" constant="20" id="G1t-XS-yGc"/>
                             <constraint firstItem="XLY-2y-2h7" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="20" id="HCY-MP-4YR"/>
                             <constraint firstItem="1X1-Yf-mzO" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="40" id="Hnm-pj-hcD"/>
                             <constraint firstItem="xqp-Nb-Mdo" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="10" id="Hy4-e8-kOr">
@@ -658,6 +673,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="MenuView" destination="DhH-Pm-tBU" id="ANP-7F-hX4"/>
                         <outlet property="ShapeView" destination="XLY-2y-2h7" id="Z3T-5j-E8x"/>
                         <outlet property="colorPicker" destination="vEr-iQ-bzh" id="O1S-Oi-Gnp"/>
                         <outlet property="colorView" destination="xqp-Nb-Mdo" id="Il7-Yu-9gu"/>
@@ -671,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYW-Wv-dXb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-764.0625" y="-194.53125"/>
+            <point key="canvasLocation" x="-764.67391304347836" y="-195.6521739130435"/>
         </scene>
         <!--Color Controller-->
         <scene sceneID="cUB-an-sqL">
@@ -1115,15 +1131,54 @@
             </objects>
             <point key="canvasLocation" x="-1323" y="6"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9Qh-vQ-pqT">
+            <objects>
+                <viewController id="CCv-uY-pWE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xtR-dG-DCz">
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="58"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYN-Qv-H0g">
+                                <rect key="frame" x="92" y="8" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="istantanea" image="Polaroid"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-us-iim">
+                                <rect key="frame" x="153" y="9" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="video" image="cinepresa"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3y-nv-wPR">
+                                <rect key="frame" x="216" y="12" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancella"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPm-6p-l9M">
+                                <rect key="frame" x="32" y="7" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="exit" image="Door"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWd-dA-qtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-716" y="420"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cilinder" width="283" height="521"/>
         <image name="ColorWheel" width="372" height="371"/>
         <image name="Crosshair" width="452" height="452"/>
         <image name="Cube" width="390" height="390"/>
+        <image name="Door" width="92" height="164"/>
         <image name="Group" width="400" height="400"/>
         <image name="Hammer" width="148" height="143"/>
         <image name="Hand" width="128" height="129"/>
+        <image name="Polaroid" width="436" height="394"/>
+        <image name="cinepresa" width="511" height="480"/>
         <image name="palla" width="341" height="330"/>
         <image name="rampa" width="718" height="717"/>
         <image name="sfera" width="168" height="163"/>
