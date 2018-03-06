@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMr-r8-Bln">
-    <device id="ipad10_5" orientation="landscape">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,7 +18,7 @@
             <objects>
                 <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspectFill" id="SuU-ik-Nbz" customClass="VideoController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rhd-Jf-s9k">
-                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rjT-wb-v6O"/>
@@ -33,15 +33,15 @@
             <objects>
                 <viewController id="kMr-r8-Bln" customClass="ViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Ln-8a-V9f" userLabel="Container">
-                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TJ-Uc-vMW">
-                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <gestureRecognizers/>
                             </arscnView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsu-Nc-5dR" userLabel="Hammer">
-                                <rect key="frame" x="999" y="239" width="73" height="76"/>
+                                <rect key="frame" x="623" y="29" width="73" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="Enm-D8-Cgt"/>
                                     <constraint firstAttribute="height" constant="66" id="K4B-hV-XMR"/>
@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU9-04-JHr" userLabel="Cube">
-                                <rect key="frame" x="992" y="372" width="80" height="90"/>
+                                <rect key="frame" x="616" y="162" width="80" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="6CJ-Fh-9az"/>
                                     <constraint firstAttribute="width" constant="70" id="QwK-QZ-dCo"/>
@@ -236,14 +236,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Crosshair" translatesAutoresizingMaskIntoConstraints="NO" id="KbR-8v-p98">
-                                <rect key="frame" x="540" y="401" width="32" height="32"/>
+                                <rect key="frame" x="352" y="191" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Gd4-Kk-XNf"/>
                                     <constraint firstAttribute="width" constant="32" id="ZiI-U1-yYe"/>
                                 </constraints>
                             </imageView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLY-2y-2h7" userLabel="ShapeView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="40" y="64" width="80" height="559"/>
+                                <rect key="frame" x="20" y="20" width="80" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="BmZ-ch-yIW"/>
                                     <constraint firstAttribute="height" constant="250" id="FFR-Se-cbh"/>
@@ -290,44 +290,8 @@
                                     <segue destination="BEz-c2-VWO" kind="embed" id="pSZ-BK-OKC"/>
                                 </connections>
                             </containerView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X1-Yf-mzO" userLabel="selectorSwitcher" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="40" y="709" width="80" height="80"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="DyG-cy-e3f"/>
-                                    <constraint firstAttribute="width" constant="80" id="d5q-XC-xEB"/>
-                                    <constraint firstAttribute="height" constant="80" id="lIP-VL-uYH"/>
-                                    <constraint firstAttribute="width" constant="70" id="oBX-ar-FyR"/>
-                                </constraints>
-                                <state key="normal" image="ColorWheel"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderThickness">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="DyG-cy-e3f"/>
-                                        <exclude reference="oBX-ar-FyR"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="DyG-cy-e3f"/>
-                                        <exclude reference="d5q-XC-xEB"/>
-                                        <exclude reference="lIP-VL-uYH"/>
-                                        <include reference="oBX-ar-FyR"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="switchSelectors:" destination="kMr-r8-Bln" eventType="touchUpInside" id="OZR-tD-z4u"/>
-                                </connections>
-                            </button>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-Nb-Mdo" userLabel="ColorView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="40" y="64" width="80" height="559"/>
+                                <rect key="frame" x="20" y="20" width="80" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="1gy-6s-boC"/>
                                     <constraint firstAttribute="height" constant="230" id="ASu-nv-u4p"/>
@@ -378,7 +342,7 @@
                                 </connections>
                             </containerView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTu-Ng-vv3" userLabel="Hand">
-                                <rect key="frame" x="992" y="514.5" width="80" height="85"/>
+                                <rect key="frame" x="616" y="304.66666666666669" width="80" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="0AK-Jy-GLZ"/>
                                     <constraint firstAttribute="height" constant="75" id="Gjj-w7-A7l">
@@ -416,6 +380,42 @@
                                 </variation>
                                 <connections>
                                     <action selector="onManipulatortap:" destination="kMr-r8-Bln" eventType="touchUpInside" id="isP-KT-zxW"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X1-Yf-mzO" userLabel="selectorSwitcher" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
+                                <rect key="frame" x="20" y="314" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="DyG-cy-e3f"/>
+                                    <constraint firstAttribute="width" constant="80" id="d5q-XC-xEB"/>
+                                    <constraint firstAttribute="height" constant="80" id="lIP-VL-uYH"/>
+                                    <constraint firstAttribute="width" constant="70" id="oBX-ar-FyR"/>
+                                </constraints>
+                                <state key="normal" image="ColorWheel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderThickness">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DyG-cy-e3f"/>
+                                        <exclude reference="oBX-ar-FyR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="DyG-cy-e3f"/>
+                                        <exclude reference="d5q-XC-xEB"/>
+                                        <exclude reference="lIP-VL-uYH"/>
+                                        <include reference="oBX-ar-FyR"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="switchSelectors:" destination="kMr-r8-Bln" eventType="touchUpInside" id="OZR-tD-z4u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -505,7 +505,9 @@
                             <constraint firstItem="mU9-04-JHr" firstAttribute="centerY" secondItem="2TJ-Uc-vMW" secondAttribute="centerY" id="nbr-kx-qvt">
                                 <variation key="heightClass=compact-widthClass=compact" constant="2.5"/>
                             </constraint>
-                            <constraint firstItem="1X1-Yf-mzO" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="10" id="oeM-58-5lf"/>
+                            <constraint firstItem="1X1-Yf-mzO" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="10" id="oeM-58-5lf">
+                                <variation key="heightClass=compact-widthClass=compact" constant="15"/>
+                            </constraint>
                             <constraint firstItem="XLY-2y-2h7" firstAttribute="top" secondItem="3Ln-8a-V9f" secondAttribute="top" constant="20" id="pU9-vA-BfY">
                                 <variation key="heightClass=regular-widthClass=regular" constant="64"/>
                             </constraint>
@@ -523,7 +525,9 @@
                             <constraint firstItem="HRP-J3-sUc" firstAttribute="trailing" secondItem="eTu-Ng-vv3" secondAttribute="trailing" constant="10" id="yKb-aG-Mub">
                                 <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                             </constraint>
-                            <constraint firstAttribute="bottom" secondItem="1X1-Yf-mzO" secondAttribute="bottom" constant="10" id="yg2-lr-jch"/>
+                            <constraint firstAttribute="bottom" secondItem="1X1-Yf-mzO" secondAttribute="bottom" constant="10" id="yg2-lr-jch">
+                                <variation key="heightClass=compact-widthClass=compact" constant="21"/>
+                            </constraint>
                             <constraint firstItem="KbR-8v-p98" firstAttribute="centerX" secondItem="3Ln-8a-V9f" secondAttribute="centerX" id="ymp-Wv-HE3"/>
                             <constraint firstItem="HRP-J3-sUc" firstAttribute="trailing" secondItem="eTu-Ng-vv3" secondAttribute="trailing" constant="40" id="zwW-c2-rCZ"/>
                         </constraints>
@@ -674,11 +678,11 @@
             <objects>
                 <viewController id="hxM-AT-Cup" customClass="ColorController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3BX-y2-Gkx" userLabel="ColorCanvas">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v5-cA-g5Q" userLabel="ColorScroll" customClass="UICustomScrollView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="I3J-ZR-BWX" userLabel="ColorStack">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="971"/>
@@ -854,11 +858,11 @@
             <objects>
                 <viewController id="BEz-c2-VWO" customClass="ShapeController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rqR-bY-2om" userLabel="ShapeCanvas">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-n5-vHc" userLabel="ShapeScroll">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Uhp-Pu-lzg" userLabel="ShapeStack">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
@@ -878,7 +882,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKE-Eu-OCb" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="79.5" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="79.666666666666671" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -910,7 +914,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cylinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtC-BH-hPw" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333343" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -932,7 +936,7 @@
                                                 <rect key="frame" x="0.0" y="200" width="80" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sphere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adK-jB-5Ex" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -976,7 +980,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ramp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be1-O7-frN" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1009,7 +1013,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPl-nF-drD" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1057,7 +1061,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWI-m7-Nkk" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333371" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
