@@ -15,7 +15,7 @@ class GamePiece {
     var orientation: OrientationType
     var node: SCNNode
     var settings: GamePieceSetting
-    var onSolidify: SolidifyLogic
+    var onSolidify: solidifyLogic
 
     static var blocks: [String : GamePiece] = [
         "Block": GamePiece(
@@ -76,7 +76,7 @@ class GamePiece {
         return blocks[name] ?? blocks["Block"];
     }
     
-    init(name: String = "piece", orientation: OrientationType = .none, settings: GamePieceSetting = .none, onSolidify solid: SolidifyLogic? = .standard) {
+    init(name: String = "piece", orientation: OrientationType = .none, settings: GamePieceSetting = .none, onSolidify solid: solidifyLogic? = .standard) {
         self.name = name
         self.orientation = orientation
         self.node = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
@@ -84,7 +84,7 @@ class GamePiece {
         self.onSolidify = solid!
     }
     
-    init(name: String = "piece", orientation: OrientationType = .none, geometry: SCNGeometry = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0), settings: GamePieceSetting = .none, onSolidify solid: SolidifyLogic? = .standard) {
+    init(name: String = "piece", orientation: OrientationType = .none, geometry: SCNGeometry = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0), settings: GamePieceSetting = .none, onSolidify solid: solidifyLogic? = .standard) {
         
         self.name = name
         self.orientation = orientation
@@ -93,7 +93,7 @@ class GamePiece {
         self.onSolidify = solid!
     }
     
-    init(name: String = "piece", orientation: OrientationType = .none, node: SCNNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)), settings: GamePieceSetting = .none, onSolidify solid: SolidifyLogic? = .standard) {
+    init(name: String = "piece", orientation: OrientationType = .none, node: SCNNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)), settings: GamePieceSetting = .none, onSolidify solid: solidifyLogic? = .standard) {
         self.name = name
         self.orientation = orientation
         self.node = node

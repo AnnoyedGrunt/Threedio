@@ -9,9 +9,8 @@
 import UIKit
 import SceneKit
 import ARKit
-import ReplayKit
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RPPreviewViewControllerDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var shapeSelector: UIView!
@@ -24,7 +23,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
     @IBOutlet weak var deleterButton: UIButton!
     @IBOutlet weak var placerButton: UIButton!
     @IBOutlet weak var manipulatorButton: UIButton!
-    
     
     var tapGesture = UITapGestureRecognizer()
     var builder : Builder?
@@ -269,47 +267,4 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
         
         return planeNode
     }
-    
-    
-//    funzione di screenshoot
-    
-    func screenShootScene(){
-        var image = sceneView.snapshot()
-//        Salva l'immagine nell'albulm
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-    
-    
-    //  Funzione di start recordig
-    @objc func startRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.startRecording{ [unowned self] (error) in
-            if let unwrappedError = error {
-                print(unwrappedError.localizedDescription)
-            } else {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Stop", style: .plain, target: self, action: #selector(self.stopRecording))
-            }
-        }
-    }
-    
-    //    Funzione di stop recording
-    @objc func stopRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.stopRecording { [unowned self] (preview, error) in
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(self.startRecording))
-            
-            if let unwrappedPreview = preview {
-                unwrappedPreview.previewControllerDelegate = (self as! RPPreviewViewControllerDelegate)
-                self.present(unwrappedPreview, animated: true)
-            }
-        }
-    }
-    
-    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
-        dismiss(animated: true)
-    }
-    
-    
 }

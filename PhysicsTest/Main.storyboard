@@ -417,33 +417,6 @@
                                 <connections>
                                     <action selector="onManipulatortap:" destination="kMr-r8-Bln" eventType="touchUpInside" id="isP-KT-zxW"/>
                                 </connections>
-<<<<<<< HEAD
-=======
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlY-E5-Nqc">
-                                <rect key="frame" x="160" y="40" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="start:" destination="kMr-r8-Bln" eventType="touchUpInside" id="M4I-2N-s4L"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaW-dh-spU">
-                                <rect key="frame" x="235" y="40" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stop:" destination="kMr-r8-Bln" eventType="touchUpInside" id="VjB-3P-gKs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0f-ib-2kh">
-                                <rect key="frame" x="294" y="40" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="screen"/>
-                                <connections>
-                                    <action selector="screen:" destination="kMr-r8-Bln" eventType="touchUpInside" id="cYE-Zh-fyY"/>
-                                </connections>
->>>>>>> 49f7c1a9055ee395c9c2c5b44eb758278a32c1c0
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -577,28 +550,18 @@
                                 <exclude reference="F4L-Vp-qYN"/>
                                 <exclude reference="HCY-MP-4YR"/>
                                 <exclude reference="Kin-aW-36a"/>
-<<<<<<< HEAD
                                 <exclude reference="eIX-Kf-24G"/>
                                 <exclude reference="hji-SQ-PSb"/>
                                 <exclude reference="pU9-vA-BfY"/>
                                 <exclude reference="59Z-vb-0Tq"/>
                                 <exclude reference="7DA-FN-knX"/>
                                 <exclude reference="DZK-iw-aCw"/>
-=======
-                                <exclude reference="dN1-5V-5vb"/>
-                                <exclude reference="eIX-Kf-24G"/>
-                                <exclude reference="hji-SQ-PSb"/>
-                                <exclude reference="59Z-vb-0Tq"/>
->>>>>>> 49f7c1a9055ee395c9c2c5b44eb758278a32c1c0
                                 <exclude reference="Hy4-e8-kOr"/>
                                 <exclude reference="JoA-y1-Bhi"/>
                                 <exclude reference="OzM-DM-Mv4"/>
                                 <exclude reference="cDd-U7-jkk"/>
                                 <exclude reference="cPa-ju-i3Z"/>
-<<<<<<< HEAD
                                 <exclude reference="deP-JF-5f6"/>
-=======
->>>>>>> 49f7c1a9055ee395c9c2c5b44eb758278a32c1c0
                                 <exclude reference="mzE-xB-dvT"/>
                                 <exclude reference="6p6-yX-3ZP"/>
                                 <exclude reference="6vg-nb-xqJ"/>
@@ -649,10 +612,6 @@
                                 <exclude reference="bf5-JK-dBp"/>
                                 <exclude reference="cDd-U7-jkk"/>
                                 <include reference="cPa-ju-i3Z"/>
-<<<<<<< HEAD
-=======
-                                <exclude reference="goR-Us-ZNZ"/>
->>>>>>> 49f7c1a9055ee395c9c2c5b44eb758278a32c1c0
                                 <exclude reference="6p6-yX-3ZP"/>
                                 <exclude reference="7Gp-Dw-pwk"/>
                                 <exclude reference="Hnm-pj-hcD"/>
@@ -677,10 +636,6 @@
                                 <exclude reference="uKn-kd-pBi"/>
                                 <include reference="59Z-vb-0Tq"/>
                                 <exclude reference="bf5-JK-dBp"/>
-<<<<<<< HEAD
-=======
-                                <exclude reference="goR-Us-ZNZ"/>
->>>>>>> 49f7c1a9055ee395c9c2c5b44eb758278a32c1c0
                                 <include reference="mzE-xB-dvT"/>
                                 <include reference="6vg-nb-xqJ"/>
                                 <exclude reference="Hnm-pj-hcD"/>
