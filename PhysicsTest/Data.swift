@@ -10,24 +10,60 @@ import Foundation
 import SceneKit
 import ARKit
 
-class GamePiece {
-    typealias solidificationCallback = (SCNNode, SCNScene) -> ()
-    
+class GamePiece {    
     var name: String
     var orientation: OrientationType
     var node: SCNNode
     var settings: GamePieceSetting
-    var onSolidification: solidificationCallback?
+    var onSolidify: solidifyLogic
 
     static var blocks: [String : GamePiece] = [
-        "Block": GamePiece(name: "block", settings: .hittable | .deletable, onSolidification: blockSolidification),
-        "Cylinder": GamePiece(name: "cylinder", orientation: .vertical, geometry: SCNCylinder(radius: 0.5, height: 1), settings: .hittable | .deletable, onSolidification: cylinderSolidification),
-        "Sphere": GamePiece(name: "sphere", geometry: SCNSphere(radius: 0.5), settings: .hittable | .deletable),
-        "Tube": GamePiece(name: "tube", orientation: .vertical, geometry: SCNTube(innerRadius: 0.4, outerRadius: 0.5, height: 1), settings: .hittable | .deletable, onSolidification: concaveSolidification),
-        "Ball": GamePiece(name: "ball", orientation: .none, geometry: SCNSphere(radius: 0.4), settings: .dynamic | .deletable, onSolidification: ballSolidification),
-        "Ramp": GamePiece(name: "ramp", orientation: .horizontal, node: unwrappedFromScene(named: "ramp.scn"), settings: .hittable | .deletable, onSolidification: concaveSolidification),
-        "Tile": GamePiece(name: "tile", orientation: .fullHorizontal, geometry: SCNBox(width: 0.7, height: 1.5, length: 0.2, chamferRadius: 0), settings: .dynamic | .deletable, onSolidification: dynamicSolidification)
-        ]
+        "Block": GamePiece(
+            name: "block",
+            settings: .hittable | .deletable,
+            onSolidify: .block
+        ),
+        "Cylinder": GamePiece(
+            name: "cylinder",
+            orientation: .vertical,
+            geometry: SCNCylinder(radius: 0.5, height: 1),
+            settings: .hittable | .deletable,
+            onSolidify: .cylinder
+        ),
+        "Sphere": GamePiece(
+            name: "sphere",
+            geometry: SCNSphere(radius: 0.5),
+            settings: .hittable | .deletable
+        ),
+        "Tube": GamePiece(
+            name: "tube",
+            orientation: .vertical,
+            geometry: SCNTube(innerRadius: 0.4, outerRadius: 0.5, height: 1),
+            settings: .hittable | .deletable,
+            onSolidify: .concave
+        ),
+        "Ball": GamePiece(
+            name: "ball",
+            orientation: .none,
+            geometry: SCNSphere(radius: 0.4),
+            settings: .dynamic | .deletable,
+            onSolidify: .ball
+        ),
+        "Ramp": GamePiece(
+            name: "ramp",
+            orientation: .horizontal,
+            node: unwrappedFromScene(named: "ramp.scn"),
+            settings: .hittable | .deletable,
+            onSolidify: .concave
+        ),
+        "Tile": GamePiece(
+            name: "tile",
+            orientation: .fullHorizontal,
+            geometry: SCNBox(width: 0.7, height: 1.5, length: 0.2, chamferRadius: 0),
+            settings: .dynamic | .deletable,
+            onSolidify: .dynamic
+        )
+    ]
 
     static func unwrappedFromScene(named name: String) -> SCNNode {
         let scene = SCNScene(named: name)
@@ -40,29 +76,29 @@ class GamePiece {
         return blocks[name] ?? blocks["Block"];
     }
     
-    init(name: String = "piece", orientation: OrientationType = .none, settings: GamePieceSetting = .none, onSolidification solid: solidificationCallback? = standardSolidification) {
+    init(name: String = "piece", orientation: OrientationType = .none, settings: GamePieceSetting = .none, onSolidify solid: solidifyLogic? = .standard) {
         self.name = name
         self.orientation = orientation
         self.node = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
         self.settings = settings
-        self.onSolidification = solid
+        self.onSolidify = solid!
     }
     
-    init(name: String = "piece", orientation: OrientationType = .none, geometry: SCNGeometry = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0), settings: GamePieceSetting = .none, onSolidification solid: solidificationCallback? = standardSolidification) {
+    init(name: String = "piece", orientation: OrientationType = .none, geometry: SCNGeometry = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0), settings: GamePieceSetting = .none, onSolidify solid: solidifyLogic? = .standard) {
         
         self.name = name
         self.orientation = orientation
         self.node = SCNNode(geometry: geometry)
         self.settings = settings
-        self.onSolidification = solid
+        self.onSolidify = solid!
     }
     
-    init(name: String = "piece", orientation: OrientationType = .none, node: SCNNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)), settings: GamePieceSetting = .none, onSolidification solid: solidificationCallback? = standardSolidification) {
+    init(name: String = "piece", orientation: OrientationType = .none, node: SCNNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)), settings: GamePieceSetting = .none, onSolidify solid: solidifyLogic? = .standard) {
         self.name = name
         self.orientation = orientation
         self.node = node
         self.settings = settings
-        self.onSolidification = solid
+        self.onSolidify = solid!
     }
 }
 

@@ -269,9 +269,7 @@ class Builder : NSObject, ARSCNViewDelegate {
         if let preview = blockPreview {
             setNodeSettings(preview, settings: piece.settings)
             setNodeMaterial(preview, material: material)
-            if let solidificationEvent = piece.onSolidification {
-                solidificationEvent(preview, view.scene)
-            }
+            piece.onSolidify.logic(preview, view.scene)
             preview.geometry?.firstMaterial = material
             blockPreview = nil
         }
