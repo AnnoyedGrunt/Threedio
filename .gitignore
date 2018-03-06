@@ -66,3 +66,9 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 *.pbxproj
+PhysicsTest/Main.storyboard
+PhysicsTest.xcodeproj/project.pbxproj
+PhysicsTest/Main.storyboard
+PhysicsTest.xcodeproj/project.pbxproj
+PhysicsTest/Main.storyboard
+PhysicsTest.xcodeproj/project.pbxproj
