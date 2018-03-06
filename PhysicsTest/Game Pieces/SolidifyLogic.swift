@@ -25,6 +25,9 @@ extension GamePiece {
             node.physicsBody = body
         }
         
+        
+        //MARK: - SOLIDIFICATION CALLBACKS
+        
         static let standard = solidifyLogic() { node, scene in
             let options: [SCNPhysicsShape.Option: Any] = [SCNPhysicsShape.Option.scale: node.scale]
             let shape = SCNPhysicsShape(geometry: node.geometry!, options: options)
