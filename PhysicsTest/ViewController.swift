@@ -138,9 +138,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         shapeView.isHidden = !shapeView.isHidden
         colorView.isHidden = !colorView.isHidden
         if !shapeView.isHidden {
-            selectorSwitcher.setImage(#imageLiteral(resourceName: "colorGradient"), for: .normal)
+            selectorSwitcher.setImage(#imageLiteral(resourceName: "ColorWheel"), for: .normal)
         } else {
-            selectorSwitcher.setImage(#imageLiteral(resourceName: "IconConstruction"), for: .normal)
+            selectorSwitcher.setImage(#imageLiteral(resourceName: "all"), for: .normal)
         }
     }
     
