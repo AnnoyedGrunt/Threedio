@@ -10,8 +10,13 @@ import Foundation
 import SceneKit
 import ARKit
 
+/**
+ cThe GameController allows for interfacing between an ARSCNView and GameTools. By changing the **tool** property, one can change the currently active tool.
+ 
+ - Note: This class creates a UITapGestureRecognizer for the targetView and becomes its delegate on init.
+ - Author: Raffaele Tontaro
+*/
 class GameController: NSObject, ARSCNViewDelegate {
-    
     var view : ARSCNView!
     var tapper : UITapGestureRecognizer!
     

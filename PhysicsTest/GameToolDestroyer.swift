@@ -10,6 +10,17 @@ import Foundation
 import SceneKit
 import ARKit
 
+/**
+ Handles the destruction of GamePieces that have already been inserted into the AR environment.
+ 
+ 
+  Like all GameTools, it is 'selected' by assigning an instance of it to the *tool* property of a GameController.
+ 
+ 
+ It allows for no actions.
+ 
+  - Author: Raffaele Tontaro
+ */
 class GameToolDestroyer: GameTool {
     var sceneView: ARSCNView!
     

@@ -10,6 +10,18 @@ import Foundation
 import SceneKit
 import ARKit
 
+/**
+    Handles everything that has to do with the placement of GamePieces within the game world and thus it is arguably the most important out of all tools.
+ 
+ Like all GameTools, it is 'selected' by assigning an instance of it to the *tool* property of a GameController.
+ 
+ It allows for the following actions:
+ 
+ * "setGamePiece": takes a string, the name of a GamePiece.
+ * "setGameMaterial": takes a string, the name of the GameMaterial.
+ 
+ - Author: Raffaele Tontaro
+ */
 class GameToolBuilder: GameTool {
     
     var sceneView: ARSCNView!

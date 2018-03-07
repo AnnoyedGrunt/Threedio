@@ -10,6 +10,10 @@ import Foundation
 import SceneKit
 
 extension GamePiece {
+    
+    /**
+     A complete list of all GamePieces usable within the game.
+     */
     static var blocks: [String : GamePiece] = [
         "Block": GamePiece(
             name: "block",

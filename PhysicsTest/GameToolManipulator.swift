@@ -10,6 +10,19 @@ import Foundation
 import SceneKit
 import ARKit
 
+/**
+ handles manipulation of dynamic GamePieces, like balls or dominoes.
+ 
+ 
+  Like all GameTools, it is 'selected' by assigning an instance of it to the *tool* property of a GameController.
+ 
+ 
+ It allows for the following actions:
+ * "dropObject": takes no value. Drops the current heldObject if not nil.
+ * "throwObject": takes no value. Throws the current heldObject if not nil.
+ 
+  - Author: Raffaele Tontaro
+ */
 class GameToolManipulator: GameTool {
     var sceneView: ARSCNView!
     var heldObject: SCNNode?
