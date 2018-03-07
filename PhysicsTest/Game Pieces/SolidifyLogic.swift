@@ -36,7 +36,11 @@ extension GamePiece {
         }
         
         static let block = SolidifyLogic() { node, scene in
-            withGeometry(node, geometry: node.geometry as! SCNBox, type: .static)
+            let geometry = SCNBox(width: CGFloat(node.scale.x), height: CGFloat(node.scale.y), length: CGFloat(node.scale.x), chamferRadius: 0)
+            //let options: [SCNPhysicsShape.Option: Any] = [SCNPhysicsShape.Option.scale: node.scale]
+            let shape = SCNPhysicsShape(geometry: geometry)
+            let body = SCNPhysicsBody(type: .static, shape: shape)
+            node.physicsBody = body
         }
         
         static let cylinder = SolidifyLogic() { node, scene in

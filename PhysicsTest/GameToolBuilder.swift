@@ -33,6 +33,8 @@ class GameToolBuilder: GameTool {
     var playfloor: SCNNode!
     var root: SCNNode!
     var origin: SCNNode!
+    var lastPositions: [SCNVector3] = []
+    let positionCacheCount = 5
     
     var piece: GamePiece! {
         didSet {
@@ -60,10 +62,12 @@ class GameToolBuilder: GameTool {
             if blockPreview == nil {
                 createPreview()
             }
+            lastPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
+            lastPositions = Array(lastPositions.suffix(positionCacheCount))
+            let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
             //recentTargetingPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
             //recentTargetingPositions = Array(recentTargetingPositions.suffix(5))
             //let position = recentTargetingPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(recentTargetingPositions.count)
-            let position = root.convertPosition(hit.worldCoordinates, to: origin)
             let direction = hit.localNormal
             updatePreview(at: position, from: sceneView.pointOfView!.position, withDirection: direction, withScale: blockSize)
         }

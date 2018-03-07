@@ -157,10 +157,10 @@
 			children = (
 				A3F3C471202EF218005CE743 /* GamePiece.swift */,
 				A3453085204F17D50071447A /* GamePieceList.swift */,
+				A31702B0204974ED0005DFCA /* SolidifyLogic.swift */,
 				A345307F204F16FA0071447A /* GamePieceSettings.swift */,
 				A3453083204F17A20071447A /* OrientationType.swift */,
 				A3453081204F17090071447A /* GameMaterial.swift */,
-				A31702B0204974ED0005DFCA /* SolidifyLogic.swift */,
 			);
 			path = "Game Pieces";
 			sourceTree = "<group>";
