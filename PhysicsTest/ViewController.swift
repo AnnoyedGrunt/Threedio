@@ -30,13 +30,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
        MenuView.isHidden = !MenuView.isHidden
     }
     
-    
-   
-    
-    
-    var tapGesture =
-        UITapGestureRecognizer()
-    var builder : Builder?
+    var tapGesture = UITapGestureRecognizer()
+    var builder: Builder?
+    var builderTool: GameToolBuilder!
+    var destroyerTool: GameToolDestroyer!
+    var manipulatorTool: GameToolManipulator!
     
     //for handling different anchors and different planes
     var globalAnchor: ARPlaneAnchor?
@@ -78,6 +76,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         //controller = Builder(targetView: sceneView)
         //controller.mode = .place
         //showSelectors(true)
+        
+        builderTool = GameToolBuilder(sceneView: sceneView)
+        destroyerTool = GameToolDestroyer(sceneView: sceneView)
+        manipulatorTool = GameToolManipulator(sceneView: sceneView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,35 +117,32 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBAction func onDeleterTap(_ sender: UIButton) {
         guard let controller = builder else {return}
         showSelectors(false)
-        //showManipulators(false)
-        controller.mode = .delete
+        controller.tool = destroyerTool
     }
     
     @IBAction func onPlacerTap(_ sender: UIButton) {
         guard let controller = builder else {return}
         showSelectors(true)
-        //showManipulators(false)
-        controller.mode = .place
+        controller.tool = builderTool
+        
     }
     
     @IBAction func onManipulatortap(_ sender: UIButton) {
         guard let controller = builder else {return}
         showSelectors(false)
-        //showManipulators(true)
-        controller.mode = .manipulate
+        controller.tool = manipulatorTool
     }
 
     @IBAction func onThrowTap(_ sender: Any) {
-        guard let controller = builder else {return}
-        controller.throwObject()
+        guard let tool = builder?.tool else {return}
+        tool.action(type: "throwObject", value: nil)
     }
     
     
     @IBAction func onDropTap(_ sender: Any) {
-        guard let controller = builder else {return}
-        controller.dropObject()
+        guard let tool = builder?.tool else {return}
+        tool.action(type: "dropObject", value: nil)
     }
-    
     
     @IBAction func switchSelectors(_ sender: UIButton) {
         shapeView.isHidden = !shapeView.isHidden
@@ -164,19 +163,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     var currentColorButton: UIButton? = nil
     @IBAction func selectColor(_ sender: UIButton) {
-        guard let controller = builder else {return}
-        controller.setMaterial(name: sender.title(for: .normal)!)
+        guard let tool = builder?.tool else {return}
+        tool.action(type: "setMaterial", value: sender.title(for: .normal)!)
     }
     
     var currentShapeButton: UIButton? = nil
     @IBAction func selectShape(_ sender: UIButton) {
-        guard let controller = builder else {return}
-        if let title = sender.title(for: .normal) {
-            controller.setGeometry(name: title)
-        }
+        guard let tool = builder?.tool else {return}
+        tool.action(type: "setGamePiece", value: sender.title(for: .normal)!)
     }
-    
-    //MARK: Plane Selection (TAP)
     
     @objc func onTap() {
         if let plane = sceneView.scene.rootNode.childNode(withName: "piano", recursively: true) {
@@ -189,7 +184,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             plane.removeFromParentNode()
             sceneView.removeGestureRecognizer(tapGesture)
             builder = Builder(targetView: sceneView)
-            builder!.mode = .place
+            builder?.tool = builderTool
             showSelectors(true)
             showTools(true)
         }

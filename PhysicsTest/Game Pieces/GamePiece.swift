@@ -15,7 +15,7 @@ class GamePiece {
     var orientation: OrientationType
     var node: SCNNode
     var settings: GamePieceSetting
-    var onSolidify: solidifyLogic
+    var onSolidify: SolidifyLogic
 
     static func unwrappedFromScene(named name: String) -> SCNNode {
         let scene = SCNScene(named: name)
@@ -29,7 +29,7 @@ class GamePiece {
     }
     
     
-    init(name: String, orientation: OrientationType, geometry: SCNGeometry, settings: GamePieceSetting, onSolidify solid: solidifyLogic) {
+    init(name: String, orientation: OrientationType, geometry: SCNGeometry, settings: GamePieceSetting, onSolidify solid: SolidifyLogic) {
         self.name = name
         self.orientation = orientation
         self.node = SCNNode(geometry: geometry)
@@ -37,7 +37,7 @@ class GamePiece {
         self.onSolidify = solid
     }
     
-    init(name: String, orientation: OrientationType, node: SCNNode, settings: GamePieceSetting, onSolidify solid: solidifyLogic) {
+    init(name: String, orientation: OrientationType, node: SCNNode, settings: GamePieceSetting, onSolidify solid: SolidifyLogic) {
         self.name = name
         self.orientation = orientation
         self.node = node

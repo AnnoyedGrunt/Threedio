@@ -10,22 +10,15 @@ import Foundation
 import SceneKit
 
 class GameMaterial: SCNMaterial {
-
-    override init() {
-        super.init()
-    }
+    //MARK: - Class functionality
+    
+    static var materials: [String : GameMaterial] = [:]
+    static var defaultMaterial = GameMaterial(color: UIColor.white)
     
     init(color: UIColor) {
         super.init()
         self.diffuse.contents = color
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    static var materials: [String : GameMaterial] = [:]
-    static var defaultMaterial = GameMaterial(color: UIColor.white)
     
     static func withName(_ name: String) -> GameMaterial {
         return materials[name] ?? defaultMaterial
@@ -39,5 +32,15 @@ class GameMaterial: SCNMaterial {
     
     static func clearMaterials() {
         materials = [:]
+    }
+    
+    //MARK: - Necessary for inheritance
+    
+    override init() {
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 }
