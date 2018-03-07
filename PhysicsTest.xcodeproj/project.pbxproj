@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A30A3C50202C8A69008587D3 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A3C4F202C8A69008587D3 /* Builder.swift */; };
+		A30A3C50202C8A69008587D3 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A3C4F202C8A69008587D3 /* GameController.swift */; };
 		A3147033203C3C740027EA0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3147032203C3C740027EA0C /* ViewController.swift */; };
 		A3147035203C3CA40027EA0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3147034203C3CA40027EA0C /* Main.storyboard */; };
 		A317026D204450270005DFCA /* 3dio.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A317026C204450270005DFCA /* 3dio.m4v */; };
@@ -59,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A30A3C4F202C8A69008587D3 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		A30A3C4F202C8A69008587D3 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		A3147032203C3C740027EA0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3147034203C3CA40027EA0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A317026C204450270005DFCA /* 3dio.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dio.m4v; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
 				A36252D420247722001FCA58 /* mys.scn */,
-				A30A3C4F202C8A69008587D3 /* Builder.swift */,
+				A30A3C4F202C8A69008587D3 /* GameController.swift */,
 				A3453088204F22A40071447A /* GameTool.swift */,
 				A345308A204FE5220071447A /* GameToolBuilder.swift */,
 				A345308C20501BDD0071447A /* GameToolDestroyer.swift */,
@@ -397,7 +397,7 @@
 				A3CA7628204066EF007810C7 /* ColorController.swift in Sources */,
 				A3CA762E2040779D007810C7 /* VideoController.swift in Sources */,
 				A36252A720247682001FCA58 /* AppDelegate.swift in Sources */,
-				A30A3C50202C8A69008587D3 /* Builder.swift in Sources */,
+				A30A3C50202C8A69008587D3 /* GameController.swift in Sources */,
 				A3453086204F17D50071447A /* GamePieceList.swift in Sources */,
 				A345308D20501BDD0071447A /* GameToolDestroyer.swift in Sources */,
 				A31702BC204B26F20005DFCA /* objectButton.swift in Sources */,

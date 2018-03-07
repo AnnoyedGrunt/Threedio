@@ -10,7 +10,7 @@ import Foundation
 import SceneKit
 import ARKit
 
-class Builder : NSObject, ARSCNViewDelegate {
+class GameController: NSObject, ARSCNViewDelegate {
     
     var view : ARSCNView!
     var tapper : UITapGestureRecognizer!

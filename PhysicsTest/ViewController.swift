@@ -31,7 +31,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     var tapGesture = UITapGestureRecognizer()
-    var builder: Builder?
+    var controller: GameController?
     var builderTool: GameToolBuilder!
     var destroyerTool: GameToolDestroyer!
     var manipulatorTool: GameToolManipulator!
@@ -115,32 +115,32 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     @IBAction func onDeleterTap(_ sender: UIButton) {
-        guard let controller = builder else {return}
+        guard let controller = self.controller else {return}
         showSelectors(false)
         controller.tool = destroyerTool
     }
     
     @IBAction func onPlacerTap(_ sender: UIButton) {
-        guard let controller = builder else {return}
+        guard let controller = self.controller else {return}
         showSelectors(true)
         controller.tool = builderTool
         
     }
     
     @IBAction func onManipulatortap(_ sender: UIButton) {
-        guard let controller = builder else {return}
+        guard let controller = self.controller else {return}
         showSelectors(false)
         controller.tool = manipulatorTool
     }
 
     @IBAction func onThrowTap(_ sender: Any) {
-        guard let tool = builder?.tool else {return}
+        guard let tool = self.controller?.tool else {return}
         tool.action(type: "throwObject", value: nil)
     }
     
     
     @IBAction func onDropTap(_ sender: Any) {
-        guard let tool = builder?.tool else {return}
+        guard let tool = self.controller?.tool else {return}
         tool.action(type: "dropObject", value: nil)
     }
     
@@ -163,13 +163,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     var currentColorButton: UIButton? = nil
     @IBAction func selectColor(_ sender: UIButton) {
-        guard let tool = builder?.tool else {return}
+        guard let tool = self.controller?.tool else {return}
         tool.action(type: "setMaterial", value: sender.title(for: .normal)!)
     }
     
     var currentShapeButton: UIButton? = nil
     @IBAction func selectShape(_ sender: UIButton) {
-        guard let tool = builder?.tool else {return}
+        guard let tool = self.controller?.tool else {return}
         tool.action(type: "setGamePiece", value: sender.title(for: .normal)!)
     }
     
@@ -183,8 +183,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             origin.position.y = position.y
             plane.removeFromParentNode()
             sceneView.removeGestureRecognizer(tapGesture)
-            builder = Builder(targetView: sceneView)
-            builder?.tool = builderTool
+            controller = GameController(targetView: sceneView)
+            controller?.tool = builderTool
             showSelectors(true)
             showTools(true)
         }
