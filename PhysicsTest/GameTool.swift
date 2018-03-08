@@ -18,6 +18,7 @@ import ARKit
 
 protocol GameTool: AnyObject {
     var sceneView: ARSCNView! {get set}
+    var listeners: GameToolListenerList {get set}
     
     init(sceneView: ARSCNView)
     
@@ -29,6 +30,9 @@ protocol GameTool: AnyObject {
     /**
         called whenever the user taps or when an already selected tool is selected again.
      */
+    
+    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor)
+    
     func onTap()
     
     /**

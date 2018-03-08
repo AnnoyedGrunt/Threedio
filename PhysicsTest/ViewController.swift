@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class ViewController: UIViewController, GameToolListener, ARSessionDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var shapeSelector: UIView!
@@ -30,56 +30,36 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
        MenuView.isHidden = !MenuView.isHidden
     }
     
-    var tapGesture = UITapGestureRecognizer()
     var controller: GameController?
     var builderTool: GameToolBuilder!
     var destroyerTool: GameToolDestroyer!
     var manipulatorTool: GameToolManipulator!
-    
-    //for handling different anchors and different planes
-    var globalAnchor: ARPlaneAnchor?
-    
-    //plane dimensions (1 = 1 metro)
-    let globalWidth: CGFloat = 2.0
-    let globalHeight: CGFloat = 2.0
-    
-    //grid dimensions, initialized in viewDidLoad() function
-    var globalScaleX: Float?
-    var globalScaleY: Float?
-    
-    var planeDetected = false
+    var detectorTool: GameToolARDetector!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showWorldOrigin)
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showFeaturePoints)
-        sceneView.debugOptions.update(with: .showPhysicsShapes)
+        //sceneView.debugOptions.update(with: .showPhysicsShapes)
         //sceneView.debugOptions.update(with: .renderAsWireframe)
         //sceneView.debugOptions.update(with: .showBoundingBoxes)
-        
-        //initializing grid dimensions
-        self.globalScaleX = (Float(globalWidth)  / 0.1).rounded()
-        self.globalScaleY = (Float(globalHeight) / 0.1).rounded()
         
         sceneView.isUserInteractionEnabled = true
         //sceneView.showsStatistics = true
         
         sceneView.scene = SCNScene(named: "mys.scn")!
-        //sceneView.scene = SCNScene()
         sceneView.session.delegate = self
-        sceneView.delegate = self
         
         generateColors()
         
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        sceneView.addGestureRecognizer(tapGesture)
-        //controller = Builder(targetView: sceneView)
-        //controller.mode = .place
-        //showSelectors(true)
-        
+        controller = GameController(targetView: sceneView)
         builderTool = GameToolBuilder(sceneView: sceneView)
         destroyerTool = GameToolDestroyer(sceneView: sceneView)
         manipulatorTool = GameToolManipulator(sceneView: sceneView)
+        detectorTool = GameToolARDetector(sceneView: sceneView)
+        detectorTool.listeners.add(self)
+        
+        controller?.tool = detectorTool
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -161,116 +141,32 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         }
     }
     
-    var currentColorButton: UIButton? = nil
     @IBAction func selectColor(_ sender: UIButton) {
         guard let tool = self.controller?.tool else {return}
         tool.action(type: "setMaterial", value: sender.title(for: .normal)!)
     }
     
-    var currentShapeButton: UIButton? = nil
     @IBAction func selectShape(_ sender: UIButton) {
         guard let tool = self.controller?.tool else {return}
         tool.action(type: "setGamePiece", value: sender.title(for: .normal)!)
     }
     
-    @objc func onTap() {
-        if let plane = sceneView.scene.rootNode.childNode(withName: "piano", recursively: true) {
-            planeDetected = true
-            let playfloor = sceneView.scene.rootNode.childNode(withName: "Playfloor", recursively: true)!
-            let origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
-            let position = plane.convertPosition(plane.position, to: sceneView.scene.rootNode)
-            playfloor.position.y = position.y
-            origin.position.y = position.y
-            plane.removeFromParentNode()
-            sceneView.removeGestureRecognizer(tapGesture)
-            controller = GameController(targetView: sceneView)
-            controller?.tool = builderTool
-            showSelectors(true)
-            showTools(true)
-        }
-    }
-    
-    //MARK: RENDERER
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        
-        //unwrapping anchor
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-        
-        if self.globalAnchor != nil && !self.planeDetected {
-            if planeAnchor != self.globalAnchor {
-                sceneView.session.remove(anchor: self.globalAnchor!)
-                self.globalAnchor = planeAnchor
+    func onTap(sender: GameTool, param: Any?) {
+        if sender is GameToolARDetector {
+            let hasSetPlane = param as! Bool
+            if hasSetPlane {
+                controller?.tool = builderTool
+                showSelectors(true)
+                showTools(true)
             }
-        } else {
-            self.globalAnchor = planeAnchor
-        }
-        
-        if !self.planeDetected {
-            let planeNode = self.createPlaneNode(anchor: self.globalAnchor!)
-            node.addChildNode(planeNode)
         }
     }
     
-    
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    func onEnter(sender: GameTool, param: Any?) {
         
-        //unwrapping anchor
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-        
-        if planeAnchor != self.globalAnchor && !self.planeDetected {
-            sceneView.session.remove(anchor: self.globalAnchor!)
-            self.globalAnchor = planeAnchor
-        }
-        
-        if !self.planeDetected {
-            //Remove existing plane nodes
-            node.enumerateChildNodes {
-                (childNode, _) in
-                childNode.removeFromParentNode()
-            }
-            
-            let planeNode = self.createPlaneNode(anchor: self.globalAnchor!)
-            node.addChildNode(planeNode)
-        }
     }
     
-    func createPlaneNode(anchor: ARPlaneAnchor) -> SCNNode {
+    func onExit(sender: GameTool, param: Any?) {
         
-        //plane dimensions
-        let planeWidth = self.globalWidth
-        let planeHeight = self.globalHeight
-        
-        //extensible plane
-        //        let planeWidth = CGFloat(anchor.extent.x)
-        //        let planeHeight = CGFloat(anchor.extent.z)
-        
-        //setting plane with dimensions
-        let plane = SCNPlane(width: planeWidth, height: planeHeight)
-        
-        //setting plane material
-        let planeMaterial = SCNMaterial()
-        let gridImage = UIImage(named: "grid.png")
-        planeMaterial.diffuse.contents = gridImage
-        let scaleX = self.globalScaleX
-        let scaleY = self.globalScaleY
-        planeMaterial.diffuse.contentsTransform = SCNMatrix4MakeScale(scaleX!, scaleY!, 0)
-        planeMaterial.diffuse.wrapS = .repeat
-        planeMaterial.diffuse.wrapT = .repeat
-        
-        plane.firstMaterial = planeMaterial
-        
-        let planeNode = SCNNode(geometry: plane)
-        planeNode.name = "piano"
-        
-        let x = CGFloat(anchor.center.x)
-        let y = CGFloat(anchor.center.y)
-        let z = CGFloat(anchor.center.z)
-        
-        planeNode.position = SCNVector3(x,y,z)
-        planeNode.eulerAngles.x = -.pi / 2
-        
-        planeNode.physicsBody = SCNPhysicsBody.static()
-        
-        return planeNode
     }
 }

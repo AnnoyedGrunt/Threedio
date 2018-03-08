@@ -25,10 +25,13 @@ import ARKit
  */
 class GameToolManipulator: GameTool {
     var sceneView: ARSCNView!
+    var listeners = GameToolListenerList()
+    
     var heldObject: SCNNode?
     let throwingStrength: Float = 2
     let holdingDistance: Float = 0.8
     let origin: SCNNode!
+    
     
     required init(sceneView: ARSCNView) {
         self.sceneView = sceneView
@@ -36,6 +39,7 @@ class GameToolManipulator: GameTool {
     }
     
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {}
+    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {}
     
     func onTap() {
         if heldObject == nil {
