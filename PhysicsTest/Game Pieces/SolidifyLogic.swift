@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 
 extension GamePiece {
-    class solidifyLogic {
+    class SolidifyLogic {
         var logic: (_ node: SCNNode, _ scene: SCNScene) -> ()
         
         init( _ logic: @escaping (SCNNode, SCNScene) -> ()) {
@@ -25,22 +25,29 @@ extension GamePiece {
             node.physicsBody = body
         }
         
-        static let standard = solidifyLogic() { node, scene in
+        
+        //MARK: - SOLIDIFICATION CALLBACKS
+        
+        static let standard = SolidifyLogic() { node, scene in
             let options: [SCNPhysicsShape.Option: Any] = [SCNPhysicsShape.Option.scale: node.scale]
             let shape = SCNPhysicsShape(geometry: node.geometry!, options: options)
             let physicsBody = SCNPhysicsBody(type: .static, shape: shape)
             node.physicsBody = physicsBody
         }
         
-        static let block = solidifyLogic() { node, scene in
-            withGeometry(node, geometry: node.geometry as! SCNBox, type: .static)
+        static let block = SolidifyLogic() { node, scene in
+            let geometry = SCNBox(width: CGFloat(node.scale.x), height: CGFloat(node.scale.y), length: CGFloat(node.scale.x), chamferRadius: 0)
+            //let options: [SCNPhysicsShape.Option: Any] = [SCNPhysicsShape.Option.scale: node.scale]
+            let shape = SCNPhysicsShape(geometry: geometry)
+            let body = SCNPhysicsBody(type: .static, shape: shape)
+            node.physicsBody = body
         }
         
-        static let cylinder = solidifyLogic() { node, scene in
+        static let cylinder = SolidifyLogic() { node, scene in
             withGeometry(node, geometry: node.geometry as! SCNCylinder, type: .static)
         }
         
-        static let concave = solidifyLogic() { node, scene in
+        static let concave = SolidifyLogic() { node, scene in
             let options: [SCNPhysicsShape.Option: Any] = [
                 SCNPhysicsShape.Option.scale: node.scale,
                 SCNPhysicsShape.Option.type: SCNPhysicsShape.ShapeType.concavePolyhedron
@@ -50,15 +57,15 @@ extension GamePiece {
             node.physicsBody = physicsBody
         }
         
-        static let dynamic = solidifyLogic() { node, scene in
+        static let dynamic = SolidifyLogic() { node, scene in
             let options: [SCNPhysicsShape.Option: Any] = [SCNPhysicsShape.Option.scale: node.scale]
             let shape = SCNPhysicsShape(geometry: node.geometry!, options: options)
             let physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
             node.physicsBody = physicsBody
         }
         
-        static let ball = solidifyLogic() { node, scene in
-            solidifyLogic.dynamic.logic(node, scene)
+        static let ball = SolidifyLogic() { node, scene in
+            SolidifyLogic.dynamic.logic(node, scene)
             node.physicsBody!.restitution = 0.6
             node.physicsBody!.rollingFriction = 0.0
             node.physicsBody!.friction = 0.1

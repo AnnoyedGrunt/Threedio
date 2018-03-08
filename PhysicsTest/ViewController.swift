@@ -9,9 +9,8 @@
 import UIKit
 import SceneKit
 import ARKit
-import ReplayKit
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RPPreviewViewControllerDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var shapeSelector: UIView!
@@ -25,9 +24,17 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
     @IBOutlet weak var placerButton: UIButton!
     @IBOutlet weak var manipulatorButton: UIButton!
     
+    @IBOutlet weak var MenuView: UIView!
+    
+    @IBAction func menu(_ sender: Any) {
+       MenuView.isHidden = !MenuView.isHidden
+    }
     
     var tapGesture = UITapGestureRecognizer()
-    var builder : Builder?
+    var controller: GameController?
+    var builderTool: GameToolBuilder!
+    var destroyerTool: GameToolDestroyer!
+    var manipulatorTool: GameToolManipulator!
     
     //for handling different anchors and different planes
     var globalAnchor: ARPlaneAnchor?
@@ -46,7 +53,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
         super.viewDidLoad()
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showWorldOrigin)
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showFeaturePoints)
-        //sceneView.debugOptions.update(with: .showPhysicsShapes)
+        sceneView.debugOptions.update(with: .showPhysicsShapes)
         //sceneView.debugOptions.update(with: .renderAsWireframe)
         //sceneView.debugOptions.update(with: .showBoundingBoxes)
         
@@ -69,6 +76,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
         //controller = Builder(targetView: sceneView)
         //controller.mode = .place
         //showSelectors(true)
+        
+        builderTool = GameToolBuilder(sceneView: sceneView)
+        destroyerTool = GameToolDestroyer(sceneView: sceneView)
+        manipulatorTool = GameToolManipulator(sceneView: sceneView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,45 +115,42 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
     }
     
     @IBAction func onDeleterTap(_ sender: UIButton) {
-        guard let controller = builder else {return}
+        guard let controller = self.controller else {return}
         showSelectors(false)
-        //showManipulators(false)
-        controller.mode = .delete
+        controller.tool = destroyerTool
     }
     
     @IBAction func onPlacerTap(_ sender: UIButton) {
-        guard let controller = builder else {return}
+        guard let controller = self.controller else {return}
         showSelectors(true)
-        //showManipulators(false)
-        controller.mode = .place
+        controller.tool = builderTool
+        
     }
     
     @IBAction func onManipulatortap(_ sender: UIButton) {
-        guard let controller = builder else {return}
+        guard let controller = self.controller else {return}
         showSelectors(false)
-        //showManipulators(true)
-        controller.mode = .manipulate
+        controller.tool = manipulatorTool
     }
 
     @IBAction func onThrowTap(_ sender: Any) {
-        guard let controller = builder else {return}
-        controller.throwObject()
+        guard let tool = self.controller?.tool else {return}
+        tool.action(type: "throwObject", value: nil)
     }
     
     
     @IBAction func onDropTap(_ sender: Any) {
-        guard let controller = builder else {return}
-        controller.dropObject()
+        guard let tool = self.controller?.tool else {return}
+        tool.action(type: "dropObject", value: nil)
     }
-    
     
     @IBAction func switchSelectors(_ sender: UIButton) {
         shapeView.isHidden = !shapeView.isHidden
         colorView.isHidden = !colorView.isHidden
         if !shapeView.isHidden {
-            selectorSwitcher.setImage(#imageLiteral(resourceName: "colorGradient"), for: .normal)
+            selectorSwitcher.setImage(#imageLiteral(resourceName: "ColorWheel"), for: .normal)
         } else {
-            selectorSwitcher.setImage(#imageLiteral(resourceName: "IconConstruction"), for: .normal)
+            selectorSwitcher.setImage(#imageLiteral(resourceName: "all"), for: .normal)
         }
     }
     
@@ -155,19 +163,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
     
     var currentColorButton: UIButton? = nil
     @IBAction func selectColor(_ sender: UIButton) {
-        guard let controller = builder else {return}
-        controller.setMaterial(name: sender.title(for: .normal)!)
+        guard let tool = self.controller?.tool else {return}
+        tool.action(type: "setMaterial", value: sender.title(for: .normal)!)
     }
     
     var currentShapeButton: UIButton? = nil
     @IBAction func selectShape(_ sender: UIButton) {
-        guard let controller = builder else {return}
-        if let title = sender.title(for: .normal) {
-            controller.setGeometry(name: title)
-        }
+        guard let tool = self.controller?.tool else {return}
+        tool.action(type: "setGamePiece", value: sender.title(for: .normal)!)
     }
-    
-    //MARK: Plane Selection (TAP)
     
     @objc func onTap() {
         if let plane = sceneView.scene.rootNode.childNode(withName: "piano", recursively: true) {
@@ -179,8 +183,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
             origin.position.y = position.y
             plane.removeFromParentNode()
             sceneView.removeGestureRecognizer(tapGesture)
-            builder = Builder(targetView: sceneView)
-            builder!.mode = .place
+            controller = GameController(targetView: sceneView)
+            controller?.tool = builderTool
             showSelectors(true)
             showTools(true)
         }
@@ -269,47 +273,4 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
         
         return planeNode
     }
-    
-    
-//    funzione di screenshoot
-    
-    func screenShootScene(){
-        var image = sceneView.snapshot()
-//        Salva l'immagine nell'albulm
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-    
-    
-    //  Funzione di start recordig
-    @objc func startRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.startRecording{ [unowned self] (error) in
-            if let unwrappedError = error {
-                print(unwrappedError.localizedDescription)
-            } else {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Stop", style: .plain, target: self, action: #selector(self.stopRecording))
-            }
-        }
-    }
-    
-    //    Funzione di stop recording
-    @objc func stopRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.stopRecording { [unowned self] (preview, error) in
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(self.startRecording))
-            
-            if let unwrappedPreview = preview {
-                unwrappedPreview.previewControllerDelegate = (self as! RPPreviewViewControllerDelegate)
-                self.present(unwrappedPreview, animated: true)
-            }
-        }
-    }
-    
-    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
-        dismiss(animated: true)
-    }
-    
-    
 }
