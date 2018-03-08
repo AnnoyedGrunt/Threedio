@@ -12,7 +12,7 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
-    @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet public weak var sceneView: ARSCNView!
     @IBOutlet weak var shapeSelector: UIView!
     @IBOutlet weak var colorPicker: UIView!
     @IBOutlet weak var shapeView: UICustomView!
@@ -23,13 +23,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBOutlet weak var deleterButton: UIButton!
     @IBOutlet weak var placerButton: UIButton!
     @IBOutlet weak var manipulatorButton: UIButton!
+    @IBOutlet weak var MenuView: UICustomView!
     
-    @IBOutlet weak var MenuView: UIView!
+    
+    @IBOutlet weak var menuButton: UIButton!
     
     @IBAction func menu(_ sender: Any) {
        MenuView.isHidden = !MenuView.isHidden
     }
     
+    @IBOutlet weak var screenBut: UIButton!
+    
+    @IBAction func screenbutton(_ sender: Any) {
+        var image = sceneView.snapshot()
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
     var tapGesture = UITapGestureRecognizer()
     var controller: GameController?
     var builderTool: GameToolBuilder!
@@ -107,11 +115,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         dropButton.isHidden = !value
     }
     
+    
+    
     func showTools(_ show: Bool?) {
         let value = show ?? placerButton.isHidden
         deleterButton.isHidden = !value
         placerButton.isHidden = !value
         manipulatorButton.isHidden = !value
+        menuButton.isHidden = !value
     }
     
     @IBAction func onDeleterTap(_ sender: UIButton) {

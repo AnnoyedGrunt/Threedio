@@ -18,7 +18,7 @@
             <objects>
                 <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspectFill" id="SuU-ik-Nbz" customClass="VideoController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rhd-Jf-s9k">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rjT-wb-v6O"/>
@@ -421,18 +421,29 @@
                                     <action selector="switchSelectors:" destination="kMr-r8-Bln" eventType="touchUpInside" id="OZR-tD-z4u"/>
                                 </connections>
                             </button>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Pm-tBU" userLabel="MenuView">
-                                <rect key="frame" x="235" y="250" width="362" height="58"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-ch-MS7">
+                                <rect key="frame" x="363" y="314" width="87" height="30"/>
+                                <state key="normal" title="Impostazioni"/>
+                                <connections>
+                                    <action selector="menu:" destination="kMr-r8-Bln" eventType="touchUpInside" id="C5x-Ox-kSC"/>
+                                </connections>
+                            </button>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Pm-tBU" userLabel="MenuView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
+                                <rect key="frame" x="281" y="246" width="250" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="cpc-HB-SFn"/>
+                                    <constraint firstAttribute="height" constant="60" id="rCg-Fa-cr3"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="CCv-uY-pWE" kind="embed" id="zJZ-AO-p6J"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-ch-MS7">
-                                <rect key="frame" x="363" y="314" width="87" height="30"/>
-                                <state key="normal" title="Impostazioni"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNu-ut-mea">
+                                <rect key="frame" x="195" y="150" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="screen"/>
                                 <connections>
-                                    <action selector="menu:" destination="kMr-r8-Bln" eventType="touchUpInside" id="Cwq-9t-nEF"/>
+                                    <action selector="screenbutton:" destination="kMr-r8-Bln" eventType="touchUpInside" id="tK8-HB-EbS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -465,6 +476,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="2"/>
                             </constraint>
                             <constraint firstItem="XLY-2y-2h7" firstAttribute="top" secondItem="HRP-J3-sUc" secondAttribute="top" constant="20" id="All-oS-ziP"/>
+                            <constraint firstItem="DhH-Pm-tBU" firstAttribute="centerX" secondItem="KbR-8v-p98" secondAttribute="centerX" id="B5s-PN-91B"/>
                             <constraint firstItem="HRP-J3-sUc" firstAttribute="trailing" secondItem="hsu-Nc-5dR" secondAttribute="trailing" constant="10" id="B8L-1j-ln1">
                                 <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                             </constraint>
@@ -486,6 +498,7 @@
                             <constraint firstItem="XLY-2y-2h7" firstAttribute="top" secondItem="xqp-Nb-Mdo" secondAttribute="top" id="J5T-5f-hXK"/>
                             <constraint firstAttribute="trailing" secondItem="2TJ-Uc-vMW" secondAttribute="trailing" id="JeI-du-MXD"/>
                             <constraint firstItem="xqp-Nb-Mdo" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="40" id="JoA-y1-Bhi"/>
+                            <constraint firstItem="9Tq-ch-MS7" firstAttribute="centerX" secondItem="KbR-8v-p98" secondAttribute="centerX" id="KG1-70-DI4"/>
                             <constraint firstItem="XLY-2y-2h7" firstAttribute="top" secondItem="HRP-J3-sUc" secondAttribute="top" constant="10" id="Kin-aW-36a"/>
                             <constraint firstItem="HRP-J3-sUc" firstAttribute="trailing" secondItem="eTu-Ng-vv3" secondAttribute="trailing" constant="20" id="OCZ-yN-fbf"/>
                             <constraint firstItem="xqp-Nb-Mdo" firstAttribute="leading" secondItem="HRP-J3-sUc" secondAttribute="leading" constant="20" id="OzM-DM-Mv4">
@@ -540,6 +553,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="17"/>
                             </constraint>
                             <constraint firstItem="KbR-8v-p98" firstAttribute="centerY" secondItem="3Ln-8a-V9f" secondAttribute="centerY" id="vZ0-JV-hY9"/>
+                            <constraint firstItem="9Tq-ch-MS7" firstAttribute="top" secondItem="DhH-Pm-tBU" secondAttribute="bottom" constant="8" symbolic="YES" id="x5D-fE-J8y"/>
                             <constraint firstItem="HRP-J3-sUc" firstAttribute="trailing" secondItem="eTu-Ng-vv3" secondAttribute="trailing" constant="20" id="xHM-SL-7NR"/>
                             <constraint firstItem="9Tq-ch-MS7" firstAttribute="centerX" secondItem="KbR-8v-p98" secondAttribute="centerX" id="y1S-a8-eP9"/>
                             <constraint firstItem="HRP-J3-sUc" firstAttribute="trailing" secondItem="eTu-Ng-vv3" secondAttribute="trailing" constant="10" id="yKb-aG-Mub">
@@ -689,15 +703,17 @@
                         <outlet property="colorView" destination="xqp-Nb-Mdo" id="Il7-Yu-9gu"/>
                         <outlet property="deleterButton" destination="hsu-Nc-5dR" id="LqD-WO-0uO"/>
                         <outlet property="manipulatorButton" destination="eTu-Ng-vv3" id="asU-fH-2aU"/>
+                        <outlet property="menuButton" destination="9Tq-ch-MS7" id="ZDV-k6-jmU"/>
                         <outlet property="placerButton" destination="mU9-04-JHr" id="7PD-HL-6Hi"/>
                         <outlet property="sceneView" destination="2TJ-Uc-vMW" id="aeW-78-wTK"/>
+                        <outlet property="screenBut" destination="hNu-ut-mea" id="tJh-Fd-F6u"/>
                         <outlet property="selectorSwitcher" destination="1X1-Yf-mzO" id="yTC-vX-Cv8"/>
                         <outlet property="shapeView" destination="XLY-2y-2h7" id="k8f-lA-jmb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYW-Wv-dXb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-764.67391304347836" y="-195.6521739130435"/>
+            <point key="canvasLocation" x="-765.51724137931035" y="-196"/>
         </scene>
         <!--Color Controller-->
         <scene sceneID="cUB-an-sqL">
@@ -708,7 +724,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v5-cA-g5Q" userLabel="ColorScroll" customClass="UICustomScrollView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="44.333333333333343" y="0.0" width="51" height="209"/>
+                                <rect key="frame" x="44" y="0.0" width="0.0" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="I3J-ZR-BWX" userLabel="ColorStack">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="971"/>
@@ -877,7 +893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmt-1y-hvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1685" y="81"/>
+            <point key="canvasLocation" x="-1315" y="178"/>
         </scene>
         <!--Shape Controller-->
         <scene sceneID="Z97-go-kxK">
@@ -887,7 +903,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="80" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-n5-vHc" userLabel="ShapeScroll">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-n5-vHc" userLabel="ShapeScroll">
                                 <rect key="frame" x="44" y="0.0" width="80" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Uhp-Pu-lzg" userLabel="ShapeStack">
@@ -1139,44 +1155,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuj-Ic-icg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1323" y="6"/>
+            <point key="canvasLocation" x="-1153" y="155"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu Controller-->
         <scene sceneID="9Qh-vQ-pqT">
             <objects>
-                <viewController id="CCv-uY-pWE" sceneMemberID="viewController">
+                <viewController id="CCv-uY-pWE" userLabel="Menu Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xtR-dG-DCz">
-                        <rect key="frame" x="0.0" y="0.0" width="362" height="58"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYN-Qv-H0g">
-                                <rect key="frame" x="92" y="8" width="40" height="40"/>
+                                <rect key="frame" x="68" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="istantanea" image="Polaroid"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-us-iim">
-                                <rect key="frame" x="153" y="9" width="40" height="40"/>
+                                <rect key="frame" x="127" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="video" image="cinepresa"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3y-nv-wPR">
-                                <rect key="frame" x="216" y="12" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancella"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPm-6p-l9M">
-                                <rect key="frame" x="32" y="7" width="40" height="40"/>
+                                <rect key="frame" x="11" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="exit" image="Door"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3y-nv-wPR">
+                                <rect key="frame" x="186" y="15" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Bomba"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="79G-Nd-CQe"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWd-dA-qtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-716" y="420"/>
+            <point key="canvasLocation" x="-697" y="458"/>
         </scene>
     </scenes>
     <resources>
