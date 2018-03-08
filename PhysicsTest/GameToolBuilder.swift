@@ -25,6 +25,8 @@ import ARKit
 class GameToolBuilder: GameTool {
     
     var sceneView: ARSCNView!
+    var listeners = GameToolListenerList()
+    
     let blockSize : Float = 0.1
     let cgBlockSize : CGFloat = 0.1
     var blockPreview : SCNNode?
@@ -65,12 +67,13 @@ class GameToolBuilder: GameTool {
             lastPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
             lastPositions = Array(lastPositions.suffix(positionCacheCount))
             let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
-            //recentTargetingPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
-            //recentTargetingPositions = Array(recentTargetingPositions.suffix(5))
-            //let position = recentTargetingPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(recentTargetingPositions.count)
             let direction = hit.localNormal
             updatePreview(at: position, from: sceneView.pointOfView!.position, withDirection: direction, withScale: blockSize)
         }
+    }
+    
+    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        
     }
     
     func onTap() {

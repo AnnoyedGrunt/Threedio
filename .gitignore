@@ -22,9 +22,6 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
-##MacOS Specific
-.DS_Store
-
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
@@ -69,3 +66,6 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 *.pbxproj
+PhysicsTest/Main.storyboard
+*.storyboard
+*.storyboard

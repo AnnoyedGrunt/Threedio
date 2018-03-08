@@ -17,7 +17,7 @@ import ARKit
  - Author: Raffaele Tontaro
 */
 class GameController: NSObject, ARSCNViewDelegate {
-    var view : ARSCNView!
+    var sceneView : ARSCNView!
     var tapper : UITapGestureRecognizer!
     
     var tool: GameTool? {
@@ -40,15 +40,20 @@ class GameController: NSObject, ARSCNViewDelegate {
     init(targetView: ARSCNView) {
         super.init()
         
-        self.view = targetView
-        self.view.delegate = self
+        sceneView = targetView
+        sceneView.delegate = self
         tapper = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        view.addGestureRecognizer(tapper)
+        sceneView.addGestureRecognizer(tapper)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let tool = self.tool else {return}
         tool.onUpdate(renderer, updateAtTime: time)
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let tool = self.tool else {return}
+        tool.ARRenderer(renderer, didUpdate: node, for: anchor)
     }
     
     @objc func onTap() {

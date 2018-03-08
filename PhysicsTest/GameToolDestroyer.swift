@@ -23,9 +23,12 @@ import ARKit
  */
 class GameToolDestroyer: GameTool {
     var sceneView: ARSCNView!
+    var listeners = GameToolListenerList()
+    
     let previewMaterial = GameMaterial(color: UIColor.red.withAlphaComponent(0.8))
     var oldMaterial: GameMaterial?
     var currentNode: SCNNode?
+    
     
     required init(sceneView: ARSCNView) {
         self.sceneView = sceneView
@@ -43,6 +46,10 @@ class GameToolDestroyer: GameTool {
             resetMaterial()
             currentNode = nil
         }
+    }
+    
+    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        
     }
     
     func onTap() {
