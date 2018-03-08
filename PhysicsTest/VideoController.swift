@@ -11,6 +11,7 @@ import UIKit
 import AVKit
 
 class VideoController: AVPlayerViewController {
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
