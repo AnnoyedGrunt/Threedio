@@ -9,8 +9,9 @@
 import UIKit
 import SceneKit
 import ARKit
+import ReplayKit
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RPPreviewViewControllerDelegate{
 
     @IBOutlet public weak var sceneView: ARSCNView!
     @IBOutlet weak var shapeSelector: UIView!
@@ -18,8 +19,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBOutlet weak var shapeView: UICustomView!
     @IBOutlet weak var colorView: UICustomView!
     @IBOutlet weak var selectorSwitcher: UIButton!
-    @IBOutlet weak var throwButton: UIButton!
-    @IBOutlet weak var dropButton: UIButton!
     @IBOutlet weak var deleterButton: UIButton!
     @IBOutlet weak var placerButton: UIButton!
     @IBOutlet weak var manipulatorButton: UIButton!
@@ -32,12 +31,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
        MenuView.isHidden = !MenuView.isHidden
     }
     
-    @IBOutlet weak var screenBut: UIButton!
-    
-    @IBAction func screenbutton(_ sender: Any) {
-        var image = sceneView.snapshot()
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
     var tapGesture = UITapGestureRecognizer()
     var controller: GameController?
     var builderTool: GameToolBuilder!
@@ -109,13 +102,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         selectorSwitcher.isHidden = !value
     }
     
-    func showManipulators(_ show: Bool?) {
-        let value = show ?? throwButton.isHidden
-        throwButton.isHidden = !value
-        dropButton.isHidden = !value
-    }
-    
-    
     
     func showTools(_ show: Bool?) {
         let value = show ?? placerButton.isHidden
@@ -144,17 +130,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         controller.tool = manipulatorTool
     }
 
-    @IBAction func onThrowTap(_ sender: Any) {
-        guard let tool = self.controller?.tool else {return}
-        tool.action(type: "throwObject", value: nil)
-    }
-    
-    
-    @IBAction func onDropTap(_ sender: Any) {
-        guard let tool = self.controller?.tool else {return}
-        tool.action(type: "dropObject", value: nil)
-    }
-    
+ 
     @IBAction func switchSelectors(_ sender: UIButton) {
         shapeView.isHidden = !shapeView.isHidden
         colorView.isHidden = !colorView.isHidden

@@ -42,6 +42,11 @@
 		A3DD310D2037461D002639EE /* car.scn in Resources */ = {isa = PBXBuildFile; fileRef = A3DD310C2037461D002639EE /* car.scn */; };
 		A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3C471202EF218005CE743 /* GamePiece.swift */; };
 		BDA9F23920515B2C00703892 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9F23820515B2C00703892 /* MenuController.swift */; };
+		BDA9F23B205196B500703892 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9F23A205196B500703892 /* SettingsViewController.swift */; };
+		BDA9F23D205196BE00703892 /* WorldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9F23C205196BE00703892 /* WorldCollectionViewCell.swift */; };
+		BDA9F23F205196C900703892 /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9F23E205196C900703892 /* TitleScreenViewController.swift */; };
+		BDA9F241205196D200703892 /* LevelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9F240205196D200703892 /* LevelSelectViewController.swift */; };
+		BDA9F243205196DB00703892 /* WorldsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA9F242205196DA00703892 /* WorldsDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +110,11 @@
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
 		A3F3C471202EF218005CE743 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
 		BDA9F23820515B2C00703892 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		BDA9F23A205196B500703892 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BDA9F23C205196BE00703892 /* WorldCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDA9F23E205196C900703892 /* TitleScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenViewController.swift; sourceTree = "<group>"; };
+		BDA9F240205196D200703892 /* LevelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectViewController.swift; sourceTree = "<group>"; };
+		BDA9F242205196DA00703892 /* WorldsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldsDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +213,11 @@
 				A3CA7627204066EF007810C7 /* ColorController.swift */,
 				A3CA76332040A958007810C7 /* ShapeController.swift */,
 				BDA9F23820515B2C00703892 /* MenuController.swift */,
+				BDA9F23A205196B500703892 /* SettingsViewController.swift */,
+				BDA9F23C205196BE00703892 /* WorldCollectionViewCell.swift */,
+				BDA9F23E205196C900703892 /* TitleScreenViewController.swift */,
+				BDA9F240205196D200703892 /* LevelSelectViewController.swift */,
+				BDA9F242205196DA00703892 /* WorldsDataManager.swift */,
 				A3DD310C2037461D002639EE /* car.scn */,
 				A33A8BA320348BF7001A7209 /* PhysicsTest.entitlements */,
 				A36252A620247682001FCA58 /* AppDelegate.swift */,
@@ -394,7 +409,9 @@
 			files = (
 				A3CA762620406197007810C7 /* UICustomView.swift in Sources */,
 				A3CA762A20406B0B007810C7 /* UIColorButton.swift in Sources */,
+				BDA9F243205196DB00703892 /* WorldsDataManager.swift in Sources */,
 				A3453084204F17A20071447A /* OrientationType.swift in Sources */,
+				BDA9F23F205196C900703892 /* TitleScreenViewController.swift in Sources */,
 				A345308B204FE5220071447A /* GameToolBuilder.swift in Sources */,
 				A345309120508D9F0071447A /* GameToolARDetector.swift in Sources */,
 				A31702B5204B115E0005DFCA /* UINibView.swift in Sources */,
@@ -402,6 +419,7 @@
 				A3147033203C3C740027EA0C /* ViewController.swift in Sources */,
 				A3453080204F16FA0071447A /* GamePieceSettings.swift in Sources */,
 				A345308F20501F7D0071447A /* GameToolManipulator.swift in Sources */,
+				BDA9F23D205196BE00703892 /* WorldCollectionViewCell.swift in Sources */,
 				A3453082204F17090071447A /* GameMaterial.swift in Sources */,
 				BDA9F23920515B2C00703892 /* MenuController.swift in Sources */,
 				A36252A920247682001FCA58 /* OldViewController.swift in Sources */,
@@ -415,7 +433,9 @@
 				A3453089204F22A40071447A /* GameTool.swift in Sources */,
 				A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */,
 				A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */,
+				BDA9F23B205196B500703892 /* SettingsViewController.swift in Sources */,
 				A36B0869203C2EEF006E8D56 /* SCNVectorExtension.swift in Sources */,
+				BDA9F241205196D200703892 /* LevelSelectViewController.swift in Sources */,
 				A3453093205096270071447A /* GameToolListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

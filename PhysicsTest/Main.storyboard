@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMr-r8-Bln">
-    <device id="retina5_9" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SuU-ik-Nbz">
+    <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,11 +19,14 @@
             <objects>
                 <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspectFill" id="SuU-ik-Nbz" customClass="VideoController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rhd-Jf-s9k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rjT-wb-v6O"/>
                     </view>
+                    <connections>
+                        <segue destination="J96-tJ-GNE" kind="show" identifier="menu" id="0xI-wI-xbi"/>
+                    </connections>
                 </avPlayerViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVe-e4-O8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,15 +37,15 @@
             <objects>
                 <viewController id="kMr-r8-Bln" customClass="ViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Ln-8a-V9f" userLabel="Container">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TJ-Uc-vMW">
-                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                                 <gestureRecognizers/>
                             </arscnView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsu-Nc-5dR" userLabel="Hammer">
-                                <rect key="frame" x="695" y="50" width="63" height="66"/>
+                                <rect key="frame" x="999" y="239" width="73" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="Enm-D8-Cgt"/>
                                     <constraint firstAttribute="height" constant="66" id="K4B-hV-XMR"/>
@@ -68,7 +72,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU9-04-JHr" userLabel="Cube">
-                                <rect key="frame" x="688" y="150" width="70" height="80"/>
+                                <rect key="frame" x="992" y="372" width="80" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="6CJ-Fh-9az"/>
                                     <constraint firstAttribute="width" constant="70" id="QwK-QZ-dCo"/>
@@ -236,14 +240,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Crosshair" translatesAutoresizingMaskIntoConstraints="NO" id="KbR-8v-p98">
-                                <rect key="frame" x="390" y="171.66666666666666" width="32" height="32"/>
+                                <rect key="frame" x="540" y="401" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Gd4-Kk-XNf"/>
                                     <constraint firstAttribute="width" constant="32" id="ZiI-U1-yYe"/>
                                 </constraints>
                             </imageView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLY-2y-2h7" userLabel="ShapeView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="54" y="10" width="80" height="230"/>
+                                <rect key="frame" x="40" y="64" width="80" height="559"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="BmZ-ch-yIW"/>
                                     <constraint firstAttribute="height" constant="250" id="FFR-Se-cbh"/>
@@ -291,7 +295,7 @@
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-Nb-Mdo" userLabel="ColorView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="54" y="10" width="80" height="230"/>
+                                <rect key="frame" x="40" y="64" width="80" height="559"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="1gy-6s-boC"/>
                                     <constraint firstAttribute="height" constant="230" id="ASu-nv-u4p"/>
@@ -342,7 +346,7 @@
                                 </connections>
                             </containerView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTu-Ng-vv3" userLabel="Hand">
-                                <rect key="frame" x="688" y="255" width="70" height="70"/>
+                                <rect key="frame" x="992" y="514.5" width="80" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="0AK-Jy-GLZ"/>
                                     <constraint firstAttribute="height" constant="75" id="Gjj-w7-A7l">
@@ -383,7 +387,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X1-Yf-mzO" userLabel="selectorSwitcher" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="59" y="284" width="70" height="70"/>
+                                <rect key="frame" x="40" y="709" width="80" height="80"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="6F5-K5-ayC"/>
@@ -422,14 +426,14 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tq-ch-MS7">
-                                <rect key="frame" x="363" y="314" width="87" height="30"/>
+                                <rect key="frame" x="513" y="784" width="87" height="30"/>
                                 <state key="normal" title="Impostazioni"/>
                                 <connections>
                                     <action selector="menu:" destination="kMr-r8-Bln" eventType="touchUpInside" id="C5x-Ox-kSC"/>
                                 </connections>
                             </button>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-Pm-tBU" userLabel="MenuView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="281" y="246" width="250" height="60"/>
+                                <rect key="frame" x="431" y="716" width="250" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="cpc-HB-SFn"/>
                                     <constraint firstAttribute="height" constant="60" id="rCg-Fa-cr3"/>
@@ -438,14 +442,6 @@
                                     <segue destination="CCv-uY-pWE" kind="embed" id="zJZ-AO-p6J"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNu-ut-mea">
-                                <rect key="frame" x="195" y="150" width="94" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="screen"/>
-                                <connections>
-                                    <action selector="screenbutton:" destination="kMr-r8-Bln" eventType="touchUpInside" id="tK8-HB-EbS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -706,31 +702,30 @@
                         <outlet property="menuButton" destination="9Tq-ch-MS7" id="ZDV-k6-jmU"/>
                         <outlet property="placerButton" destination="mU9-04-JHr" id="7PD-HL-6Hi"/>
                         <outlet property="sceneView" destination="2TJ-Uc-vMW" id="aeW-78-wTK"/>
-                        <outlet property="screenBut" destination="hNu-ut-mea" id="tJh-Fd-F6u"/>
                         <outlet property="selectorSwitcher" destination="1X1-Yf-mzO" id="yTC-vX-Cv8"/>
                         <outlet property="shapeView" destination="XLY-2y-2h7" id="k8f-lA-jmb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYW-Wv-dXb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-765.51724137931035" y="-196"/>
+            <point key="canvasLocation" x="-734" y="-130"/>
         </scene>
         <!--Color Controller-->
         <scene sceneID="cUB-an-sqL">
             <objects>
                 <viewController id="hxM-AT-Cup" customClass="ColorController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3BX-y2-Gkx" userLabel="ColorCanvas">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="230"/>
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v5-cA-g5Q" userLabel="ColorScroll" customClass="UICustomScrollView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="44" y="0.0" width="0.0" height="209"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="I3J-ZR-BWX" userLabel="ColorStack">
-                                        <rect key="frame" x="0.0" y="0.0" width="51" height="971"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="971"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjQ-1a-FYQ" userLabel="White" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.98831622340000003" green="1" blue="0.98348844879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="HFT-1k-OGR"/>
@@ -749,7 +744,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOM-CY-Gkd" userLabel="Yellow" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="81" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="81" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.95167510060000005" green="0.90647961070000005" blue="0.25808085609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Yellow">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -759,7 +754,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3V-xZ-B85" userLabel="Orange" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="162" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="162" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.94945323469999998" green="0.52491061530000005" blue="0.16892836080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <size key="titleShadowOffset" width="2" height="2"/>
                                                 <state key="normal" title="Orange">
@@ -770,7 +765,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzB-kE-B3e" userLabel="Red" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="243" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="243" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.94945323469999998" green="0.2862577563" blue="0.13075624290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Red">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -780,7 +775,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noq-LT-5nZ" userLabel="Purple" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="324" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="324" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.90291212929999998" green="0.1957977192" blue="0.85239025450000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Purple">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -790,7 +785,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIK-Zu-ouP" userLabel="Blue" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="405" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="405" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.22865229409999999" green="0.1423500778" blue="0.94945323469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Blue">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -800,7 +795,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96H-1m-4uK" userLabel="Teal" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="486" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="486" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.35502169039999998" green="0.62014734019999995" blue="0.96621346470000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Teal">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -810,7 +805,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvz-kf-LmR" userLabel="Sky" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="567" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="567" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.43620858289999997" green="0.87528201189999999" blue="0.94945323469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Sky">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -820,7 +815,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuf-U2-rcA" userLabel="Green" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="648" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="648" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.2008671306" green="0.94945323469999998" blue="0.22689194770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Green">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -830,7 +825,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-gH-aPX" userLabel="Gray" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="729" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="729" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.77189086289999997" green="0.74933358520000004" blue="0.70212143029999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Gray">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -841,7 +836,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hb-Uo-U79" userLabel="Brown" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="810" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="810" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.59765107890000002" green="0.45017646779999998" blue="0.27903095779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Brown">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -851,7 +846,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f59-g1-lhe" userLabel="Black" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="891" width="51" height="80"/>
+                                                <rect key="frame" x="0.0" y="891" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Black">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -900,11 +895,11 @@
             <objects>
                 <viewController id="BEz-c2-VWO" customClass="ShapeController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rqR-bY-2om" userLabel="ShapeCanvas">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="230"/>
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-n5-vHc" userLabel="ShapeScroll">
-                                <rect key="frame" x="44" y="0.0" width="80" height="209"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-n5-vHc" userLabel="ShapeScroll">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Uhp-Pu-lzg" userLabel="ShapeStack">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
@@ -924,7 +919,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKE-Eu-OCb" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="79.666666666666671" width="80" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="79.5" width="80" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -956,7 +951,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cylinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtC-BH-hPw" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80.333333333333343" width="80" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.5" y="80" width="80" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -978,13 +973,13 @@
                                                 <rect key="frame" x="0.0" y="200" width="80" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sphere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adK-jB-5Ex" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-Wb-hFN" userLabel="ObjectButton" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="8" width="80" height="80"/>
+                                                        <rect key="frame" x="0.0" y="11" width="80" height="80"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="9E0-Wb-hFN" secondAttribute="height" multiplier="1:1" id="l9W-e9-AsK"/>
                                                         </constraints>
@@ -1022,7 +1017,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ramp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be1-O7-frN" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1055,7 +1050,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPl-nF-drD" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1103,7 +1098,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWI-m7-Nkk" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80.333333333333371" width="80" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.5" y="80" width="80" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1160,7 +1155,7 @@
         <!--Menu Controller-->
         <scene sceneID="9Qh-vQ-pqT">
             <objects>
-                <viewController id="CCv-uY-pWE" userLabel="Menu Controller" sceneMemberID="viewController">
+                <viewController id="CCv-uY-pWE" userLabel="Menu Controller" customClass="MenuController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xtR-dG-DCz">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1169,29 +1164,262 @@
                                 <rect key="frame" x="68" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="istantanea" image="Polaroid"/>
+                                <connections>
+                                    <action selector="screenButton:" destination="CCv-uY-pWE" eventType="touchUpInside" id="Q6G-ID-1eS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-us-iim">
-                                <rect key="frame" x="127" y="10" width="40" height="40"/>
+                                <rect key="frame" x="130" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="video" image="cinepresa"/>
+                                <connections>
+                                    <action selector="startButto:" destination="CCv-uY-pWE" eventType="touchUpInside" id="YZx-0J-g2y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPm-6p-l9M">
                                 <rect key="frame" x="11" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="exit" image="Door"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3y-nv-wPR">
-                                <rect key="frame" x="186" y="15" width="49" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX3-4e-Aoi">
+                                <rect key="frame" x="130" y="10" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94945323469999998" green="0.2862577563" blue="0.13075624290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="cinepresa"/>
+                                <connections>
+                                    <action selector="stopButto:" destination="CCv-uY-pWE" eventType="touchUpInside" id="GeQ-7I-4cS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-GO-UlL">
+                                <rect key="frame" x="185" y="15" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Bomba"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="79G-Nd-CQe"/>
                     </view>
+                    <connections>
+                        <outlet property="start" destination="xUc-us-iim" id="eeK-gX-skA"/>
+                        <outlet property="stop" destination="EX3-4e-Aoi" id="1kU-e7-CaQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWd-dA-qtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-697" y="458"/>
+            <point key="canvasLocation" x="-697.53694581280786" y="457.60000000000002"/>
+        </scene>
+        <!--Level Select View Controller-->
+        <scene sceneID="NRA-l0-0HI">
+            <objects>
+                <viewController id="PO7-8t-CNX" customClass="LevelSelectViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dr7-eJ-U6S">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByN-vf-Mwg">
+                                <rect key="frame" x="20" y="64" width="1072" height="750"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6ka-Jt-UVN">
+                                    <size key="itemSize" width="230" height="242"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.94999998807907104" contentMode="center" reuseIdentifier="WorldCell" id="RgU-oO-Xgn" customClass="WorldCollectionViewCell" customModule="PhysicsTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="242"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="242"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsC-TP-bhf">
+                                                    <rect key="frame" x="55" y="201" width="126" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="GMZ-TS-0TI"/>
+                                                        <constraint firstAttribute="width" constant="40" id="M4X-GP-TT4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WDV-42-Wev">
+                                                    <rect key="frame" x="35" y="20" width="160" height="160"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="160" id="4rn-b9-DSq"/>
+                                                        <constraint firstAttribute="height" constant="160" id="his-4L-2rx"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="WDV-42-Wev" secondAttribute="trailing" constant="27" id="90H-3T-FuC"/>
+                                            <constraint firstItem="bsC-TP-bhf" firstAttribute="leading" secondItem="RgU-oO-Xgn" secondAttribute="leadingMargin" constant="86.5" id="NSJ-LO-zig"/>
+                                            <constraint firstItem="bsC-TP-bhf" firstAttribute="top" secondItem="WDV-42-Wev" secondAttribute="bottom" constant="21" id="gji-nQ-tjn"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="bsC-TP-bhf" secondAttribute="trailing" constant="85.5" id="iR3-rA-LOZ"/>
+                                            <constraint firstItem="WDV-42-Wev" firstAttribute="top" secondItem="RgU-oO-Xgn" secondAttribute="topMargin" constant="12" id="oKx-tp-8IY"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="bsC-TP-bhf" secondAttribute="bottom" constant="13" id="sTi-yv-rKo"/>
+                                            <constraint firstItem="WDV-42-Wev" firstAttribute="leading" secondItem="RgU-oO-Xgn" secondAttribute="leadingMargin" constant="27" id="wlr-5F-Fch"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="icoCell" destination="WDV-42-Wev" id="qdB-Zt-80R"/>
+                                            <outlet property="labelCell" destination="bsC-TP-bhf" id="0MR-NH-PJZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="PO7-8t-CNX" id="Q7t-l1-p4q"/>
+                                    <outlet property="delegate" destination="PO7-8t-CNX" id="qDr-UZ-zR6"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E7K-s4-Gbc" firstAttribute="trailing" secondItem="ByN-vf-Mwg" secondAttribute="trailing" constant="20" id="HyZ-Cz-X48"/>
+                            <constraint firstItem="E7K-s4-Gbc" firstAttribute="bottom" secondItem="ByN-vf-Mwg" secondAttribute="bottom" constant="20" id="J3H-fI-bdW"/>
+                            <constraint firstItem="ByN-vf-Mwg" firstAttribute="top" secondItem="E7K-s4-Gbc" secondAttribute="top" id="MIw-d1-2u1"/>
+                            <constraint firstItem="ByN-vf-Mwg" firstAttribute="leading" secondItem="E7K-s4-Gbc" secondAttribute="leading" constant="20" id="olZ-XS-e8o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E7K-s4-Gbc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4EI-CH-t5n"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ByN-vf-Mwg" id="FXm-O1-eQV"/>
+                        <segue destination="4Ih-Kk-NJR" kind="show" identifier="levelToSettings" id="D6C-pg-RhX">
+                            <nil key="action"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbI-4L-jut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2" y="-1086"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="fgQ-NN-QKQ">
+            <objects>
+                <viewController id="4Ih-Kk-NJR" customClass="SettingsViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="0V7-pD-YXA">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rt5-7N-6OI">
+                                <rect key="frame" x="950" y="659" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9wj-Cz-Dha"/>
+                                    <constraint firstAttribute="width" constant="100" id="RBx-NY-efH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Play"/>
+                                <connections>
+                                    <action selector="playOrAddWorld:" destination="4Ih-Kk-NJR" eventType="touchUpInside" id="uz0-m4-cqr"/>
+                                    <segue destination="kMr-r8-Bln" kind="show" identifier="game" id="Ox2-8p-oed"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRU-kh-fpu">
+                                <rect key="frame" x="230" y="99" width="640" height="660"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-CC-uXj">
+                                        <rect key="frame" x="80" y="75" width="500" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="GJZ-Gl-fGW"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="500" id="P0Z-MG-zo4"/>
+                                            <constraint firstAttribute="width" constant="500" id="TxD-Jm-VaI"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqW-cb-Oc0">
+                                        <rect key="frame" x="135" y="215" width="370" height="376"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="376" id="ceT-nA-3Lv"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="l3y-lI-pmW"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changeIco:" destination="4Ih-Kk-NJR" eventType="touchUpInside" id="veA-ch-ZUT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3IR-CC-uXj" secondAttribute="trailing" constant="80" id="1Dm-TF-Ywu"/>
+                                    <constraint firstItem="3IR-CC-uXj" firstAttribute="leading" secondItem="pRU-kh-fpu" secondAttribute="leading" constant="80" id="9k0-NX-fqc"/>
+                                    <constraint firstItem="eqW-cb-Oc0" firstAttribute="top" secondItem="3IR-CC-uXj" secondAttribute="bottom" constant="75" id="9su-9a-0y4"/>
+                                    <constraint firstAttribute="height" constant="660" id="F3B-io-Swb"/>
+                                    <constraint firstItem="eqW-cb-Oc0" firstAttribute="leading" secondItem="pRU-kh-fpu" secondAttribute="leading" constant="135" id="U0n-Nr-c08"/>
+                                    <constraint firstItem="3IR-CC-uXj" firstAttribute="top" secondItem="pRU-kh-fpu" secondAttribute="top" constant="75" id="nMg-dd-7wP"/>
+                                    <constraint firstAttribute="bottom" secondItem="eqW-cb-Oc0" secondAttribute="bottom" constant="70" id="pfN-zW-ABT"/>
+                                    <constraint firstAttribute="trailing" secondItem="eqW-cb-Oc0" secondAttribute="trailing" constant="135" id="ttb-U9-8m8"/>
+                                    <constraint firstAttribute="width" constant="650" id="vVz-mL-of1"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-lr-bwt">
+                                <rect key="frame" x="950" y="99" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Nxw-MR-U00"/>
+                                    <constraint firstAttribute="height" constant="100" id="S49-An-hIS"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="modify"/>
+                                <connections>
+                                    <action selector="modifyWorld:" destination="4Ih-Kk-NJR" eventType="touchUpInside" id="VoR-he-Ods"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egg-Hb-wKj">
+                                <rect key="frame" x="50" y="614" width="100" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="JqD-P5-0Ls"/>
+                                    <constraint firstAttribute="width" constant="100" id="eEA-UJ-LxS"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Garbage"/>
+                                <connections>
+                                    <action selector="deleteWorld:" destination="4Ih-Kk-NJR" eventType="touchUpInside" id="XFm-7P-COa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gAO-P2-xjv" firstAttribute="trailing" secondItem="ikf-lr-bwt" secondAttribute="trailing" constant="50" id="3Qa-sj-9ve"/>
+                            <constraint firstItem="gAO-P2-xjv" firstAttribute="bottom" secondItem="rt5-7N-6OI" secondAttribute="bottom" constant="75" id="60o-bo-JBJ"/>
+                            <constraint firstItem="ikf-lr-bwt" firstAttribute="top" secondItem="gAO-P2-xjv" secondAttribute="top" constant="35" id="6W6-Y2-9dr"/>
+                            <constraint firstItem="gAO-P2-xjv" firstAttribute="bottom" secondItem="egg-Hb-wKj" secondAttribute="bottom" constant="75" id="Jpq-rw-1Yd"/>
+                            <constraint firstItem="pRU-kh-fpu" firstAttribute="leading" secondItem="egg-Hb-wKj" secondAttribute="trailing" constant="80" id="KPS-Gt-Bo2"/>
+                            <constraint firstItem="egg-Hb-wKj" firstAttribute="leading" secondItem="gAO-P2-xjv" secondAttribute="leading" constant="50" id="Na7-XS-soy"/>
+                            <constraint firstItem="pRU-kh-fpu" firstAttribute="top" secondItem="gAO-P2-xjv" secondAttribute="top" constant="35" id="cJU-M5-Jh7"/>
+                            <constraint firstItem="gAO-P2-xjv" firstAttribute="trailing" secondItem="rt5-7N-6OI" secondAttribute="trailing" constant="50" id="lXs-LO-ok3"/>
+                            <constraint firstItem="rt5-7N-6OI" firstAttribute="leading" secondItem="pRU-kh-fpu" secondAttribute="trailing" constant="80" id="mBs-1f-miD"/>
+                            <constraint firstItem="egg-Hb-wKj" firstAttribute="leading" secondItem="gAO-P2-xjv" secondAttribute="leading" constant="50" id="uWA-Ni-IRs"/>
+                            <constraint firstItem="gAO-P2-xjv" firstAttribute="bottom" secondItem="pRU-kh-fpu" secondAttribute="bottom" constant="75" id="va9-kD-br1"/>
+                            <constraint firstItem="gAO-P2-xjv" firstAttribute="bottom" secondItem="egg-Hb-wKj" secondAttribute="bottom" constant="80" id="wPB-Cf-QMR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gAO-P2-xjv"/>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="pRU-kh-fpu" id="SKV-AH-3O1"/>
+                        <outlet property="deleteButton" destination="egg-Hb-wKj" id="ePJ-MA-XRQ"/>
+                        <outlet property="icoButton" destination="eqW-cb-Oc0" id="OI3-0l-4bc"/>
+                        <outlet property="modifyButton" destination="ikf-lr-bwt" id="94A-HC-1NM"/>
+                        <outlet property="nameWorldTextField" destination="3IR-CC-uXj" id="doG-jU-eIU"/>
+                        <outlet property="playOrAddButton" destination="rt5-7N-6OI" id="0j3-p6-1Z3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWi-vZ-1Wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="-250"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yw3-0m-o92">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J96-tJ-GNE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KJe-YD-LIk">
+                        <rect key="frame" x="0.0" y="20" width="1112" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PO7-8t-CNX" kind="relationship" relationship="rootViewController" id="akj-ch-Qcc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIc-kl-axk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-766" y="-1086"/>
         </scene>
     </scenes>
     <resources>
@@ -1200,11 +1428,14 @@
         <image name="Crosshair" width="452" height="452"/>
         <image name="Cube" width="390" height="390"/>
         <image name="Door" width="92" height="164"/>
+        <image name="Garbage" width="380" height="538"/>
         <image name="Group" width="400" height="400"/>
         <image name="Hammer" width="148" height="143"/>
         <image name="Hand" width="128" height="129"/>
+        <image name="Play" width="161" height="202"/>
         <image name="Polaroid" width="436" height="394"/>
         <image name="cinepresa" width="511" height="480"/>
+        <image name="modify" width="375" height="369"/>
         <image name="palla" width="341" height="330"/>
         <image name="rampa" width="718" height="717"/>
         <image name="sfera" width="168" height="163"/>
