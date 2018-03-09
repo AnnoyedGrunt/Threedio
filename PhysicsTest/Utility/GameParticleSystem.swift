@@ -31,7 +31,7 @@ class GameParticleSystem: SCNParticleSystem {
         }
     }
     
-    private var fullAcceleration: SCNVector3
+    /*private var fullAcceleration: SCNVector3
     override var acceleration: SCNVector3 {
         get {
             return fullAcceleration * scale
@@ -39,7 +39,8 @@ class GameParticleSystem: SCNParticleSystem {
         set {
             fullAccelereta
         }
-    }
+    //}
+    */
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

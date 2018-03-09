@@ -49,6 +49,7 @@
 		BDD786B02052A0AE00E5A83F /* macchininaBlender.obj in Resources */ = {isa = PBXBuildFile; fileRef = BDD786A72052A0AD00E5A83F /* macchininaBlender.obj */; };
 		BDD786B12052A0AE00E5A83F /* LevelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A82052A0AE00E5A83F /* LevelSelectViewController.swift */; };
 		BDD786B22052A0AE00E5A83F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A92052A0AE00E5A83F /* SettingsViewController.swift */; };
+		BDD786B42052A69300E5A83F /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786B32052A69300E5A83F /* GamePiece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +110,6 @@
 		A3CA762D2040779D007810C7 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		A3CA76332040A958007810C7 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
-		A3F3C471202EF218005CE743 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
 		BDD786A12052A0AC00E5A83F /* WorldsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldsDataManager.swift; sourceTree = "<group>"; };
 		BDD786A22052A0AC00E5A83F /* BBNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNode.swift; sourceTree = "<group>"; };
 		BDD786A32052A0AD00E5A83F /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		BDD786A72052A0AD00E5A83F /* macchininaBlender.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = macchininaBlender.obj; sourceTree = "<group>"; };
 		BDD786A82052A0AE00E5A83F /* LevelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectViewController.swift; sourceTree = "<group>"; };
 		BDD786A92052A0AE00E5A83F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BDD786B32052A69300E5A83F /* GamePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +212,7 @@
 		A3453087204F19430071447A /* Game Pieces */ = {
 			isa = PBXGroup;
 			children = (
-				A3F3C471202EF218005CE743 /* GamePiece.swift */,
+				BDD786B32052A69300E5A83F /* GamePiece.swift */,
 				A3453085204F17D50071447A /* GamePieceList.swift */,
 				A31702B0204974ED0005DFCA /* SolidifyLogic.swift */,
 				A345307F204F16FA0071447A /* GamePieceSettings.swift */,
@@ -459,6 +460,7 @@
 				A36252A720247682001FCA58 /* AppDelegate.swift in Sources */,
 				A3453086204F17D50071447A /* GamePieceList.swift in Sources */,
 				A31517972052A0A800BE5E0D /* GameToolManipulator.swift in Sources */,
+				BDD786B42052A69300E5A83F /* GamePiece.swift in Sources */,
 				A315179B2052A0C400BE5E0D /* SCNVectorExtension.swift in Sources */,
 				A31517962052A0A800BE5E0D /* GameToolBuilder.swift in Sources */,
 				A31517952052A0A800BE5E0D /* GameToolARDetector.swift in Sources */,
