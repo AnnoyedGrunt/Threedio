@@ -12,10 +12,18 @@ import AVKit
 
 class VideoController: AVPlayerViewController {
    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let path: String = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
+        
+        var path: String
+        
+        if UIDevice().userInterfaceIdiom == .pad {
+            path = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
+        }else{
+            path = Bundle.main.path(forResource: "3dioIphone", ofType: "m4v")!
+        }
         let movieurl: NSURL = NSURL.fileURL(withPath: path) as NSURL
         
         showsPlaybackControls = false
@@ -29,4 +37,47 @@ class VideoController: AVPlayerViewController {
     @objc func playerDidFinishPlaying(note: NSNotification){
         self.performSegue(withIdentifier: "menu", sender: self)
     }
+    
+    
+//    func riconosciDevice(){
+    
+//        if UIDevice().userInterfaceIdiom == .phone {
+//            switch UIScreen.main.nativeBounds.height {
+//            case 1136:
+//                print("iPhone 5 or 5S or 5C")
+//            case 1334:
+//                print("iPhone 6/6S/7/8")
+//            case 2208:
+//                print("iPhone 6+/6S+/7+/8+")
+//            case 2436:
+//                print("iPhone X")
+//            default:
+//                print("unkno")
+//            }
+//        }
+        
+//        if UIDevice().userInterfaceIdiom == .pad {
+//            switch UIScreen.main.nativeBounds.height{
+//            case 2732:
+//                print("Ipad 12,pro")
+//            case 2224:
+//                print("Ipad 10, pro")
+//            default:
+//                print("Niente")
+//            }
+//        }
+        
+//        if UIDevice().userInterfaceIdiom == .pad{
+//            if UIScreen.main.nativeBounds.height == 2732 || UIScreen.main.nativeBounds.height == 2224 || UIScreen.main.nativeBounds.height == 2048 {
+//                print("CIAO")
+//            }
+//        }
+        
+//        if UIDevice().userInterfaceIdiom == .pad {
+//            print("IPAD")
+//        }else {
+//            print("Iphone")
+//        }
+//
+//    }
 }
