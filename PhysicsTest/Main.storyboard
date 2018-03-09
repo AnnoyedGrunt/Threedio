@@ -1313,8 +1313,8 @@
                                     <segue destination="kMr-r8-Bln" kind="show" identifier="game" id="Ox2-8p-oed"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRU-kh-fpu">
-                                <rect key="frame" x="230" y="99" width="640" height="660"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRU-kh-fpu">
+                                <rect key="frame" x="230" y="100" width="640" height="660"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-CC-uXj">
                                         <rect key="frame" x="80" y="75" width="500" height="65"/>
