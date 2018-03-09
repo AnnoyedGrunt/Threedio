@@ -52,9 +52,25 @@ class GameToolDestroyer: GameTool {
         
     }
     
+   
+    
     func onTap() {
         if let node = currentNode {
-            node.removeFromParentNode()
+            
+            let explosion = SCNParticleSystem(named: "Explode.scnp", inDirectory: nil)
+//            sceneView.backgroundColor = UIColor.black
+//            sceneView = view as! SCNView
+//            let contactNode = SCNNode()
+//            contactNode.position = node.position
+//            contactNode.scale = SCNVector3(0.1,0.1,0.1)
+//            sceneView.scene.rootNode.addChildNode(contactNode)
+//
+            node.geometry = nil
+            node.physicsBody = nil
+            node.addParticleSystem(explosion!)
+           
+            
+            //node.removeFromParentNode()
             currentNode = nil
         }
     }
