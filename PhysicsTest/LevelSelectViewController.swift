@@ -9,7 +9,7 @@
 import UIKit
 
 class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+    // spazio minimo tra le celle
     final let cellSpacing: CGFloat = 20
     var isIphone: Bool = false
     
@@ -27,7 +27,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         self.view.backgroundColor = WorldsDataManager.shared.colorBackground
         self.collectionView.backgroundColor = WorldsDataManager.shared.colorBackground
         
-        //Size Check
+        //Size Check se è un iphone o è un ipad!
         if self.view.bounds.width < 1000 {
             self.isIphone = true
         }
@@ -35,14 +35,14 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         //CollectionView FlowLayout
         let collectionViewFlowLayot = UICollectionViewFlowLayout()
         collectionViewFlowLayot.sectionInset = UIEdgeInsets(top: 0, left: cellSpacing, bottom: 0, right: cellSpacing)
+        collectionViewFlowLayot.minimumLineSpacing = 50
+        collectionViewFlowLayot.headerReferenceSize = CGSize(width: 50, height: 50)
+        collectionViewFlowLayot.footerReferenceSize = CGSize(width: 50, height: 50)
         if isIphone {
             collectionViewFlowLayot.scrollDirection = .horizontal
-            collectionViewFlowLayot.minimumLineSpacing = 50
+            
         } else {
             collectionViewFlowLayot.scrollDirection = .vertical
-            collectionViewFlowLayot.minimumLineSpacing = 50
-            collectionViewFlowLayot.headerReferenceSize = CGSize(width: 50, height: 50)
-            collectionViewFlowLayot.footerReferenceSize = CGSize(width: 50, height: 50)
         }
         
         self.collectionView.setCollectionViewLayout(collectionViewFlowLayot, animated: true)
@@ -72,9 +72,12 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
         if isIphone {
-            return CGSize(width: screenSize.width / 3, height: screenSize.height / 2 + 50)
+            
+            //return CGSize(width: screenSize.width / 3, height: screenSize.height / 2 + 50)
+            return CGSize(width: 300, height: 300)
         } else {
-            return CGSize(width: screenSize.width / 4, height: screenSize.height / 3)
+            return CGSize(width: 300, height: 300)
+        //     return CGSize(width: screenSize.width / 4, height: screenSize.height / 3)
         }
     }
     

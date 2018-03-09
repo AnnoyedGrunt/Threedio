@@ -13,6 +13,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //to play audio
     let avPlayer = UIApplication.shared.delegate as! AppDelegate
     
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var playOrAddButton: UIButton!
     @IBOutlet weak var nameWorldTextField: UITextField! {
