@@ -17,6 +17,7 @@
 		A31517972052A0A800BE5E0D /* GameToolManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517912052A0A800BE5E0D /* GameToolManipulator.swift */; };
 		A315179B2052A0C400BE5E0D /* SCNVectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517992052A0C400BE5E0D /* SCNVectorExtension.swift */; };
 		A315179C2052A0C400BE5E0D /* GameParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A315179A2052A0C400BE5E0D /* GameParticleSystem.swift */; };
+		A315179E2052A26200BE5E0D /* GameToolDestroyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A315179D2052A26200BE5E0D /* GameToolDestroyer.swift */; };
 		A317026D204450270005DFCA /* 3dio.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A317026C204450270005DFCA /* 3dio.m4v */; };
 		A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B0204974ED0005DFCA /* SolidifyLogic.swift */; };
 		A31702B5204B115E0005DFCA /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B4204B115E0005DFCA /* UINibView.swift */; };
@@ -27,7 +28,6 @@
 		A3453082204F17090071447A /* GameMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3453081204F17090071447A /* GameMaterial.swift */; };
 		A3453084204F17A20071447A /* OrientationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3453083204F17A20071447A /* OrientationType.swift */; };
 		A3453086204F17D50071447A /* GamePieceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3453085204F17D50071447A /* GamePieceList.swift */; };
-		A345308D20501BDD0071447A /* GameToolDestroyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345308C20501BDD0071447A /* GameToolDestroyer.swift */; };
 		A36252A720247682001FCA58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36252A620247682001FCA58 /* AppDelegate.swift */; };
 		A36252AE20247682001FCA58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36252AD20247682001FCA58 /* Assets.xcassets */; };
 		A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36252AF20247682001FCA58 /* LaunchScreen.storyboard */; };
@@ -80,6 +80,7 @@
 		A31517912052A0A800BE5E0D /* GameToolManipulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameToolManipulator.swift; sourceTree = "<group>"; };
 		A31517992052A0C400BE5E0D /* SCNVectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVectorExtension.swift; sourceTree = "<group>"; };
 		A315179A2052A0C400BE5E0D /* GameParticleSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameParticleSystem.swift; sourceTree = "<group>"; };
+		A315179D2052A26200BE5E0D /* GameToolDestroyer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameToolDestroyer.swift; sourceTree = "<group>"; };
 		A317026C204450270005DFCA /* 3dio.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dio.m4v; sourceTree = "<group>"; };
 		A31702B0204974ED0005DFCA /* SolidifyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidifyLogic.swift; sourceTree = "<group>"; };
 		A31702B4204B115E0005DFCA /* UINibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		A3453081204F17090071447A /* GameMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaterial.swift; sourceTree = "<group>"; };
 		A3453083204F17A20071447A /* OrientationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationType.swift; sourceTree = "<group>"; };
 		A3453085204F17D50071447A /* GamePieceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePieceList.swift; sourceTree = "<group>"; };
-		A345308C20501BDD0071447A /* GameToolDestroyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolDestroyer.swift; sourceTree = "<group>"; };
 		A36252A320247682001FCA58 /* PhysicsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36252A620247682001FCA58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36252AD20247682001FCA58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,8 +111,6 @@
 		A3CA76332040A958007810C7 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
 		A3F3C471202EF218005CE743 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
-		C569C2AD20518EB800A807D3 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
-		C569C2AF20518EBE00A807D3 /* cloud@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@3x.png"; sourceTree = "<group>"; };
 		BDD786A12052A0AC00E5A83F /* WorldsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldsDataManager.swift; sourceTree = "<group>"; };
 		BDD786A22052A0AC00E5A83F /* BBNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNode.swift; sourceTree = "<group>"; };
 		BDD786A32052A0AD00E5A83F /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -173,13 +171,13 @@
 		A315178B2052A0A800BE5E0D /* Game Logic */ = {
 			isa = PBXGroup;
 			children = (
+				A315179D2052A26200BE5E0D /* GameToolDestroyer.swift */,
 				A315178C2052A0A800BE5E0D /* GameController.swift */,
 				A315178D2052A0A800BE5E0D /* GameTool.swift */,
 				A315178E2052A0A800BE5E0D /* GameToolListener.swift */,
 				A315178F2052A0A800BE5E0D /* GameToolARDetector.swift */,
 				A31517902052A0A800BE5E0D /* GameToolBuilder.swift */,
 				A31517912052A0A800BE5E0D /* GameToolManipulator.swift */,
-				A345308C20501BDD0071447A /* GameToolDestroyer.swift */,
 			);
 			path = "Game Logic";
 			sourceTree = "<group>";
@@ -270,19 +268,7 @@
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
 				A36252D420247722001FCA58 /* mys.scn */,
-<<<<<<< HEAD
-				C569C2AF20518EBE00A807D3 /* cloud@3x.png */,
-				C569C2AD20518EB800A807D3 /* Explode.scnp */,
 				A315178B2052A0A800BE5E0D /* Game Logic */,
-=======
-				A30A3C4F202C8A69008587D3 /* GameController.swift */,
-				A3453088204F22A40071447A /* GameTool.swift */,
-				A3453092205096270071447A /* GameToolListener.swift */,
-				A345308A204FE5220071447A /* GameToolBuilder.swift */,
-				A345308C20501BDD0071447A /* GameToolDestroyer.swift */,
-				A345308E20501F7D0071447A /* GameToolManipulator.swift */,
-				A345309020508D9F0071447A /* GameToolARDetector.swift */,
->>>>>>> a4c92dfaa617e65169a7325fe7f40dcc61855754
 				A3453087204F19430071447A /* Game Pieces */,
 			);
 			path = PhysicsTest;
@@ -459,18 +445,14 @@
 				A3CA762A20406B0B007810C7 /* UIColorButton.swift in Sources */,
 				BDD786AA2052A0AE00E5A83F /* WorldsDataManager.swift in Sources */,
 				A3453084204F17A20071447A /* OrientationType.swift in Sources */,
-<<<<<<< HEAD
-=======
-				A345308B204FE5220071447A /* GameToolBuilder.swift in Sources */,
-				A345309120508D9F0071447A /* GameToolARDetector.swift in Sources */,
 				BDD786AB2052A0AE00E5A83F /* BBNode.swift in Sources */,
->>>>>>> a4c92dfaa617e65169a7325fe7f40dcc61855754
 				A31702B5204B115E0005DFCA /* UINibView.swift in Sources */,
 				A3CA76342040A958007810C7 /* ShapeController.swift in Sources */,
 				A3147033203C3C740027EA0C /* ViewController.swift in Sources */,
 				A3453080204F16FA0071447A /* GamePieceSettings.swift in Sources */,
 				A3453082204F17090071447A /* GameMaterial.swift in Sources */,
 				BDD786AE2052A0AE00E5A83F /* TitleScreenViewController.swift in Sources */,
+				A315179E2052A26200BE5E0D /* GameToolDestroyer.swift in Sources */,
 				A3CA7628204066EF007810C7 /* ColorController.swift in Sources */,
 				A3CA762E2040779D007810C7 /* VideoController.swift in Sources */,
 				A31517942052A0A800BE5E0D /* GameToolListener.swift in Sources */,
@@ -478,25 +460,19 @@
 				A36252A720247682001FCA58 /* AppDelegate.swift in Sources */,
 				A3453086204F17D50071447A /* GamePieceList.swift in Sources */,
 				A31517972052A0A800BE5E0D /* GameToolManipulator.swift in Sources */,
-				A345308D20501BDD0071447A /* GameToolDestroyer.swift in Sources */,
 				A315179B2052A0C400BE5E0D /* SCNVectorExtension.swift in Sources */,
 				A31517962052A0A800BE5E0D /* GameToolBuilder.swift in Sources */,
 				A31517952052A0A800BE5E0D /* GameToolARDetector.swift in Sources */,
 				A31702BC204B26F20005DFCA /* objectButton.swift in Sources */,
 				A31517932052A0A800BE5E0D /* GameTool.swift in Sources */,
 				A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */,
-<<<<<<< HEAD
 				A315179C2052A0C400BE5E0D /* GameParticleSystem.swift in Sources */,
 				A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */,
-=======
 				BDD786B22052A0AE00E5A83F /* SettingsViewController.swift in Sources */,
 				BDD786AF2052A0AE00E5A83F /* WorldCollectionViewCell.swift in Sources */,
 				A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */,
-				A36B0869203C2EEF006E8D56 /* SCNVectorExtension.swift in Sources */,
 				BDD786AC2052A0AE00E5A83F /* MenuController.swift in Sources */,
 				BDD786B12052A0AE00E5A83F /* LevelSelectViewController.swift in Sources */,
-				A3453093205096270071447A /* GameToolListener.swift in Sources */,
->>>>>>> a4c92dfaa617e65169a7325fe7f40dcc61855754
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
