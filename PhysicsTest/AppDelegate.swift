@@ -8,11 +8,39 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //for sound effects and music
+    var audioPlayer = AVAudioPlayer()
+    var isPlaying = false
+    
+    //play sound
+    func playSound(file:String, ext:String) -> Void {
+        do {
+            let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: file, ofType: ext)!)
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.prepareToPlay()
+            if file == "menuMusic" {
+                audioPlayer.numberOfLoops = -1
+            }
+            audioPlayer.play()
+            isPlaying = true
+        } catch let error {
+            NSLog(error.localizedDescription)
+        }
+    }
+    
+    //stop sound
+    func stopSound() {
+        audioPlayer.stop()
+        isPlaying = false
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
