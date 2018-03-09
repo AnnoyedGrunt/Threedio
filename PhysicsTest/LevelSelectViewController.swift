@@ -97,9 +97,9 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     //Segue to SettingsCollectionView
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "levelToSettings", sender: self)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.performSegue(withIdentifier: "levelToSettings", sender: self)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = self.collectionView!.indexPathsForSelectedItems![0] as NSIndexPath
