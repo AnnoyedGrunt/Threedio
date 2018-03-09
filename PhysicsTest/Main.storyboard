@@ -1232,33 +1232,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="230" height="242"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsC-TP-bhf">
-                                                    <rect key="frame" x="55" y="201" width="126" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="GMZ-TS-0TI"/>
-                                                        <constraint firstAttribute="width" constant="40" id="M4X-GP-TT4"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsC-TP-bhf">
+                                                    <rect key="frame" x="47" y="190" width="142" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WDV-42-Wev">
-                                                    <rect key="frame" x="35" y="20" width="160" height="160"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="160" id="4rn-b9-DSq"/>
-                                                        <constraint firstAttribute="height" constant="160" id="his-4L-2rx"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="35" y="18" width="160" height="152"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="WDV-42-Wev" secondAttribute="trailing" constant="27" id="90H-3T-FuC"/>
-                                            <constraint firstItem="bsC-TP-bhf" firstAttribute="leading" secondItem="RgU-oO-Xgn" secondAttribute="leadingMargin" constant="86.5" id="NSJ-LO-zig"/>
-                                            <constraint firstItem="bsC-TP-bhf" firstAttribute="top" secondItem="WDV-42-Wev" secondAttribute="bottom" constant="21" id="gji-nQ-tjn"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="bsC-TP-bhf" secondAttribute="trailing" constant="85.5" id="iR3-rA-LOZ"/>
-                                            <constraint firstItem="WDV-42-Wev" firstAttribute="top" secondItem="RgU-oO-Xgn" secondAttribute="topMargin" constant="12" id="oKx-tp-8IY"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="bsC-TP-bhf" secondAttribute="bottom" constant="13" id="sTi-yv-rKo"/>
-                                            <constraint firstItem="WDV-42-Wev" firstAttribute="leading" secondItem="RgU-oO-Xgn" secondAttribute="leadingMargin" constant="27" id="wlr-5F-Fch"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="bsC-TP-bhf" secondAttribute="bottom" constant="24" id="4oD-Gu-wsE"/>
+                                            <constraint firstItem="WDV-42-Wev" firstAttribute="leading" secondItem="RgU-oO-Xgn" secondAttribute="leadingMargin" constant="27" id="I7l-4K-itn"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="WDV-42-Wev" secondAttribute="trailing" constant="27" id="KUL-DS-Qgj"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="bsC-TP-bhf" secondAttribute="trailing" constant="33" id="LtY-Mi-Cox"/>
+                                            <constraint firstItem="bsC-TP-bhf" firstAttribute="top" secondItem="WDV-42-Wev" secondAttribute="bottom" constant="20" id="PWL-3A-qV8"/>
+                                            <constraint firstItem="bsC-TP-bhf" firstAttribute="leading" secondItem="RgU-oO-Xgn" secondAttribute="leadingMargin" constant="39" id="hk3-oO-tYt"/>
+                                            <constraint firstItem="WDV-42-Wev" firstAttribute="top" secondItem="RgU-oO-Xgn" secondAttribute="topMargin" constant="10" id="s92-HL-ITR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="icoCell" destination="WDV-42-Wev" id="qdB-Zt-80R"/>
