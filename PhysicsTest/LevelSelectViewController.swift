@@ -10,7 +10,8 @@ import UIKit
 
 class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    final let cellSpacing: CGFloat = 10
+    final let cellSpacing: CGFloat = 20
+    var isIphone: Bool = false
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -23,23 +24,29 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        //CollectionView FlowLayout
-        let collectionViewFlowLayot = UICollectionViewFlowLayout()
-        collectionViewFlowLayot.scrollDirection = .vertical
-        collectionViewFlowLayot.sectionInset = UIEdgeInsets(top: 0, left: cellSpacing, bottom: 0, right: cellSpacing)
-        collectionViewFlowLayot.minimumInteritemSpacing = 10
-        collectionViewFlowLayot.minimumLineSpacing = 80
-        collectionViewFlowLayot.headerReferenceSize = CGSize(width: 30, height: 50)
-        collectionViewFlowLayot.footerReferenceSize = CGSize(width: 30, height: 50)
-        
-        collectionView.setCollectionViewLayout(collectionViewFlowLayot, animated: true)
         self.view.backgroundColor = WorldsDataManager.shared.colorBackground
         self.collectionView.backgroundColor = WorldsDataManager.shared.colorBackground
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        //Size Check
+        if self.view.bounds.width < 1000 {
+            self.isIphone = true
+        }
+        
+        //CollectionView FlowLayout
+        let collectionViewFlowLayot = UICollectionViewFlowLayout()
+        collectionViewFlowLayot.sectionInset = UIEdgeInsets(top: 0, left: cellSpacing, bottom: 0, right: cellSpacing)
+        if isIphone {
+            collectionViewFlowLayot.scrollDirection = .horizontal
+            collectionViewFlowLayot.minimumLineSpacing = 50
+        } else {
+            collectionViewFlowLayot.scrollDirection = .vertical
+            collectionViewFlowLayot.minimumLineSpacing = 50
+            collectionViewFlowLayot.headerReferenceSize = CGSize(width: 50, height: 50)
+            collectionViewFlowLayot.footerReferenceSize = CGSize(width: 50, height: 50)
+        }
+        
+        self.collectionView.setCollectionViewLayout(collectionViewFlowLayot, animated: true)
+        
     }
     
     //
@@ -64,7 +71,11 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     //Size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
-        return CGSize(width: screenSize.width / 4, height: screenSize.height / 3)
+        if isIphone {
+            return CGSize(width: screenSize.width / 3, height: screenSize.height / 2 + 50)
+        } else {
+            return CGSize(width: screenSize.width / 4, height: screenSize.height / 3)
+        }
     }
     
     //Cells settings

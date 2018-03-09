@@ -169,7 +169,6 @@
 				B9DDCE4A2052CE9800112668 /* SettingsViewController.swift */,
 				B9DDCE452052CE9800112668 /* TitleScreenViewController.swift */,
 				B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */,
-				B9DDCE462052CE9800112668 /* WorldsDataManager.swift */,
 				A3147032203C3C740027EA0C /* ViewController.swift */,
 				A3CA762D2040779D007810C7 /* VideoController.swift */,
 				A3CA7627204066EF007810C7 /* ColorController.swift */,
@@ -224,6 +223,7 @@
 		A31517D32052CD4200BE5E0D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B9DDCE462052CE9800112668 /* WorldsDataManager.swift */,
 				A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */,
 				A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */,
 			);
@@ -663,7 +663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4J698459X;
+				DEVELOPMENT_TEAM = Z2JAF7FZAQ;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -679,7 +679,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4J698459X;
+				DEVELOPMENT_TEAM = Z2JAF7FZAQ;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
