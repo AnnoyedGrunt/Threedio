@@ -47,6 +47,9 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewWillAppear(true)
         self.collectionView.reloadData()
         
+        //hides the navigation controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
         if !avPlayer.isPlaying {
             //plays music menu
             self.avPlayer.playSound(file: "menuMusic", ext: "wav")
