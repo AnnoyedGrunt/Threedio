@@ -41,6 +41,8 @@
 		A3CA76342040A958007810C7 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CA76332040A958007810C7 /* ShapeController.swift */; };
 		A3DD310D2037461D002639EE /* car.scn in Resources */ = {isa = PBXBuildFile; fileRef = A3DD310C2037461D002639EE /* car.scn */; };
 		A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3C471202EF218005CE743 /* GamePiece.swift */; };
+		C569C2AE20518EB800A807D3 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = C569C2AD20518EB800A807D3 /* Explode.scnp */; };
+		C569C2B020518EBE00A807D3 /* cloud@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C569C2AF20518EBE00A807D3 /* cloud@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		A3CA76332040A958007810C7 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
 		A3F3C471202EF218005CE743 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		C569C2AD20518EB800A807D3 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
+		C569C2AF20518EBE00A807D3 /* cloud@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,8 @@
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
 				A36252D420247722001FCA58 /* mys.scn */,
+				C569C2AF20518EBE00A807D3 /* cloud@3x.png */,
+				C569C2AD20518EB800A807D3 /* Explode.scnp */,
 				A30A3C4F202C8A69008587D3 /* GameController.swift */,
 				A3453088204F22A40071447A /* GameTool.swift */,
 				A3453092205096270071447A /* GameToolListener.swift */,
@@ -362,9 +368,11 @@
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				A36252D520247722001FCA58 /* mys.scn in Resources */,
 				A317026D204450270005DFCA /* 3dio.m4v in Resources */,
+				C569C2AE20518EB800A807D3 /* Explode.scnp in Resources */,
 				A3147035203C3CA40027EA0C /* Main.storyboard in Resources */,
 				A36252AE20247682001FCA58 /* Assets.xcassets in Resources */,
 				A31702B8204B117B0005DFCA /* objectButton.xib in Resources */,
+				C569C2B020518EBE00A807D3 /* cloud@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z2JJPC79E9;
+				DEVELOPMENT_TEAM = 4G53MCT3NM;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -596,7 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z2JJPC79E9;
+				DEVELOPMENT_TEAM = 4G53MCT3NM;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
