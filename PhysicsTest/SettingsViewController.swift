@@ -94,11 +94,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             WorldsDataManager.shared.addWorld(name: nameWorldTextField.text!, ico: WorldsDataManager.shared.icons.index(of: self.icoButton.currentBackgroundImage!)!)
             WorldsDataManager.shared.worldCreated += 1
             
-            self.performSegue(withIdentifier: "game", sender: self)
+//            self.performSegue(withIdentifier: "game", sender: self)
         }
-        else {
-            self.performSegue(withIdentifier: "game", sender: self)
-        }
+//        else {
+//            self.performSegue(withIdentifier: "game", sender: self)
+//        }
         
         if avPlayer.isPlaying {
             self.avPlayer.stopSound()
