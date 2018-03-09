@@ -54,7 +54,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, RP
         super.viewDidLoad()
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showWorldOrigin)
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showFeaturePoints)
-        sceneView.debugOptions.update(with: .showPhysicsShapes)
+        //sceneView.debugOptions.update(with: .showPhysicsShapes)
         //sceneView.debugOptions.update(with: .renderAsWireframe)
         //sceneView.debugOptions.update(with: .showBoundingBoxes)
         

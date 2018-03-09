@@ -39,7 +39,7 @@ class GameParticleSystem: SCNParticleSystem {
         set {
             fullAccelereta
         }
-    //}
+    }
     */
     
     required init?(coder aDecoder: NSCoder) {
