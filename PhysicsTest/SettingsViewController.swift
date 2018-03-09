@@ -10,6 +10,9 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
     
+    //to play audio
+    let avPlayer = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var playOrAddButton: UIButton!
     @IBOutlet weak var nameWorldTextField: UITextField! {
@@ -21,7 +24,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var modifyButton: UIButton!
     @IBOutlet weak var backView: UIView!
     var isInitial = false
-    var selectedWorld: Int?  
+    var selectedWorld: Int?
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if !avPlayer.isPlaying {
+            //plays music menu
+            self.avPlayer.playSound(file: "menuMusic", ext: "wav")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,14 +89,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     //Button for add a new world or play
     @IBAction func playOrAddWorld(_ sender: Any) {
+        
         if isInitial {
             WorldsDataManager.shared.addWorld(name: nameWorldTextField.text!, ico: WorldsDataManager.shared.icons.index(of: self.icoButton.currentBackgroundImage!)!)
             WorldsDataManager.shared.worldCreated += 1
             
-            self.performSegue(withIdentifier: "game", sender: self)
+//            self.performSegue(withIdentifier: "game", sender: self)
         }
-        else {
-            self.performSegue(withIdentifier: "game", sender: self)
+//        else {
+//            self.performSegue(withIdentifier: "game", sender: self)
+//        }
+        
+        if avPlayer.isPlaying {
+            self.avPlayer.stopSound()
         }
     }
     

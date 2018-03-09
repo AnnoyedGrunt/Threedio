@@ -68,3 +68,5 @@ fastlane/test_output
 *.pbxproj
 *.pbxproj
 PhysicsTest.xcodeproj/project.pbxproj
+.DS_Store
+.DS_Store

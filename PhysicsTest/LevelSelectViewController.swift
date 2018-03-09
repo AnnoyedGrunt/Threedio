@@ -14,6 +14,9 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //to play audio
+    let avPlayer = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +35,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.setCollectionViewLayout(collectionViewFlowLayot, animated: true)
         self.view.backgroundColor = WorldsDataManager.shared.colorBackground
         self.collectionView.backgroundColor = WorldsDataManager.shared.colorBackground
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,6 +46,14 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.collectionView.reloadData()
+        
+        //hides the navigation controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        if !avPlayer.isPlaying {
+            //plays music menu
+            self.avPlayer.playSound(file: "menuMusic", ext: "wav")
+        }
     }
     
     //Number of items
