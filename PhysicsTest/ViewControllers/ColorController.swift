@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class ColorController: UIViewController {
+    
     @IBOutlet weak var ColorStack: UIStackView!
     let selectionThickness: CGFloat = 4
     
