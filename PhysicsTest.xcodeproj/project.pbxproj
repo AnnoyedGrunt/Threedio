@@ -40,7 +40,6 @@
 		A3CA762E2040779D007810C7 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CA762D2040779D007810C7 /* VideoController.swift */; };
 		A3CA76342040A958007810C7 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CA76332040A958007810C7 /* ShapeController.swift */; };
 		A3DD310D2037461D002639EE /* car.scn in Resources */ = {isa = PBXBuildFile; fileRef = A3DD310C2037461D002639EE /* car.scn */; };
-		A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3C471202EF218005CE743 /* GamePiece.swift */; };
 		BDD786AA2052A0AE00E5A83F /* WorldsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A12052A0AC00E5A83F /* WorldsDataManager.swift */; };
 		BDD786AB2052A0AE00E5A83F /* BBNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A22052A0AC00E5A83F /* BBNode.swift */; };
 		BDD786AC2052A0AE00E5A83F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A32052A0AD00E5A83F /* MenuController.swift */; };
@@ -467,10 +466,8 @@
 				A31517932052A0A800BE5E0D /* GameTool.swift in Sources */,
 				A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */,
 				A315179C2052A0C400BE5E0D /* GameParticleSystem.swift in Sources */,
-				A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */,
 				BDD786B22052A0AE00E5A83F /* SettingsViewController.swift in Sources */,
 				BDD786AF2052A0AE00E5A83F /* WorldCollectionViewCell.swift in Sources */,
-				A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */,
 				BDD786AC2052A0AE00E5A83F /* MenuController.swift in Sources */,
 				BDD786B12052A0AE00E5A83F /* LevelSelectViewController.swift in Sources */,
 			);
