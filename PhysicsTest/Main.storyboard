@@ -35,7 +35,7 @@
         <!--View Controller-->
         <scene sceneID="SrY-y4-YKC">
             <objects>
-                <viewController id="kMr-r8-Bln" customClass="ViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="game" id="kMr-r8-Bln" customClass="ViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Ln-8a-V9f" userLabel="Container">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1351,7 +1351,7 @@
                                 <state key="normal" backgroundImage="Play"/>
                                 <connections>
                                     <action selector="playOrAddWorld:" destination="4Ih-Kk-NJR" eventType="touchUpInside" id="uz0-m4-cqr"/>
-                                    <segue destination="kMr-r8-Bln" kind="show" identifier="game" id="1Ww-Va-HC1"/>
+                                    <segue destination="kMr-r8-Bln" kind="show" identifier="" id="GyB-rt-isX"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRU-kh-fpu">
@@ -1450,6 +1450,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J96-tJ-GNE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KJe-YD-LIk">
+                        <rect key="frame" x="0.0" y="20" width="1112" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
