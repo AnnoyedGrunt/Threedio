@@ -21,6 +21,7 @@
 		A31517D12052CC1300BE5E0D /* create.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A31517CE2052CC1300BE5E0D /* create.mp3 */; };
 		A31517D62052CD7B00BE5E0D /* SCNVectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */; };
 		A31517D72052CD7B00BE5E0D /* GameParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */; };
+		A31517DD2052D67800BE5E0D /* dustCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = A31517DC2052D67700BE5E0D /* dustCloud.png */; };
 		A317026D204450270005DFCA /* 3dio.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A317026C204450270005DFCA /* 3dio.m4v */; };
 		A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B0204974ED0005DFCA /* SolidifyLogic.swift */; };
 		A31702B5204B115E0005DFCA /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B4204B115E0005DFCA /* UINibView.swift */; };
@@ -86,6 +87,7 @@
 		A31517CE2052CC1300BE5E0D /* create.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = create.mp3; sourceTree = "<group>"; };
 		A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCNVectorExtension.swift; path = Utility/SCNVectorExtension.swift; sourceTree = "<group>"; };
 		A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameParticleSystem.swift; path = Utility/GameParticleSystem.swift; sourceTree = "<group>"; };
+		A31517DC2052D67700BE5E0D /* dustCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dustCloud.png; sourceTree = "<group>"; };
 		A317026C204450270005DFCA /* 3dio.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dio.m4v; sourceTree = "<group>"; };
 		A31702B0204974ED0005DFCA /* SolidifyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidifyLogic.swift; sourceTree = "<group>"; };
 		A31702B4204B115E0005DFCA /* UINibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		A31517CA2052CBE800BE5E0D /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				A31517DC2052D67700BE5E0D /* dustCloud.png */,
 				C569C2AF20518EBE00A807D3 /* cloud@3x.png */,
 				C569C2AD20518EB800A807D3 /* Explode.scnp */,
 			);
@@ -439,6 +442,7 @@
 			files = (
 				A3DD310D2037461D002639EE /* car.scn in Resources */,
 				A321B0552043220700845A09 /* ramp.scn in Resources */,
+				A31517DD2052D67800BE5E0D /* dustCloud.png in Resources */,
 				A31517CF2052CC1300BE5E0D /* break.mp3 in Resources */,
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				A36252D520247722001FCA58 /* mys.scn in Resources */,
@@ -663,7 +667,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4J698459X;
+				DEVELOPMENT_TEAM = Z2JJPC79E9;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -679,7 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4J698459X;
+				DEVELOPMENT_TEAM = Z2JJPC79E9;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;

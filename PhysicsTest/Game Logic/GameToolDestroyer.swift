@@ -64,7 +64,7 @@ class GameToolDestroyer: GameTool {
             node.physicsBody = nil
             node.addParticleSystem(explosion!)
             node.scale = SCNVector3(1,1,1)
-           
+            node.castsShadow = false
             
             //node.removeFromParentNode()
             currentNode = nil
