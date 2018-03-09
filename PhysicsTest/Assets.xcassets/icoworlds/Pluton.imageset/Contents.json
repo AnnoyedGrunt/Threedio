@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "Pluton.pdf",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "Pluton@2x.pdf",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "Pluton@3x.pdf",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
