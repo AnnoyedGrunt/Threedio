@@ -35,7 +35,7 @@ class VideoController: AVPlayerViewController {
     }
     
     @objc func playerDidFinishPlaying(note: NSNotification){
-        self.performSegue(withIdentifier: "menu", sender: self)
+        self.performSegue(withIdentifier: "start", sender: self)
     }
     
     

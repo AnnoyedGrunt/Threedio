@@ -29,6 +29,9 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         start.isHidden = !start.isHidden
        
     }
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func startButto(_ sender: Any) {
                startRecording()
