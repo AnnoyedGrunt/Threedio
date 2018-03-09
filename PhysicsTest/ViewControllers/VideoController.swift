@@ -12,10 +12,18 @@ import AVKit
 
 class VideoController: AVPlayerViewController {
    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let path: String = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
+        
+        var path: String
+        
+        if UIDevice().userInterfaceIdiom == .pad {
+            path = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
+        }else{
+            path = Bundle.main.path(forResource: "3dioIphone", ofType: "m4v")!
+        }
         let movieurl: NSURL = NSURL.fileURL(withPath: path) as NSURL
         
         showsPlaybackControls = false

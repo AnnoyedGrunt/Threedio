@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ED81EDB2052E441002F4CD8 /* 3dioIphone.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5ED81EDA2052E441002F4CD8 /* 3dioIphone.m4v */; };
 		A3147033203C3C740027EA0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3147032203C3C740027EA0C /* ViewController.swift */; };
 		A3147035203C3CA40027EA0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3147034203C3CA40027EA0C /* Main.storyboard */; };
 		A31517C32052CBBE00BE5E0D /* GameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517BC2052CBBD00BE5E0D /* GameTool.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5ED81EDA2052E441002F4CD8 /* 3dioIphone.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3dioIphone.m4v; path = ../../../3dioIphone.m4v; sourceTree = "<group>"; };
 		A3147032203C3C740027EA0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3147034203C3CA40027EA0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A31517BC2052CBBD00BE5E0D /* GameTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTool.swift; path = "Game Logic/GameTool.swift"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				BDD786B72052D21A00E5A83F /* Menu.storyboard */,
 				BDD786B92052D28F00E5A83F /* Game.storyboard */,
 				A317026C204450270005DFCA /* 3dio.m4v */,
+				5ED81EDA2052E441002F4CD8 /* 3dioIphone.m4v */,
 				A33A8BA320348BF7001A7209 /* PhysicsTest.entitlements */,
 				A36252A620247682001FCA58 /* AppDelegate.swift */,
 				A36252AD20247682001FCA58 /* Assets.xcassets */,
@@ -446,6 +449,7 @@
 				A3DD310D2037461D002639EE /* car.scn in Resources */,
 				A321B0552043220700845A09 /* ramp.scn in Resources */,
 				A31517CF2052CC1300BE5E0D /* break.mp3 in Resources */,
+				5ED81EDB2052E441002F4CD8 /* 3dioIphone.m4v in Resources */,
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				A36252D520247722001FCA58 /* mys.scn in Resources */,
 				A317026D204450270005DFCA /* 3dio.m4v in Resources */,
@@ -671,6 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW836T2T62;
 				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -687,6 +692,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW836T2T62;
 				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
