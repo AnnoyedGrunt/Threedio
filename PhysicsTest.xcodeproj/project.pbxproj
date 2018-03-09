@@ -226,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				A36252A520247682001FCA58 /* PhysicsTest */,
-				A31517982052A0C400BE5E0D /* Utility */,
 				A36252BA20247682001FCA58 /* PhysicsTestTests */,
 				A36252C520247682001FCA58 /* PhysicsTestUITests */,
 				A36252A420247682001FCA58 /* Products */,
@@ -270,6 +269,7 @@
 				A36252D420247722001FCA58 /* mys.scn */,
 				A315178B2052A0A800BE5E0D /* Game Logic */,
 				A3453087204F19430071447A /* Game Pieces */,
+				A31517982052A0C400BE5E0D /* Utility */,
 			);
 			path = PhysicsTest;
 			sourceTree = "<group>";
