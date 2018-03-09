@@ -18,6 +18,8 @@
 		A315179B2052A0C400BE5E0D /* SCNVectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517992052A0C400BE5E0D /* SCNVectorExtension.swift */; };
 		A315179C2052A0C400BE5E0D /* GameParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A315179A2052A0C400BE5E0D /* GameParticleSystem.swift */; };
 		A315179E2052A26200BE5E0D /* GameToolDestroyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A315179D2052A26200BE5E0D /* GameToolDestroyer.swift */; };
+		A31517A72052BF5300BE5E0D /* cloud@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A31517A62052BF5300BE5E0D /* cloud@3x.png */; };
+		A31517A92052BF6400BE5E0D /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = A31517A82052BF6400BE5E0D /* Explode.scnp */; };
 		A317026D204450270005DFCA /* 3dio.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A317026C204450270005DFCA /* 3dio.m4v */; };
 		A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B0204974ED0005DFCA /* SolidifyLogic.swift */; };
 		A31702B5204B115E0005DFCA /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B4204B115E0005DFCA /* UINibView.swift */; };
@@ -83,6 +85,8 @@
 		A31517992052A0C400BE5E0D /* SCNVectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVectorExtension.swift; sourceTree = "<group>"; };
 		A315179A2052A0C400BE5E0D /* GameParticleSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameParticleSystem.swift; sourceTree = "<group>"; };
 		A315179D2052A26200BE5E0D /* GameToolDestroyer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameToolDestroyer.swift; sourceTree = "<group>"; };
+		A31517A62052BF5300BE5E0D /* cloud@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cloud@3x.png"; path = "PhysicsTest/cloud@3x.png"; sourceTree = SOURCE_ROOT; };
+		A31517A82052BF6400BE5E0D /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; name = Explode.scnp; path = PhysicsTest/Explode.scnp; sourceTree = SOURCE_ROOT; };
 		A317026C204450270005DFCA /* 3dio.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dio.m4v; sourceTree = "<group>"; };
 		A31702B0204974ED0005DFCA /* SolidifyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidifyLogic.swift; sourceTree = "<group>"; };
 		A31702B4204B115E0005DFCA /* UINibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
@@ -195,6 +199,15 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		A31517A52052BF4300BE5E0D /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				A31517A82052BF6400BE5E0D /* Explode.scnp */,
+				A31517A62052BF5300BE5E0D /* cloud@3x.png */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 		A31702B6204B11670005DFCA /* ObjectButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +286,7 @@
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
 				A36252D420247722001FCA58 /* mys.scn */,
+				A31517A52052BF4300BE5E0D /* Particles */,
 				A315178B2052A0A800BE5E0D /* Game Logic */,
 				A3453087204F19430071447A /* Game Pieces */,
 				A31517982052A0C400BE5E0D /* Utility */,
@@ -426,6 +440,8 @@
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				BDD786B02052A0AE00E5A83F /* macchininaBlender.obj in Resources */,
 				A36252D520247722001FCA58 /* mys.scn in Resources */,
+				A31517A92052BF6400BE5E0D /* Explode.scnp in Resources */,
+				A31517A72052BF5300BE5E0D /* cloud@3x.png in Resources */,
 				A317026D204450270005DFCA /* 3dio.m4v in Resources */,
 				BDD786B62052B37400E5A83F /* Menu.storyboard in Resources */,
 				A3147035203C3CA40027EA0C /* Main.storyboard in Resources */,
