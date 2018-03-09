@@ -27,7 +27,6 @@
 		A345309120508D9F0071447A /* GameToolARDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345309020508D9F0071447A /* GameToolARDetector.swift */; };
 		A3453093205096270071447A /* GameToolListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3453092205096270071447A /* GameToolListener.swift */; };
 		A36252A720247682001FCA58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36252A620247682001FCA58 /* AppDelegate.swift */; };
-		A36252A920247682001FCA58 /* OldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36252A820247682001FCA58 /* OldViewController.swift */; };
 		A36252AE20247682001FCA58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36252AD20247682001FCA58 /* Assets.xcassets */; };
 		A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36252AF20247682001FCA58 /* LaunchScreen.storyboard */; };
 		A36252BC20247682001FCA58 /* PhysicsTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36252BB20247682001FCA58 /* PhysicsTestTests.swift */; };
@@ -41,6 +40,8 @@
 		A3CA76342040A958007810C7 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CA76332040A958007810C7 /* ShapeController.swift */; };
 		A3DD310D2037461D002639EE /* car.scn in Resources */ = {isa = PBXBuildFile; fileRef = A3DD310C2037461D002639EE /* car.scn */; };
 		A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3C471202EF218005CE743 /* GamePiece.swift */; };
+		C569C2AE20518EB800A807D3 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = C569C2AD20518EB800A807D3 /* Explode.scnp */; };
+		C569C2B020518EBE00A807D3 /* cloud@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C569C2AF20518EBE00A807D3 /* cloud@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +84,6 @@
 		A3453092205096270071447A /* GameToolListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolListener.swift; sourceTree = "<group>"; };
 		A36252A320247682001FCA58 /* PhysicsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36252A620247682001FCA58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A36252A820247682001FCA58 /* OldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViewController.swift; sourceTree = "<group>"; };
-		A36252AB20247682001FCA58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NotMain.storyboard; sourceTree = "<group>"; };
 		A36252AD20247682001FCA58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A36252B020247682001FCA58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A36252B220247682001FCA58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +102,8 @@
 		A3CA76332040A958007810C7 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
 		A3F3C471202EF218005CE743 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		C569C2AD20518EB800A807D3 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
+		C569C2AF20518EBE00A807D3 /* cloud@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,13 +131,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A3147036203C43BD0027EA0C /* Old stuff */ = {
+		A315177620528BC400BE5E0D /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				A36252A820247682001FCA58 /* OldViewController.swift */,
-				A36252AA20247682001FCA58 /* NotMain.storyboard */,
+				A3CA762520406197007810C7 /* UICustomView.swift */,
+				A3CA762920406B0B007810C7 /* UIColorButton.swift */,
+				A31702B6204B11670005DFCA /* ObjectButton */,
 			);
-			path = "Old stuff";
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		A315177720528BD100BE5E0D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A3147032203C3C740027EA0C /* ViewController.swift */,
+				A3CA762D2040779D007810C7 /* VideoController.swift */,
+				A3CA7627204066EF007810C7 /* ColorController.swift */,
+				A3CA76332040A958007810C7 /* ShapeController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		A31702B6204B11670005DFCA /* ObjectButton */ = {
@@ -147,6 +160,7 @@
 				A31702B7204B117B0005DFCA /* objectButton.xib */,
 			);
 			name = ObjectButton;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A33A8BA420348BFA001A7209 /* Frameworks */ = {
@@ -196,10 +210,8 @@
 				A321B0542043220700845A09 /* ramp.scn */,
 				A3147034203C3CA40027EA0C /* Main.storyboard */,
 				A317026C204450270005DFCA /* 3dio.m4v */,
-				A3147032203C3C740027EA0C /* ViewController.swift */,
-				A3CA762D2040779D007810C7 /* VideoController.swift */,
-				A3CA7627204066EF007810C7 /* ColorController.swift */,
-				A3CA76332040A958007810C7 /* ShapeController.swift */,
+				A315177720528BD100BE5E0D /* ViewControllers */,
+				A315177620528BC400BE5E0D /* Interface */,
 				A3DD310C2037461D002639EE /* car.scn */,
 				A33A8BA320348BF7001A7209 /* PhysicsTest.entitlements */,
 				A36252A620247682001FCA58 /* AppDelegate.swift */,
@@ -207,6 +219,8 @@
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
 				A36252D420247722001FCA58 /* mys.scn */,
+				C569C2AF20518EBE00A807D3 /* cloud@3x.png */,
+				C569C2AD20518EB800A807D3 /* Explode.scnp */,
 				A30A3C4F202C8A69008587D3 /* GameController.swift */,
 				A3453088204F22A40071447A /* GameTool.swift */,
 				A3453092205096270071447A /* GameToolListener.swift */,
@@ -215,11 +229,7 @@
 				A345308E20501F7D0071447A /* GameToolManipulator.swift */,
 				A345309020508D9F0071447A /* GameToolARDetector.swift */,
 				A3453087204F19430071447A /* Game Pieces */,
-				A3CA762520406197007810C7 /* UICustomView.swift */,
-				A3CA762920406B0B007810C7 /* UIColorButton.swift */,
-				A31702B6204B11670005DFCA /* ObjectButton */,
 				A36B0868203C2EEF006E8D56 /* SCNVectorExtension.swift */,
-				A3147036203C43BD0027EA0C /* Old stuff */,
 			);
 			path = PhysicsTest;
 			sourceTree = "<group>";
@@ -362,9 +372,11 @@
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				A36252D520247722001FCA58 /* mys.scn in Resources */,
 				A317026D204450270005DFCA /* 3dio.m4v in Resources */,
+				C569C2AE20518EB800A807D3 /* Explode.scnp in Resources */,
 				A3147035203C3CA40027EA0C /* Main.storyboard in Resources */,
 				A36252AE20247682001FCA58 /* Assets.xcassets in Resources */,
 				A31702B8204B117B0005DFCA /* objectButton.xib in Resources */,
+				C569C2B020518EBE00A807D3 /* cloud@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +412,6 @@
 				A3453080204F16FA0071447A /* GamePieceSettings.swift in Sources */,
 				A345308F20501F7D0071447A /* GameToolManipulator.swift in Sources */,
 				A3453082204F17090071447A /* GameMaterial.swift in Sources */,
-				A36252A920247682001FCA58 /* OldViewController.swift in Sources */,
 				A3CA7628204066EF007810C7 /* ColorController.swift in Sources */,
 				A3CA762E2040779D007810C7 /* VideoController.swift in Sources */,
 				A36252A720247682001FCA58 /* AppDelegate.swift in Sources */,
@@ -448,14 +459,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A36252AA20247682001FCA58 /* NotMain.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A36252AB20247682001FCA58 /* Base */,
-			);
-			name = NotMain.storyboard;
-			sourceTree = "<group>";
-		};
 		A36252AF20247682001FCA58 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -580,7 +583,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = VW836T2T62;
+=======
+				DEVELOPMENT_TEAM = 4G53MCT3NM;
+>>>>>>> 1591e92b9e3a4491a63f34e02486db80637cbdfe
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -596,7 +603,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = VW836T2T62;
+=======
+				DEVELOPMENT_TEAM = 4G53MCT3NM;
+>>>>>>> 1591e92b9e3a4491a63f34e02486db80637cbdfe
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
