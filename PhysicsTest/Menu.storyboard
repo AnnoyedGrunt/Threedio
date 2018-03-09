@@ -264,10 +264,10 @@
             </objects>
             <point key="canvasLocation" x="1256" y="-1228"/>
         </scene>
-        <!--Video-->
+        <!--Game-->
         <scene sceneID="raE-Wv-owH">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="menu" storyboardName="Video" id="8ay-8V-BeS" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="menu" storyboardName="Game" id="8ay-8V-BeS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fv0-Bg-Eww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1854" y="-1194"/>
