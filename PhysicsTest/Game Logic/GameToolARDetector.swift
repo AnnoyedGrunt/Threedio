@@ -13,10 +13,13 @@ import ARKit
 /**
  Handles everything that has to do with the initial phase of the game: plane detection
  */
+
 class GameToolARDetector: NSObject, GameTool {
     
     var sceneView: ARSCNView!
     var listeners = GameToolListenerList()
+    var playfloor: SCNNode?
+    var origin: SCNNode?
     
     //for handling different anchors and different planes
     var globalAnchor: ARPlaneAnchor?
@@ -40,10 +43,19 @@ class GameToolARDetector: NSObject, GameTool {
     }
     
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        
+        /*let point = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
+        if let hit =  sceneView.hitTest(point, types: .existingPlaneUsingExtent).first {
+            let camera = sceneView.pointOfView!
+            let position = camera.convertPosition(SCNVector3(0,0, -hit.distance), to: sceneView.scene.rootNode)
+            playfloor?.position = position
+            origin?.position = position
+        }*/
+        print("existin'")
     }
     
     func onEnter() {
+        playfloor = sceneView.scene.rootNode.childNode(withName: "Playfloor", recursively: true)!
+        origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
     }
     
     func onExit() {
@@ -56,11 +68,12 @@ class GameToolARDetector: NSObject, GameTool {
     func onTap() {
         if let plane = sceneView.scene.rootNode.childNode(withName: "piano", recursively: true) {
             planeDetected = true
-            let playfloor = sceneView.scene.rootNode.childNode(withName: "Playfloor", recursively: true)!
-            let origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
+            //let playfloor = sceneView.scene.rootNode.childNode(withName: "Playfloor", recursively: true)!
+            //let origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
             let position = plane.convertPosition(plane.position, to: sceneView.scene.rootNode)
-            playfloor.position.y = position.y
-            origin.position.y = position.y
+            playfloor?.position.y = position.y
+            origin?.position.y = position.y
+            playfloor?.geometry?.firstMaterial = plane.geometry!.firstMaterial
             plane.removeFromParentNode()
             listeners.invokeOnTap(sender: self, param: true)
         } else {
@@ -69,26 +82,6 @@ class GameToolARDetector: NSObject, GameTool {
     }
     
     //MARK: RENDERER
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        
-        //unwrapping anchor
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-        
-        if self.globalAnchor != nil && !self.planeDetected {
-            if planeAnchor != self.globalAnchor {
-                sceneView.session.remove(anchor: self.globalAnchor!)
-                self.globalAnchor = planeAnchor
-            }
-        } else {
-            self.globalAnchor = planeAnchor
-        }
-        
-        if !self.planeDetected {
-            let planeNode = self.createPlaneNode(anchor: self.globalAnchor!)
-            node.addChildNode(planeNode)
-        }
-    }
-    
     
     func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         

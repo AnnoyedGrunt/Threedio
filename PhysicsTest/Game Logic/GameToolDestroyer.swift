@@ -65,8 +65,6 @@ class GameToolDestroyer: GameTool {
             node.addParticleSystem(explosion!)
             node.scale = SCNVector3(1,1,1)
             node.castsShadow = false
-            
-            //node.removeFromParentNode()
             currentNode = nil
             
             audioPlayer.playSound(file: "break", ext: "mp3")
