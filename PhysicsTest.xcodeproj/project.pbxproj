@@ -41,6 +41,9 @@
 		A3CA76342040A958007810C7 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CA76332040A958007810C7 /* ShapeController.swift */; };
 		A3DD310D2037461D002639EE /* car.scn in Resources */ = {isa = PBXBuildFile; fileRef = A3DD310C2037461D002639EE /* car.scn */; };
 		B9DDCE3B2052AEBF00112668 /* menuMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = B9DDCE3A2052AEBF00112668 /* menuMusic.wav */; };
+		B9DDCE3E2052BB6600112668 /* break.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B9DDCE3C2052BB6500112668 /* break.mp3 */; };
+		B9DDCE3F2052BB6600112668 /* create.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B9DDCE3D2052BB6600112668 /* create.mp3 */; };
+		B9DDCE422052C96E00112668 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE412052C96E00112668 /* Test.swift */; };
 		BDD786AA2052A0AE00E5A83F /* WorldsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A12052A0AC00E5A83F /* WorldsDataManager.swift */; };
 		BDD786AB2052A0AE00E5A83F /* BBNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A22052A0AC00E5A83F /* BBNode.swift */; };
 		BDD786AC2052A0AE00E5A83F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD786A32052A0AD00E5A83F /* MenuController.swift */; };
@@ -113,6 +116,9 @@
 		A3CA76332040A958007810C7 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
 		B9DDCE3A2052AEBF00112668 /* menuMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menuMusic.wav; sourceTree = "<group>"; };
+		B9DDCE3C2052BB6500112668 /* break.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = break.mp3; sourceTree = "<group>"; };
+		B9DDCE3D2052BB6600112668 /* create.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = create.mp3; sourceTree = "<group>"; };
+		B9DDCE412052C96E00112668 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		BDD786A12052A0AC00E5A83F /* WorldsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldsDataManager.swift; sourceTree = "<group>"; };
 		BDD786A22052A0AC00E5A83F /* BBNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNode.swift; sourceTree = "<group>"; };
 		BDD786A32052A0AD00E5A83F /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -272,6 +278,7 @@
 				A36252AD20247682001FCA58 /* Assets.xcassets */,
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
+				B9DDCE412052C96E00112668 /* Test.swift */,
 				A36252D420247722001FCA58 /* mys.scn */,
 				A315178B2052A0A800BE5E0D /* Game Logic */,
 				A3453087204F19430071447A /* Game Pieces */,
@@ -301,6 +308,8 @@
 		B9DDCE392052AE9A00112668 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				B9DDCE3C2052BB6500112668 /* break.mp3 */,
+				B9DDCE3D2052BB6600112668 /* create.mp3 */,
 				B9DDCE3A2052AEBF00112668 /* menuMusic.wav */,
 			);
 			path = Sounds;
@@ -422,6 +431,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3DD310D2037461D002639EE /* car.scn in Resources */,
+				B9DDCE3E2052BB6600112668 /* break.mp3 in Resources */,
+				B9DDCE3F2052BB6600112668 /* create.mp3 in Resources */,
 				A321B0552043220700845A09 /* ramp.scn in Resources */,
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				BDD786B02052A0AE00E5A83F /* macchininaBlender.obj in Resources */,
@@ -462,6 +473,7 @@
 				BDD786AA2052A0AE00E5A83F /* WorldsDataManager.swift in Sources */,
 				A3453084204F17A20071447A /* OrientationType.swift in Sources */,
 				BDD786AB2052A0AE00E5A83F /* BBNode.swift in Sources */,
+				B9DDCE422052C96E00112668 /* Test.swift in Sources */,
 				A31702B5204B115E0005DFCA /* UINibView.swift in Sources */,
 				A3CA76342040A958007810C7 /* ShapeController.swift in Sources */,
 				A3147033203C3C740027EA0C /* ViewController.swift in Sources */,
@@ -647,7 +659,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
+				DEVELOPMENT_TEAM = K4J698459X;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -663,7 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
+				DEVELOPMENT_TEAM = K4J698459X;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;

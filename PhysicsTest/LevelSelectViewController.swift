@@ -52,7 +52,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         
         if !avPlayer.isPlaying {
             //plays music menu
-            self.avPlayer.playSound(file: "menuMusic", ext: "wav")
+            self.avPlayer.playMusic(file: "menuMusic", ext: "wav")
         }
     }
     

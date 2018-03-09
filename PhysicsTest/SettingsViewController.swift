@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         if !avPlayer.isPlaying {
             //plays music menu
-            self.avPlayer.playSound(file: "menuMusic", ext: "wav")
+            self.avPlayer.playMusic(file: "menuMusic", ext: "wav")
         }
     }
     
@@ -101,7 +101,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 //        }
         
         if avPlayer.isPlaying {
-            self.avPlayer.stopSound()
+            self.avPlayer.stopMusic()
         }
     }
     

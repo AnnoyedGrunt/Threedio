@@ -38,6 +38,8 @@ class GameToolBuilder: GameTool {
     var lastPositions: [SCNVector3] = []
     let positionCacheCount = 5
     
+    var audioPlayer = UIApplication.shared.delegate as! AppDelegate
+    
     var piece: GamePiece! {
         didSet {
             deletePreview()
@@ -78,6 +80,8 @@ class GameToolBuilder: GameTool {
     
     func onTap() {
         solidifyPreview()
+        
+        audioPlayer.playSound(file: "create", ext: "mp3")
     }
     
     func onExit() {

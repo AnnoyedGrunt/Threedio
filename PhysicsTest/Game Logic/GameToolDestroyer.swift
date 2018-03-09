@@ -29,6 +29,8 @@ class GameToolDestroyer: GameTool {
     var oldMaterial: GameMaterial?
     var currentNode: SCNNode?
     
+    var audioPlayer = UIApplication.shared.delegate as! AppDelegate
+    
     
     required init(sceneView: ARSCNView) {
         self.sceneView = sceneView
@@ -72,6 +74,8 @@ class GameToolDestroyer: GameTool {
             
             //node.removeFromParentNode()
             currentNode = nil
+            
+            audioPlayer.playSound(file: "break", ext: "mp3")
         }
     }
     

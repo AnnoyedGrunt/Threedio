@@ -17,29 +17,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     //for sound effects and music
-    var audioPlayer = AVAudioPlayer()
+    var musicPlayer = AVAudioPlayer()
     var isPlaying = false
+
+    var soundsPlayer = AVAudioPlayer()
     
-    //play sound
-    func playSound(file:String, ext:String) -> Void {
+    //play music
+    func playMusic(file:String, ext:String) {
         do {
             let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: file, ofType: ext)!)
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.prepareToPlay()
-            if file == "menuMusic" {
-                audioPlayer.numberOfLoops = -1
-            }
-            audioPlayer.play()
+            musicPlayer = try AVAudioPlayer(contentsOf: url)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
             isPlaying = true
         } catch let error {
             NSLog(error.localizedDescription)
         }
     }
     
-    //stop sound
-    func stopSound() {
-        audioPlayer.stop()
+    //stop music
+    func stopMusic() {
+        musicPlayer.stop()
         isPlaying = false
+    }
+    
+    
+    //play sounds
+    func playSound(file:String, ext:String) {
+        do {
+            let url = URL.init(fileURLWithPath: Bundle.main.path(forResource: file, ofType: ext)!)
+            soundsPlayer = try AVAudioPlayer(contentsOf: url)
+            soundsPlayer.prepareToPlay()
+            soundsPlayer.play()
+        } catch let error {
+            NSLog(error.localizedDescription)
+        }
     }
 
 
