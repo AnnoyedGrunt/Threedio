@@ -19,6 +19,8 @@
 		A31517CF2052CC1300BE5E0D /* break.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A31517CC2052CC1300BE5E0D /* break.mp3 */; };
 		A31517D02052CC1300BE5E0D /* menuMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = A31517CD2052CC1300BE5E0D /* menuMusic.wav */; };
 		A31517D12052CC1300BE5E0D /* create.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A31517CE2052CC1300BE5E0D /* create.mp3 */; };
+		A31517D62052CD7B00BE5E0D /* SCNVectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */; };
+		A31517D72052CD7B00BE5E0D /* GameParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */; };
 		A317026D204450270005DFCA /* 3dio.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A317026C204450270005DFCA /* 3dio.m4v */; };
 		A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B0204974ED0005DFCA /* SolidifyLogic.swift */; };
 		A31702B5204B115E0005DFCA /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B4204B115E0005DFCA /* UINibView.swift */; };
@@ -76,6 +78,8 @@
 		A31517CC2052CC1300BE5E0D /* break.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = break.mp3; sourceTree = "<group>"; };
 		A31517CD2052CC1300BE5E0D /* menuMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menuMusic.wav; sourceTree = "<group>"; };
 		A31517CE2052CC1300BE5E0D /* create.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = create.mp3; sourceTree = "<group>"; };
+		A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCNVectorExtension.swift; path = Utility/SCNVectorExtension.swift; sourceTree = "<group>"; };
+		A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameParticleSystem.swift; path = Utility/GameParticleSystem.swift; sourceTree = "<group>"; };
 		A317026C204450270005DFCA /* 3dio.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dio.m4v; sourceTree = "<group>"; };
 		A31702B0204974ED0005DFCA /* SolidifyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidifyLogic.swift; sourceTree = "<group>"; };
 		A31702B4204B115E0005DFCA /* UINibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
@@ -199,6 +203,15 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		A31517D32052CD4200BE5E0D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */,
+				A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		A31702B6204B11670005DFCA /* ObjectButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +274,7 @@
 				A36252AD20247682001FCA58 /* Assets.xcassets */,
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
+				A31517D32052CD4200BE5E0D /* Utility */,
 				A31517CB2052CC1300BE5E0D /* Sounds */,
 				A315177720528BD100BE5E0D /* ViewControllers */,
 				A315177620528BC400BE5E0D /* Interface */,
@@ -458,11 +472,13 @@
 				A3CA762E2040779D007810C7 /* VideoController.swift in Sources */,
 				A31517C52052CBBE00BE5E0D /* GameToolBuilder.swift in Sources */,
 				A36252A720247682001FCA58 /* AppDelegate.swift in Sources */,
+				A31517D62052CD7B00BE5E0D /* SCNVectorExtension.swift in Sources */,
 				A31517C72052CBBE00BE5E0D /* GameToolDestroyer.swift in Sources */,
 				A3453086204F17D50071447A /* GamePieceList.swift in Sources */,
 				A31702BC204B26F20005DFCA /* objectButton.swift in Sources */,
 				A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */,
 				A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */,
+				A31517D72052CD7B00BE5E0D /* GameParticleSystem.swift in Sources */,
 				A31517C32052CBBE00BE5E0D /* GameTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
