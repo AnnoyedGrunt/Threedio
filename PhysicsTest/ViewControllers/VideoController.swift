@@ -11,23 +11,29 @@ import UIKit
 import AVKit
 
 class VideoController: AVPlayerViewController {
-   
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        var path: String
+        
+        var videoPath: String
         
         if UIDevice().userInterfaceIdiom == .pad {
-            path = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
+            videoPath = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
         }else{
-            path = Bundle.main.path(forResource: "3dioIphone", ofType: "m4v")!
+            videoPath = Bundle.main.path(forResource: "3dioIphone", ofType: "m4v")!
         }
-        let movieurl: NSURL = NSURL.fileURL(withPath: path) as NSURL
+        let movieurl: NSURL = NSURL.fileURL(withPath: videoPath) as NSURL
         
         showsPlaybackControls = false
+        
+        
         self.player = AVPlayer(url: movieurl as URL)
+        
         player!.play()
         
         NotificationCenter.default.addObserver(self, selector:#selector(self.playerDidFinishPlaying(note:)),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)

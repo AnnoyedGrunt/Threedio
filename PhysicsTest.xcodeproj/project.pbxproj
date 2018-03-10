@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5ED81EDD205328B2002F4CD8 /* 3dioIphone.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */; };
+		5ED81EDF2053412C002F4CD8 /* landscape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED81EDE2053412C002F4CD8 /* landscape.swift */; };
 		A3147033203C3C740027EA0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3147032203C3C740027EA0C /* ViewController.swift */; };
 		A3147035203C3CA40027EA0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3147034203C3CA40027EA0C /* Main.storyboard */; };
 		A31517C32052CBBE00BE5E0D /* GameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517BC2052CBBD00BE5E0D /* GameTool.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dioIphone.m4v; sourceTree = "<group>"; };
+		5ED81EDE2053412C002F4CD8 /* landscape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landscape.swift; sourceTree = "<group>"; };
 		A3147032203C3C740027EA0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3147034203C3CA40027EA0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A31517BC2052CBBD00BE5E0D /* GameTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTool.swift; path = "Game Logic/GameTool.swift"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */,
 				A3147032203C3C740027EA0C /* ViewController.swift */,
 				A3CA762D2040779D007810C7 /* VideoController.swift */,
+				5ED81EDE2053412C002F4CD8 /* landscape.swift */,
 				A3CA7627204066EF007810C7 /* ColorController.swift */,
 				A3CA76332040A958007810C7 /* ShapeController.swift */,
 			);
@@ -513,6 +516,7 @@
 				A31517D62052CD7B00BE5E0D /* SCNVectorExtension.swift in Sources */,
 				A31517C72052CBBE00BE5E0D /* GameToolDestroyer.swift in Sources */,
 				A3453086204F17D50071447A /* GamePieceList.swift in Sources */,
+				5ED81EDF2053412C002F4CD8 /* landscape.swift in Sources */,
 				B9DDCE502052CE9800112668 /* SettingsViewController.swift in Sources */,
 				A31702BC204B26F20005DFCA /* objectButton.swift in Sources */,
 				B9DDCE4E2052CE9800112668 /* WorldCollectionViewCell.swift in Sources */,
@@ -679,7 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
+				DEVELOPMENT_TEAM = VW836T2T62;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -695,7 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
+				DEVELOPMENT_TEAM = VW836T2T62;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
