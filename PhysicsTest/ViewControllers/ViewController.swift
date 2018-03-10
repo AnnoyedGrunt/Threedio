@@ -143,6 +143,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
             let hasFound = param as! Bool
             if hasFound {
                 showSelectors(true)
+                showTools(true)
                 controller?.tool = builderTool
             }
         }

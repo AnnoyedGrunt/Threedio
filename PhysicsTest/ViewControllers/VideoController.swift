@@ -22,7 +22,7 @@ class VideoController: AVPlayerViewController {
         if UIDevice().userInterfaceIdiom == .pad {
             path = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
         }else{
-            path = Bundle.main.path(forResource: "3dioIphone", ofType: "m4v")!
+            path = Bundle.main.path(forResource: "3dio", ofType: "m4v")!
         }
         let movieurl: NSURL = NSURL.fileURL(withPath: path) as NSURL
         
