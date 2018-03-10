@@ -11,8 +11,9 @@ import UIKit
 import AVKit
 
 class VideoController: AVPlayerViewController {
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeLeft
+        return .landscape
     }
     
     override func viewDidLoad() {
