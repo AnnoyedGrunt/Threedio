@@ -16,7 +16,7 @@ import ARKit
  - Author: Raffaele Tontaro
 */
 
-protocol GameTool: AnyObject {
+@objc protocol GameTool: AnyObject {
     var sceneView: ARSCNView! {get set}
     var listeners: GameToolListenerList {get set}
     
@@ -25,25 +25,27 @@ protocol GameTool: AnyObject {
     /**
         called once every frame.
     */
-    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval)
+    @objc optional func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval)
+    
+    @objc optional func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor)
     
     /**
-        called whenever the user taps or when an already selected tool is selected again.
+        called whenever the user taps
      */
+    @objc optional func onTap(_ sender: UITapGestureRecognizer)
     
-    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor)
-    
-    func onTap()
-    
+    @objc optional func onPan(_ sender: UIPanGestureRecognizer)
     /**
         Called by newly selected tools.
      */
-    func onEnter()
+    @objc optional func onEnter()
     
     /**
         Called when a tool is switched out for another.
     */
-    func onExit()
+    @objc optional func onExit()
+    
+    @objc optional func onReselect()
     
     /**
         An interfacing function. Look at each specific GameTool's documentation to see what actions they allow and what values they take.
@@ -51,5 +53,5 @@ protocol GameTool: AnyObject {
      + Parameter type: the action you want to execute.
      + Parameter value: the value you want to execute it with. Not all actions take a value.
     */
-    func action(type: String, value: Any?)
+    @objc optional func action(type: String, value: Any?)
 }

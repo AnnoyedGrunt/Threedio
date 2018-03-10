@@ -50,15 +50,21 @@ class GameToolDestroyer: GameTool {
         }
     }
     
-    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        
+    func onTap(_ sender: UITapGestureRecognizer) {
+        destroyBlock()
     }
     
-   
+    func onReselect() {
+        destroyBlock()
+    }
     
-    func onTap() {
+    func onExit() {
+        resetMaterial()
+        currentNode = nil
+    }
+    
+    private func destroyBlock() {
         if let node = currentNode {
-            
             let explosion = SCNParticleSystem(named: "Explode.scnp", inDirectory: nil)
             node.geometry = nil
             node.physicsBody = nil
@@ -70,21 +76,13 @@ class GameToolDestroyer: GameTool {
             audioPlayer.playSound(file: "break", ext: "mp3")
         }
     }
-    
-    func onEnter() {}
-    func onExit() {
-        resetMaterial()
-        currentNode = nil
-    }
-    
-    func action(type: String, value: Any? = nil) {}
-    
     private func resetMaterial() {
         guard let node = currentNode else {return}
         guard let material = oldMaterial else {return}
         
         node.geometry?.firstMaterial = material
     }
+    
     private func raycast(filter mask: GamePieceSetting?) -> SCNHitTestResult? {
         let point = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
         var options : [SCNHitTestOption: Any] = [SCNHitTestOption.boundingBoxOnly: true, SCNHitTestOption.firstFoundOnly : true]

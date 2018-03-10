@@ -41,15 +41,13 @@ class GameToolManipulator: GameTool {
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {}
     func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {}
     
-    func onTap() {
-        if heldObject == nil {
-            manipulate()
-        } else {
-            throwObject()
-        }
+    func onTap(_ sender: UITapGestureRecognizer) {
+        manipulate()
     }
     
-    func onEnter() {}
+    func onReselect() {
+        manipulate()
+    }
     
     func onExit() {
         dropObject()
@@ -65,7 +63,16 @@ class GameToolManipulator: GameTool {
 }
 
 private extension GameToolManipulator {
+    
     func manipulate() {
+        if heldObject == nil {
+            grabObject()
+        } else {
+            throwObject()
+        }
+    }
+    
+    func grabObject() {
         if let hit = raycast(filter: .dynamic) {
             dropObject()
             heldObject = hit.node

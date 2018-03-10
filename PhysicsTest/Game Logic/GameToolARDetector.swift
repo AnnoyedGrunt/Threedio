@@ -20,37 +20,40 @@ class GameToolARDetector: NSObject, GameTool {
     var listeners = GameToolListenerList()
     var playfloor: SCNNode?
     var origin: SCNNode?
-    
-    //for handling different anchors and different planes
-    var globalAnchor: ARPlaneAnchor?
+    var plane: SCNNode!
     
     //plane dimensions (1 = 1 metro)
-    let globalWidth: CGFloat = 2.0
-    let globalHeight: CGFloat = 2.0
-    
-    //grid dimensions, initialized in viewDidLoad() function
-    var globalScaleX: Float?
-    var globalScaleY: Float?
-    
-    var planeDetected = false
+    private let globalWidth: CGFloat = 2.0
+    private let globalHeight: CGFloat = 2.0
+    private let cellSize: CGFloat = 0.1
+    private var planeDetected = false
     
     required init(sceneView: ARSCNView) {
         self.sceneView = sceneView
         super.init()
-        //initializing grid dimensions
-        self.globalScaleX = (Float(globalWidth)  / 0.1).rounded()
-        self.globalScaleY = (Float(globalHeight) / 0.1).rounded()
+        
+        plane = SCNNode()
+        let planeGeometry = SCNPlane(width: globalWidth, height: globalHeight)
+        planeGeometry.materials = [createGridMaterial(plane: planeGeometry)]
+        
+        plane.geometry = planeGeometry
+        sceneView.scene.rootNode.addChildNode(plane)
+        plane.eulerAngles.x = -.pi / 2
     }
     
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        /*let point = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
+        let point = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
         if let hit =  sceneView.hitTest(point, types: .existingPlaneUsingExtent).first {
             let camera = sceneView.pointOfView!
             let position = camera.convertPosition(SCNVector3(0,0, -hit.distance), to: sceneView.scene.rootNode)
             playfloor?.position = position
             origin?.position = position
-        }*/
-        print("existin'")
+            plane.position = position + SCNVector3(0, 0.01, 0)
+            
+            playfloor?.eulerAngles.y = plane.eulerAngles.y
+            origin?.eulerAngles.y = plane.eulerAngles.y
+            planeDetected = true
+        }
     }
     
     func onEnter() {
@@ -58,92 +61,48 @@ class GameToolARDetector: NSObject, GameTool {
         origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
     }
     
-    func onExit() {
-    }
-    
-    func action(type: String, value: Any?) {
-        
-    }
-    
-    func onTap() {
-        if let plane = sceneView.scene.rootNode.childNode(withName: "piano", recursively: true) {
-            planeDetected = true
-            //let playfloor = sceneView.scene.rootNode.childNode(withName: "Playfloor", recursively: true)!
-            //let origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
-            let position = plane.convertPosition(plane.position, to: sceneView.scene.rootNode)
-            playfloor?.position.y = position.y
-            origin?.position.y = position.y
-            playfloor?.geometry?.firstMaterial = plane.geometry!.firstMaterial
+    func onTap(_ sender: UITapGestureRecognizer) {
+        if planeDetected {
             plane.removeFromParentNode()
+            plane = nil
             listeners.invokeOnTap(sender: self, param: true)
         } else {
             listeners.invokeOnTap(sender: self, param: false)
         }
     }
     
-    //MARK: RENDERER
+    var currentPoint: CGPoint?
+    var currentRotation: Float = 0
+    let fullRotationDistance: CGFloat = 2000
     
-    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        
-        //unwrapping anchor
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-        
-        if planeAnchor != self.globalAnchor && !self.planeDetected {
-            if globalAnchor != nil {
-                sceneView.session.remove(anchor: self.globalAnchor!)
-            }
-            self.globalAnchor = planeAnchor
+    func onPan(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .began {
+            currentPoint = sender.translation(in: sceneView)
+            currentRotation = plane.eulerAngles.y
+        } else if sender.state == .changed {
+            let newPoint = sender.translation(in: sceneView)
+            let horizontalChange = newPoint.x - currentPoint!.x
+            let rotation = 2 * Float.pi * Float(horizontalChange / fullRotationDistance)
+            plane.eulerAngles.y = currentRotation + rotation
         }
-        
-        if !self.planeDetected {
-            //Remove existing plane nodes
-            node.enumerateChildNodes {
-                (childNode, _) in
-                childNode.removeFromParentNode()
-            }
-            
-            let planeNode = self.createPlaneNode(anchor: self.globalAnchor!)
-            node.addChildNode(planeNode)
-        }
-    }
-    
-    func createPlaneNode(anchor: ARPlaneAnchor) -> SCNNode {
-        
-        //plane dimensions
-        let planeWidth = self.globalWidth
-        let planeHeight = self.globalHeight
-        
-        //extensible plane
-        //        let planeWidth = CGFloat(anchor.extent.x)
-        //        let planeHeight = CGFloat(anchor.extent.z)
-        
-        //setting plane with dimensions
-        let plane = SCNPlane(width: planeWidth, height: planeHeight)
-        
-        //setting plane material
-        let planeMaterial = SCNMaterial()
-        let gridImage = UIImage(named: "grid.png")
-        planeMaterial.diffuse.contents = gridImage
-        let scaleX = self.globalScaleX
-        let scaleY = self.globalScaleY
-        planeMaterial.diffuse.contentsTransform = SCNMatrix4MakeScale(scaleX!, scaleY!, 0)
-        planeMaterial.diffuse.wrapS = .repeat
-        planeMaterial.diffuse.wrapT = .repeat
-        
-        plane.firstMaterial = planeMaterial
-        
-        let planeNode = SCNNode(geometry: plane)
-        planeNode.name = "piano"
-        
-        let x = CGFloat(anchor.center.x)
-        let y = CGFloat(anchor.center.y)
-        let z = CGFloat(anchor.center.z)
-        
-        planeNode.position = SCNVector3(x,y,z)
-        planeNode.eulerAngles.x = -.pi / 2
-        
-        planeNode.physicsBody = SCNPhysicsBody.static()
-        
-        return planeNode
     }
 }
+
+//MARK: - PRIVATE EXTENSION
+private extension GameToolARDetector {
+    func createGridMaterial(plane: SCNPlane) -> SCNMaterial {
+        let wRepeat = Float(plane.width / cellSize)
+        let hRepeat = Float(plane.height / cellSize)
+        
+        let image = UIImage(named: "grid.png")
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = image
+        material.diffuse.contentsTransform = SCNMatrix4MakeScale(wRepeat, hRepeat, 0)
+        material.diffuse.wrapS = .repeat
+        material.diffuse.wrapT = .repeat
+        return material
+    }
+}
+
+

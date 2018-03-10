@@ -14,7 +14,7 @@ protocol GameToolListener: AnyObject {
     func onExit(sender: GameTool, param: Any?)
 }
 
-class GameToolListenerList {
+class GameToolListenerList: NSObject {
     private var listeners: [GameToolListener] = []
     
     func add(_ listener: GameToolListener) {

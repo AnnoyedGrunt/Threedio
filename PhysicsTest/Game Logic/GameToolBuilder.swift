@@ -37,6 +37,7 @@ class GameToolBuilder: GameTool {
     var origin: SCNNode!
     var lastPositions: [SCNVector3] = []
     let positionCacheCount = 5
+    let hitter: SCNNode = SCNNode()
     
     var audioPlayer = UIApplication.shared.delegate as! AppDelegate
     
@@ -59,6 +60,9 @@ class GameToolBuilder: GameTool {
         origin = root.childNode(withName: "Origin", recursively: true)
         
         setGamePiece(named: "Block")
+        let geometry = SCNSphere(radius: 0.02)
+        hitter.geometry = geometry
+        sceneView.scene.rootNode.addChildNode(hitter)
     }
     
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -66,29 +70,27 @@ class GameToolBuilder: GameTool {
             if blockPreview == nil {
                 createPreview()
             }
+            hitter.position = hit.worldCoordinates
             lastPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
             lastPositions = Array(lastPositions.suffix(positionCacheCount))
             let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
-            let direction = hit.localNormal
+            let direction = root.convertVector(hit.localNormal, to: origin)
             updatePreview(at: position, from: sceneView.pointOfView!.position, withDirection: direction, withScale: blockSize)
         }
     }
     
-    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        
+    func onTap(_ sender: UITapGestureRecognizer) {
+        placeBlock()
     }
     
-    func onTap() {
-        solidifyPreview()
-        
-        audioPlayer.playSound(file: "create", ext: "mp3")
+    func onReselect() {
+        placeBlock()
     }
+    
     
     func onExit() {
         deletePreview()
     }
-    
-    func onEnter() {}
     
     func action(type: String, value: Any? = nil) {
         if type == "setGamePiece" {
@@ -103,6 +105,13 @@ class GameToolBuilder: GameTool {
 
 //MARK: - PRIVATE EXTENSION
 private extension GameToolBuilder {
+    //MARK: - PLACEMENT
+    
+    func placeBlock() {
+        solidifyPreview()
+        audioPlayer.playSound(file: "create", ext: "mp3")
+    }
+    
     //MARK: - ACTIONS
 
     func setGamePiece(named name: String) {
@@ -114,6 +123,7 @@ private extension GameToolBuilder {
         material = GameMaterial.withName(name)
         deletePreview()
     }
+    
     //MARK: - NODE MANAGEMENT
     func createNode() -> SCNNode {
         let node = duplicateNode(piece.node)
