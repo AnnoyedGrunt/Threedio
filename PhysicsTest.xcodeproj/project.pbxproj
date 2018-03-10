@@ -190,11 +190,11 @@
 			children = (
 				A31517BF2052CBBD00BE5E0D /* GameController.swift */,
 				A31517BC2052CBBD00BE5E0D /* GameTool.swift */,
-				A31517C22052CBBD00BE5E0D /* GameToolARDetector.swift */,
 				A31517BE2052CBBD00BE5E0D /* GameToolBuilder.swift */,
 				A31517C02052CBBD00BE5E0D /* GameToolDestroyer.swift */,
-				A31517C12052CBBD00BE5E0D /* GameToolListener.swift */,
 				A31517BD2052CBBD00BE5E0D /* GameToolManipulator.swift */,
+				A31517C22052CBBD00BE5E0D /* GameToolARDetector.swift */,
+				A31517C12052CBBD00BE5E0D /* GameToolListener.swift */,
 			);
 			name = "Game Logic";
 			sourceTree = "<group>";
@@ -680,7 +680,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2JJPC79E9;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -697,7 +696,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2JJPC79E9;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;

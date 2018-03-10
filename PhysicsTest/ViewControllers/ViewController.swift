@@ -42,7 +42,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showFeaturePoints)
         //sceneView.debugOptions.update(with: .showPhysicsShapes)
         //sceneView.debugOptions.update(with: .renderAsWireframe)
-        //sceneView.debugOptions.update(with: .showBoundingBoxes)
+        sceneView.debugOptions.update(with: .showBoundingBoxes)
         
         sceneView.isUserInteractionEnabled = true
         //sceneView.showsStatistics = true
@@ -130,12 +130,12 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     
     @IBAction func selectColor(_ sender: UIButton) {
         guard let tool = self.controller?.tool else {return}
-        tool.action(type: "setMaterial", value: sender.title(for: .normal)!)
+        tool.action?(type: "setMaterial", value: sender.title(for: .normal)!)
     }
     
     @IBAction func selectShape(_ sender: UIButton) {
         guard let tool = self.controller?.tool else {return}
-        tool.action(type: "setGamePiece", value: sender.title(for: .normal)!)
+        tool.action?(type: "setGamePiece", value: sender.title(for: .normal)!)
     }
     
     func onTap(sender: GameTool, param: Any?) {

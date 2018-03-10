@@ -22,18 +22,11 @@ class GameToolARDetector: NSObject, GameTool {
     var origin: SCNNode?
     var plane: SCNNode!
     
-    //for handling different anchors and different planes
-    var globalAnchor: ARPlaneAnchor?
-    
     //plane dimensions (1 = 1 metro)
-    let globalWidth: CGFloat = 2.0
-    let globalHeight: CGFloat = 2.0
-    
-    //grid dimensions, initialized in viewDidLoad() function
-    var globalScaleX: Float?
-    var globalScaleY: Float?
-    
-    var planeDetected = false
+    private let globalWidth: CGFloat = 2.0
+    private let globalHeight: CGFloat = 2.0
+    private let cellSize: CGFloat = 0.1
+    private var planeDetected = false
     
     required init(sceneView: ARSCNView) {
         self.sceneView = sceneView
@@ -56,6 +49,9 @@ class GameToolARDetector: NSObject, GameTool {
             playfloor?.position = position
             origin?.position = position
             plane.position = position + SCNVector3(0, 0.01, 0)
+            
+            playfloor?.eulerAngles.y = plane.eulerAngles.y
+            origin?.eulerAngles.y = plane.eulerAngles.y
             planeDetected = true
         }
     }
@@ -65,29 +61,36 @@ class GameToolARDetector: NSObject, GameTool {
         origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
     }
     
-    func onExit() {
-    }
-    
-    func action(type: String, value: Any?) {
-        
-    }
-    
-    func onTap() {
+    func onTap(_ sender: UITapGestureRecognizer) {
         if planeDetected {
+            plane.removeFromParentNode()
+            plane = nil
             listeners.invokeOnTap(sender: self, param: true)
         } else {
             listeners.invokeOnTap(sender: self, param: false)
         }
     }
     
-    //MARK: RENDERER
+    var currentPoint: CGPoint?
+    var currentRotation: Float = 0
+    let fullRotationDistance: CGFloat = 2000
     
-    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    func onPan(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .began {
+            currentPoint = sender.translation(in: sceneView)
+            currentRotation = plane.eulerAngles.y
+        } else if sender.state == .changed {
+            let newPoint = sender.translation(in: sceneView)
+            let horizontalChange = newPoint.x - currentPoint!.x
+            let rotation = 2 * Float.pi * Float(horizontalChange / fullRotationDistance)
+            plane.eulerAngles.y = currentRotation + rotation
+        }
     }
-    
+}
+
+//MARK: - PRIVATE EXTENSION
+private extension GameToolARDetector {
     func createGridMaterial(plane: SCNPlane) -> SCNMaterial {
-        
-        let cellSize: CGFloat = 0.1
         let wRepeat = Float(plane.width / cellSize)
         let hRepeat = Float(plane.height / cellSize)
         
@@ -101,3 +104,5 @@ class GameToolARDetector: NSObject, GameTool {
         return material
     }
 }
+
+
