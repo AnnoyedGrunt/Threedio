@@ -40,4 +40,12 @@ extension SCNVector3 {
             left.z * right.z
         )
     }
+    
+    static func ==(l: SCNVector3, r: SCNVector3) -> Bool {
+        return (l.x == r.x && l.y == r.y && l.z == r.z)
+    }
+    
+    static func !=(l: SCNVector3, r: SCNVector3) -> Bool {
+        return !(l == r)
+    }
 }

@@ -37,7 +37,6 @@ class GameToolBuilder: GameTool {
     var origin: SCNNode!
     var lastPositions: [SCNVector3] = []
     let positionCacheCount = 5
-    let hitter: SCNNode = SCNNode()
     
     var audioPlayer = UIApplication.shared.delegate as! AppDelegate
     
@@ -60,22 +59,21 @@ class GameToolBuilder: GameTool {
         origin = root.childNode(withName: "Origin", recursively: true)
         
         setGamePiece(named: "Block")
-        let geometry = SCNSphere(radius: 0.02)
-        hitter.geometry = geometry
-        sceneView.scene.rootNode.addChildNode(hitter)
     }
     
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         if let hit = raycast(filter: .hittable) {
-            if blockPreview == nil {
-                createPreview()
+            let currentPosition = root.convertPosition(hit.worldCoordinates, to: origin)
+            if lastPositions.isEmpty || currentPosition != lastPositions.last! {
+                if blockPreview == nil {
+                    createPreview()
+                }
+                lastPositions.append(currentPosition)
+                lastPositions = Array(lastPositions.suffix(positionCacheCount))
+                let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
+                let direction = root.convertVector(hit.localNormal, to: origin)
+                updatePreview(at: position, from: sceneView.pointOfView!.position, withDirection: direction, withScale: blockSize)
             }
-            hitter.position = hit.worldCoordinates
-            lastPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
-            lastPositions = Array(lastPositions.suffix(positionCacheCount))
-            let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
-            let direction = root.convertVector(hit.localNormal, to: origin)
-            updatePreview(at: position, from: sceneView.pointOfView!.position, withDirection: direction, withScale: blockSize)
         }
     }
     
@@ -157,22 +155,27 @@ private extension GameToolBuilder {
         let y = toGrid(position.y, withOffset: direction.y)
         let z = toGrid(position.z, withOffset: direction.z)
         
-        node.position = SCNVector3(x: x, y: y, z: z)
-        node.scale = SCNVector3(x: scale, y: scale, z: scale)
-        
-        if piece.orientation == .vertical {
-            node.eulerAngles.x = Float.pi * 0.5 * round(direction.z)
-            node.eulerAngles.z = Float.pi * -0.5 * round(direction.x)
-        } else if piece.orientation == .horizontal {
-            if direction.z < 0 {
-                node.eulerAngles.y = Float.pi
-            } else {
-                node.eulerAngles.y = Float.pi * 0.5 * sign(round(direction.x))
+        let matrixPosition = SCNMatrix4MakeTranslation(x, y, z)
+        let testShape = SCNPhysicsShape(geometry: node.geometry!, options: [SCNPhysicsShape.Option.type: SCNPhysicsShape.ShapeType.boundingBox])
+        let results = sceneView.scene.physicsWorld.convexSweepTest(with: testShape, from: matrixPosition, to: matrixPosition)
+        if results.isEmpty {
+            node.position = SCNVector3(x: x, y: y, z: z)
+            node.scale = SCNVector3(x: scale, y: scale, z: scale)
+            
+            if piece.orientation == .vertical {
+                node.eulerAngles.x = Float.pi * 0.5 * round(direction.z)
+                node.eulerAngles.z = Float.pi * -0.5 * round(direction.x)
+            } else if piece.orientation == .horizontal {
+                if direction.z < 0 {
+                    node.eulerAngles.y = Float.pi
+                } else {
+                    node.eulerAngles.y = Float.pi * 0.5 * sign(round(direction.x))
+                }
+            } else if piece.orientation == .fullHorizontal {
+                let dir: SCNVector3 = position - origin
+                let angle = atan2(dir.x, dir.z)
+                node.eulerAngles.y = angle//+ Float.pi/2
             }
-        } else if piece.orientation == .fullHorizontal {
-            let dir: SCNVector3 = position - origin
-            let angle = atan2(dir.x, dir.z)
-            node.eulerAngles.y = angle//+ Float.pi/2
         }
     }
     
