@@ -37,7 +37,6 @@ class GameToolBuilder: GameTool {
     var origin: SCNNode!
     var lastPositions: [SCNVector3] = []
     let positionCacheCount = 5
-    let hitter: SCNNode = SCNNode()
     
     var audioPlayer = UIApplication.shared.delegate as! AppDelegate
     
@@ -60,9 +59,6 @@ class GameToolBuilder: GameTool {
         origin = root.childNode(withName: "Origin", recursively: true)
         
         setGamePiece(named: "Block")
-        let geometry = SCNSphere(radius: 0.02)
-        hitter.geometry = geometry
-        sceneView.scene.rootNode.addChildNode(hitter)
     }
     
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -70,7 +66,6 @@ class GameToolBuilder: GameTool {
             if blockPreview == nil {
                 createPreview()
             }
-            hitter.position = hit.worldCoordinates
             lastPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
             lastPositions = Array(lastPositions.suffix(positionCacheCount))
             let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
