@@ -44,7 +44,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         if isInitial {
             deleteButton.isHidden = true
-            // modifyButton.isHidden = true
+            modifyButton.isHidden = true
             self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[0], for: .normal)
             self.nameWorldTextField.text = "New World \(WorldsDataManager.shared.worldCreated)"
         }
