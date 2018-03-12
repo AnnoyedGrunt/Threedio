@@ -24,21 +24,11 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     @IBOutlet weak var MenuView: UICustomView!
     
     
+    @IBOutlet weak var menuButton: UIButton!
     
-    @IBOutlet weak var menuButton2: UIButton!
-    
-    
-    @IBAction func menu2(_ sender: Any) {
-        MenuView.isHidden = !MenuView.isHidden
-        if MenuView.isHidden {
-            menuButton2.setImage(#imageLiteral(resourceName: "Path 2"), for: .normal)
-        } else {
-            menuButton2.setImage(#imageLiteral(resourceName: "Path 3"), for: .normal)
-        }
-        
+    @IBAction func menu(_ sender: Any) {
+       MenuView.isHidden = !MenuView.isHidden
     }
-    
-    
     
     var controller: GameController?
     var builderTool: GameToolBuilder!
@@ -98,7 +88,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
         deleterButton.isHidden = !value
         placerButton.isHidden = !value
         manipulatorButton.isHidden = !value
-        // menuButton2.isHidden = !value
+        menuButton.isHidden = !value
     }
     
     @IBAction func onDeleterTap(_ sender: UIButton) {
