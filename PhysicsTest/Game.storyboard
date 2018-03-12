@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rXP-p4-xpa">
-    <device id="ipad10_5" orientation="landscape">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,15 +18,15 @@
             <objects>
                 <viewController storyboardIdentifier="game" id="rXP-p4-xpa" customClass="ViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LEC-Va-CPM" userLabel="Container">
-                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nET-Cy-RKk">
-                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                                 <gestureRecognizers/>
                             </arscnView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80l-44-6b5" userLabel="Hammer">
-                                <rect key="frame" x="999" y="239" width="73" height="76"/>
+                                <rect key="frame" x="695" y="50" width="63" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="1wL-6v-9xY"/>
                                     <constraint firstAttribute="height" constant="66" id="A4s-KM-M0M"/>
@@ -42,10 +42,10 @@
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="I1r-iN-VqU"/>
-                                        <include reference="A4s-KM-M0M"/>
-                                        <include reference="z8d-Ra-7Wt"/>
                                         <exclude reference="1wL-6v-9xY"/>
+                                        <include reference="A4s-KM-M0M"/>
+                                        <exclude reference="I1r-iN-VqU"/>
+                                        <include reference="z8d-Ra-7Wt"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWw-nE-Iuo" userLabel="Cube">
-                                <rect key="frame" x="992" y="372" width="80" height="90"/>
+                                <rect key="frame" x="688" y="150" width="70" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="Bmc-rY-c50"/>
                                     <constraint firstAttribute="width" constant="70" id="IBX-Xv-YOe"/>
@@ -69,10 +69,10 @@
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="yRk-ZM-Zca"/>
+                                        <exclude reference="Bmc-rY-c50"/>
                                         <include reference="IBX-Xv-YOe"/>
                                         <include reference="ZEh-Mq-TTX"/>
-                                        <exclude reference="Bmc-rY-c50"/>
+                                        <exclude reference="yRk-ZM-Zca"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -221,14 +221,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Crosshair" translatesAutoresizingMaskIntoConstraints="NO" id="x8x-8Z-9Tl">
-                                <rect key="frame" x="540" y="401" width="32" height="32"/>
+                                <rect key="frame" x="390" y="172" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="K7I-nJ-e9d"/>
                                     <constraint firstAttribute="width" constant="32" id="MXY-RS-qr8"/>
                                 </constraints>
                             </imageView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5o-E0-jea" userLabel="ShapeView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="40" y="64" width="80" height="559"/>
+                                <rect key="frame" x="54" y="10" width="80" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="535" id="GHu-vf-9Lp"/>
                                     <constraint firstAttribute="height" constant="250" id="Qun-OQ-ZGS"/>
@@ -249,26 +249,26 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Qun-OQ-ZGS"/>
-                                        <exclude reference="q0U-qc-LNs"/>
                                         <exclude reference="Upx-PF-mf3"/>
+                                        <exclude reference="q0U-qc-LNs"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Upx-PF-mf3"/>
                                         <exclude reference="GHu-vf-9Lp"/>
+                                        <include reference="Upx-PF-mf3"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="Qun-OQ-ZGS"/>
                                         <exclude reference="GHu-vf-9Lp"/>
+                                        <include reference="Qun-OQ-ZGS"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="q0U-qc-LNs"/>
                                         <exclude reference="GHu-vf-9Lp"/>
+                                        <include reference="q0U-qc-LNs"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -276,7 +276,7 @@
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nf-k6-z3n" userLabel="ColorView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="40" y="64" width="80" height="559"/>
+                                <rect key="frame" x="54" y="10" width="80" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="33f-r7-tN3"/>
                                     <constraint firstAttribute="width" constant="80" id="7QU-9c-2pO"/>
@@ -297,17 +297,17 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="33f-r7-tN3"/>
                                         <exclude reference="Frs-qF-mO1"/>
                                         <exclude reference="Jv3-PY-eru"/>
                                         <exclude reference="y77-zq-fsF"/>
-                                        <exclude reference="33f-r7-tN3"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
+                                        <exclude reference="33f-r7-tN3"/>
                                         <include reference="Jv3-PY-eru"/>
                                         <exclude reference="cQG-VE-Ua2"/>
-                                        <exclude reference="33f-r7-tN3"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
@@ -327,7 +327,7 @@
                                 </connections>
                             </containerView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f91-t1-bCi" userLabel="Hand">
-                                <rect key="frame" x="992" y="514.5" width="80" height="85"/>
+                                <rect key="frame" x="688" y="255" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="0Bi-MM-Ly6"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="DCL-Ep-2rX"/>
@@ -340,27 +340,27 @@
                                     <constraint firstAttribute="width" constant="80" id="sV7-ne-gwn"/>
                                     <constraint firstAttribute="height" constant="85" id="vpW-jA-moO"/>
                                 </constraints>
-                                <state key="normal" image="Hand"/>
+                                <state key="normal" image="NUOVA MANO"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="RFN-sb-wK9"/>
-                                        <exclude reference="m33-uV-fjU"/>
-                                        <exclude reference="jet-T4-WIY"/>
-                                        <exclude reference="c6c-aG-vfF"/>
                                         <exclude reference="0Bi-MM-Ly6"/>
                                         <exclude reference="DCL-Ep-2rX"/>
+                                        <exclude reference="RFN-sb-wK9"/>
+                                        <exclude reference="c6c-aG-vfF"/>
+                                        <exclude reference="jet-T4-WIY"/>
+                                        <exclude reference="m33-uV-fjU"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="RFN-sb-wK9"/>
-                                        <exclude reference="m33-uV-fjU"/>
-                                        <exclude reference="jet-T4-WIY"/>
-                                        <exclude reference="sV7-ne-gwn"/>
-                                        <include reference="c6c-aG-vfF"/>
                                         <include reference="0Bi-MM-Ly6"/>
-                                        <exclude reference="vpW-jA-moO"/>
                                         <exclude reference="DCL-Ep-2rX"/>
+                                        <exclude reference="RFN-sb-wK9"/>
+                                        <include reference="c6c-aG-vfF"/>
+                                        <exclude reference="jet-T4-WIY"/>
+                                        <exclude reference="m33-uV-fjU"/>
+                                        <exclude reference="sV7-ne-gwn"/>
+                                        <exclude reference="vpW-jA-moO"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -368,11 +368,11 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIG-c5-7gW" userLabel="selectorSwitcher" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="40" y="709" width="80" height="80"/>
+                                <rect key="frame" x="59" y="284" width="70" height="70"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="FSa-7t-4nC"/>
-                                    <constraint firstAttribute="width" constant="80" id="LxA-Z4-DkK"/>
+                                    <constraint firstAttribute="height" constant="70" id="FSa-7t-4nC"/>
+                                    <constraint firstAttribute="width" constant="70" id="LxA-Z4-DkK"/>
                                     <constraint firstAttribute="width" constant="70" id="YjC-Ma-oPH"/>
                                     <constraint firstAttribute="height" constant="70" id="qtx-E5-Can"/>
                                     <constraint firstAttribute="width" constant="70" id="ssY-kP-wKg"/>
@@ -388,33 +388,37 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="ssY-kP-wKg"/>
-                                        <exclude reference="qtx-E5-Can"/>
                                         <exclude reference="YjC-Ma-oPH"/>
+                                        <exclude reference="qtx-E5-Can"/>
+                                        <exclude reference="ssY-kP-wKg"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="ssY-kP-wKg"/>
-                                        <include reference="qtx-E5-Can"/>
-                                        <exclude reference="LxA-Z4-DkK"/>
                                         <exclude reference="FSa-7t-4nC"/>
+                                        <exclude reference="LxA-Z4-DkK"/>
                                         <exclude reference="YjC-Ma-oPH"/>
+                                        <include reference="qtx-E5-Can"/>
+                                        <include reference="ssY-kP-wKg"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="switchSelectors:" destination="rXP-p4-xpa" eventType="touchUpInside" id="VYJ-a2-cQo"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ0-df-q22">
-                                <rect key="frame" x="513" y="784" width="87" height="30"/>
-                                <state key="normal" title="Impostazioni"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-OX-AGS">
+                                <rect key="frame" x="361" y="324" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VCy-eb-xeL"/>
+                                    <constraint firstAttribute="width" constant="90" id="t7Z-1j-329"/>
+                                </constraints>
+                                <state key="normal" title="giù" image="Path 2"/>
                                 <connections>
-                                    <action selector="menu:" destination="rXP-p4-xpa" eventType="touchUpInside" id="HBb-m1-Vum"/>
+                                    <action selector="menu2:" destination="rXP-p4-xpa" eventType="touchUpInside" id="EJc-oS-rRm"/>
                                 </connections>
                             </button>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcU-28-fRO" userLabel="MenuView" customClass="UICustomView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="431" y="716" width="250" height="60"/>
+                                <rect key="frame" x="281" y="255" width="250" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="WDi-JE-ODB"/>
                                     <constraint firstAttribute="height" constant="60" id="xiv-6C-LQx"/>
@@ -431,10 +435,8 @@
                             <constraint firstItem="80l-44-6b5" firstAttribute="top" secondItem="mDa-WQ-dDl" secondAttribute="top" constant="10" id="2KU-kD-wcS">
                                 <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                             </constraint>
-                            <constraint firstItem="iJ0-df-q22" firstAttribute="centerX" secondItem="x8x-8Z-9Tl" secondAttribute="centerX" id="2e2-Sj-yT0"/>
                             <constraint firstItem="f91-t1-bCi" firstAttribute="top" secondItem="WWw-nE-Iuo" secondAttribute="bottom" constant="35" id="4GM-xv-aLK"/>
                             <constraint firstItem="mDa-WQ-dDl" firstAttribute="bottom" secondItem="f91-t1-bCi" secondAttribute="bottom" constant="30" id="4w8-rJ-5KF"/>
-                            <constraint firstItem="mDa-WQ-dDl" firstAttribute="bottom" secondItem="iJ0-df-q22" secondAttribute="bottom" constant="10" id="5FS-4B-UCO"/>
                             <constraint firstItem="EIG-c5-7gW" firstAttribute="leading" secondItem="mDa-WQ-dDl" secondAttribute="leading" constant="10" id="5Lf-hZ-z2g">
                                 <variation key="heightClass=compact-widthClass=compact" constant="15"/>
                             </constraint>
@@ -456,16 +458,13 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="2"/>
                             </constraint>
                             <constraint firstItem="6nf-k6-z3n" firstAttribute="leading" secondItem="mDa-WQ-dDl" secondAttribute="leading" constant="20" id="AoP-6o-w9G"/>
-                            <constraint firstItem="mDa-WQ-dDl" firstAttribute="bottom" secondItem="iJ0-df-q22" secondAttribute="bottom" constant="20" id="Bzb-XI-HAB"/>
-                            <constraint firstItem="iJ0-df-q22" firstAttribute="centerX" secondItem="x8x-8Z-9Tl" secondAttribute="centerX" id="E5r-W3-wkB"/>
                             <constraint firstItem="mDa-WQ-dDl" firstAttribute="bottom" secondItem="EIG-c5-7gW" secondAttribute="bottom" constant="40" id="GHP-Vf-MgU">
-                                <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="55"/>
                             </constraint>
                             <constraint firstItem="6nf-k6-z3n" firstAttribute="top" secondItem="LEC-Va-CPM" secondAttribute="top" constant="20" id="Ggb-3N-5Xf">
                                 <variation key="heightClass=regular-widthClass=regular" constant="64"/>
                             </constraint>
                             <constraint firstItem="6nf-k6-z3n" firstAttribute="leading" secondItem="EIG-c5-7gW" secondAttribute="leading" id="GuO-fO-zna"/>
-                            <constraint firstItem="iJ0-df-q22" firstAttribute="top" secondItem="gcU-28-fRO" secondAttribute="bottom" constant="8" symbolic="YES" id="H0e-9S-dR2"/>
                             <constraint firstItem="6nf-k6-z3n" firstAttribute="top" secondItem="mDa-WQ-dDl" secondAttribute="top" constant="10" id="IKb-eG-wcV"/>
                             <constraint firstItem="WWw-nE-Iuo" firstAttribute="centerY" secondItem="nET-Cy-RKk" secondAttribute="centerY" id="KJq-db-J6S">
                                 <variation key="heightClass=compact-widthClass=compact" constant="2.5"/>
@@ -525,10 +524,12 @@
                             </constraint>
                             <constraint firstItem="6nf-k6-z3n" firstAttribute="leading" secondItem="mDa-WQ-dDl" secondAttribute="leading" constant="40" id="kHo-ZZ-OLq"/>
                             <constraint firstItem="mDa-WQ-dDl" firstAttribute="trailing" secondItem="f91-t1-bCi" secondAttribute="trailing" constant="20" id="kt5-GR-ZaY"/>
+                            <constraint firstItem="OVU-OX-AGS" firstAttribute="top" secondItem="gcU-28-fRO" secondAttribute="bottom" constant="9" id="msX-j0-gTl"/>
                             <constraint firstItem="v5o-E0-jea" firstAttribute="top" secondItem="mDa-WQ-dDl" secondAttribute="top" constant="20" id="ou8-bb-EKd"/>
                             <constraint firstItem="v5o-E0-jea" firstAttribute="leading" secondItem="mDa-WQ-dDl" secondAttribute="leading" constant="40" id="qhr-OA-sse"/>
                             <constraint firstItem="mDa-WQ-dDl" firstAttribute="bottom" secondItem="f91-t1-bCi" secondAttribute="bottom" constant="20" id="rtT-6M-p9K"/>
                             <constraint firstItem="EIG-c5-7gW" firstAttribute="bottom" secondItem="mDa-WQ-dDl" secondAttribute="bottom" constant="10" id="skT-7l-Okv"/>
+                            <constraint firstItem="OVU-OX-AGS" firstAttribute="centerX" secondItem="x8x-8Z-9Tl" secondAttribute="centerX" id="tPy-yb-wjE"/>
                             <constraint firstItem="v5o-E0-jea" firstAttribute="top" secondItem="6nf-k6-z3n" secondAttribute="top" id="tW0-ow-8Rf"/>
                             <constraint firstItem="mDa-WQ-dDl" firstAttribute="trailing" secondItem="WWw-nE-Iuo" secondAttribute="trailing" constant="40" id="ts3-WE-XhT"/>
                             <constraint firstItem="mDa-WQ-dDl" firstAttribute="trailing" secondItem="f91-t1-bCi" secondAttribute="trailing" constant="40" id="vM0-ad-02X"/>
@@ -541,135 +542,131 @@
                             </constraint>
                             <constraint firstItem="WWw-nE-Iuo" firstAttribute="centerX" secondItem="f91-t1-bCi" secondAttribute="centerX" id="yOh-Za-hDg"/>
                             <constraint firstItem="EIG-c5-7gW" firstAttribute="leading" secondItem="mDa-WQ-dDl" secondAttribute="leading" constant="20" id="yld-AG-eVC"/>
+                            <constraint firstItem="mDa-WQ-dDl" firstAttribute="bottom" secondItem="OVU-OX-AGS" secondAttribute="bottom" id="zIl-XN-J6l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mDa-WQ-dDl"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="MKZ-6a-A9A"/>
-                                <exclude reference="VFr-uB-dLU"/>
-                                <exclude reference="9u9-RQ-dCZ"/>
-                                <exclude reference="eR2-82-zGe"/>
-                                <exclude reference="7sb-Pa-Kgs"/>
-                                <exclude reference="fhJ-nh-dgi"/>
-                                <exclude reference="5FS-4B-UCO"/>
-                                <exclude reference="kt5-GR-ZaY"/>
-                                <exclude reference="OqZ-W4-n4L"/>
-                                <exclude reference="e9g-7G-rTV"/>
-                                <exclude reference="brk-S3-FLF"/>
                                 <exclude reference="4w8-rJ-5KF"/>
-                                <exclude reference="rtT-6M-p9K"/>
                                 <exclude reference="6la-qj-6ah"/>
+                                <exclude reference="7sb-Pa-Kgs"/>
+                                <exclude reference="9u9-RQ-dCZ"/>
+                                <exclude reference="MKZ-6a-A9A"/>
+                                <exclude reference="OqZ-W4-n4L"/>
                                 <exclude reference="RTp-nQ-jF9"/>
+                                <exclude reference="VFr-uB-dLU"/>
                                 <exclude reference="bGl-6I-wnC"/>
+                                <exclude reference="brk-S3-FLF"/>
+                                <exclude reference="e9g-7G-rTV"/>
+                                <exclude reference="eR2-82-zGe"/>
+                                <exclude reference="fhJ-nh-dgi"/>
+                                <exclude reference="kt5-GR-ZaY"/>
+                                <exclude reference="rtT-6M-p9K"/>
                                 <exclude reference="xPU-ea-Obj"/>
-                                <exclude reference="ou8-bb-EKd"/>
+                                <exclude reference="AoP-6o-w9G"/>
+                                <exclude reference="Ggb-3N-5Xf"/>
+                                <exclude reference="GuO-fO-zna"/>
+                                <exclude reference="IKb-eG-wcV"/>
+                                <exclude reference="Rw3-PO-GVp"/>
+                                <exclude reference="SUh-hl-v4F"/>
+                                <exclude reference="Uah-ue-WA3"/>
+                                <exclude reference="hac-DV-8xx"/>
+                                <exclude reference="jTq-D6-3Cn"/>
+                                <exclude reference="kHo-ZZ-OLq"/>
+                                <exclude reference="1jg-zE-awT"/>
+                                <exclude reference="6tT-pc-LVn"/>
+                                <exclude reference="RL5-0p-ARA"/>
                                 <exclude reference="RcV-E2-V0p"/>
                                 <exclude reference="feV-bG-qgo"/>
-                                <exclude reference="1jg-zE-awT"/>
-                                <exclude reference="RL5-0p-ARA"/>
+                                <exclude reference="ou8-bb-EKd"/>
                                 <exclude reference="qhr-OA-sse"/>
-                                <exclude reference="6tT-pc-LVn"/>
-                                <exclude reference="AoP-6o-w9G"/>
-                                <exclude reference="Rw3-PO-GVp"/>
-                                <exclude reference="GuO-fO-zna"/>
-                                <exclude reference="SUh-hl-v4F"/>
-                                <exclude reference="kHo-ZZ-OLq"/>
-                                <exclude reference="jTq-D6-3Cn"/>
-                                <exclude reference="Uah-ue-WA3"/>
-                                <exclude reference="IKb-eG-wcV"/>
-                                <exclude reference="Ggb-3N-5Xf"/>
-                                <exclude reference="hac-DV-8xx"/>
-                                <exclude reference="yld-AG-eVC"/>
-                                <exclude reference="Zk2-DU-qZQ"/>
-                                <exclude reference="WrN-pb-624"/>
                                 <exclude reference="5Lf-hZ-z2g"/>
+                                <exclude reference="WrN-pb-624"/>
+                                <exclude reference="Zk2-DU-qZQ"/>
                                 <exclude reference="skT-7l-Okv"/>
                                 <exclude reference="wqD-Tg-Qro"/>
-                                <exclude reference="E5r-W3-wkB"/>
+                                <exclude reference="yld-AG-eVC"/>
                                 <exclude reference="2KU-kD-wcS"/>
                                 <exclude reference="yOh-Za-hDg"/>
-                                <exclude reference="inR-Uf-JEN"/>
                                 <exclude reference="4GM-xv-aLK"/>
+                                <exclude reference="inR-Uf-JEN"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="6la-qj-6ah"/>
                                 <include reference="MKZ-6a-A9A"/>
                                 <include reference="eR2-82-zGe"/>
-                                <include reference="6la-qj-6ah"/>
                                 <include reference="xPU-ea-Obj"/>
-                                <include reference="RL5-0p-ARA"/>
                                 <include reference="SUh-hl-v4F"/>
+                                <include reference="RL5-0p-ARA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
-                                <exclude reference="VFr-uB-dLU"/>
-                                <exclude reference="9u9-RQ-dCZ"/>
-                                <exclude reference="7sb-Pa-Kgs"/>
-                                <exclude reference="fhJ-nh-dgi"/>
-                                <exclude reference="Bzb-XI-HAB"/>
-                                <include reference="5FS-4B-UCO"/>
-                                <exclude reference="kt5-GR-ZaY"/>
-                                <exclude reference="ts3-WE-XhT"/>
-                                <exclude reference="OqZ-W4-n4L"/>
-                                <exclude reference="e9g-7G-rTV"/>
                                 <exclude reference="4w8-rJ-5KF"/>
-                                <exclude reference="rtT-6M-p9K"/>
+                                <exclude reference="7sb-Pa-Kgs"/>
+                                <exclude reference="9u9-RQ-dCZ"/>
                                 <exclude reference="GHP-Vf-MgU"/>
-                                <exclude reference="Yn5-6G-a86"/>
+                                <exclude reference="OqZ-W4-n4L"/>
                                 <exclude reference="RTp-nQ-jF9"/>
+                                <exclude reference="VFr-uB-dLU"/>
+                                <exclude reference="Yn5-6G-a86"/>
                                 <exclude reference="bGl-6I-wnC"/>
+                                <exclude reference="e9g-7G-rTV"/>
+                                <exclude reference="fhJ-nh-dgi"/>
+                                <exclude reference="kt5-GR-ZaY"/>
+                                <exclude reference="rtT-6M-p9K"/>
+                                <exclude reference="ts3-WE-XhT"/>
                                 <exclude reference="vM0-ad-02X"/>
-                                <exclude reference="RcV-E2-V0p"/>
-                                <exclude reference="tW0-ow-8Rf"/>
-                                <include reference="1jg-zE-awT"/>
-                                <exclude reference="qhr-OA-sse"/>
-                                <exclude reference="bOj-gI-cwt"/>
-                                <exclude reference="kHo-ZZ-OLq"/>
-                                <exclude reference="jTq-D6-3Cn"/>
                                 <exclude reference="5z0-go-Zqg"/>
-                                <exclude reference="Uah-ue-WA3"/>
                                 <include reference="IKb-eG-wcV"/>
-                                <exclude reference="yld-AG-eVC"/>
-                                <exclude reference="WrN-pb-624"/>
-                                <exclude reference="vQU-cS-yWN"/>
+                                <exclude reference="Uah-ue-WA3"/>
+                                <exclude reference="jTq-D6-3Cn"/>
+                                <exclude reference="kHo-ZZ-OLq"/>
+                                <include reference="1jg-zE-awT"/>
+                                <exclude reference="RcV-E2-V0p"/>
+                                <exclude reference="bOj-gI-cwt"/>
+                                <exclude reference="qhr-OA-sse"/>
+                                <exclude reference="tW0-ow-8Rf"/>
                                 <include reference="5Lf-hZ-z2g"/>
+                                <exclude reference="WrN-pb-624"/>
                                 <exclude reference="skT-7l-Okv"/>
+                                <exclude reference="vQU-cS-yWN"/>
                                 <include reference="wqD-Tg-Qro"/>
-                                <include reference="E5r-W3-wkB"/>
-                                <exclude reference="7Mw-Fy-c5Z"/>
+                                <exclude reference="yld-AG-eVC"/>
                                 <include reference="2KU-kD-wcS"/>
+                                <exclude reference="7Mw-Fy-c5Z"/>
                                 <include reference="yOh-Za-hDg"/>
-                                <exclude reference="inR-Uf-JEN"/>
                                 <exclude reference="4GM-xv-aLK"/>
                                 <exclude reference="PQa-PU-uCv"/>
+                                <exclude reference="inR-Uf-JEN"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="brk-S3-FLF"/>
                                 <exclude reference="GHP-Vf-MgU"/>
-                                <include reference="ou8-bb-EKd"/>
-                                <include reference="feV-bG-qgo"/>
-                                <exclude reference="tW0-ow-8Rf"/>
-                                <exclude reference="bOj-gI-cwt"/>
-                                <include reference="AoP-6o-w9G"/>
+                                <include reference="brk-S3-FLF"/>
                                 <exclude reference="5z0-go-Zqg"/>
+                                <include reference="AoP-6o-w9G"/>
                                 <include reference="hac-DV-8xx"/>
+                                <exclude reference="bOj-gI-cwt"/>
+                                <include reference="feV-bG-qgo"/>
+                                <include reference="ou8-bb-EKd"/>
+                                <exclude reference="tW0-ow-8Rf"/>
                                 <include reference="Zk2-DU-qZQ"/>
                                 <exclude reference="vQU-cS-yWN"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <exclude reference="tW0-ow-8Rf"/>
-                                <include reference="6tT-pc-LVn"/>
-                                <exclude reference="bOj-gI-cwt"/>
-                                <include reference="Rw3-PO-GVp"/>
-                                <include reference="GuO-fO-zna"/>
                                 <exclude reference="5z0-go-Zqg"/>
                                 <include reference="Ggb-3N-5Xf"/>
+                                <include reference="GuO-fO-zna"/>
+                                <include reference="Rw3-PO-GVp"/>
+                                <include reference="6tT-pc-LVn"/>
+                                <exclude reference="bOj-gI-cwt"/>
+                                <exclude reference="tW0-ow-8Rf"/>
                             </mask>
                         </variation>
                     </view>
@@ -680,7 +677,7 @@
                         <outlet property="colorView" destination="6nf-k6-z3n" id="CiU-N1-OA5"/>
                         <outlet property="deleterButton" destination="80l-44-6b5" id="OZN-5F-xXF"/>
                         <outlet property="manipulatorButton" destination="f91-t1-bCi" id="Bvr-6P-4TF"/>
-                        <outlet property="menuButton" destination="iJ0-df-q22" id="i4u-pq-UgN"/>
+                        <outlet property="menuButton2" destination="OVU-OX-AGS" id="I2S-S3-KW1"/>
                         <outlet property="placerButton" destination="WWw-nE-Iuo" id="4Gf-BK-7p7"/>
                         <outlet property="sceneView" destination="nET-Cy-RKk" id="ATu-8G-B18"/>
                         <outlet property="selectorSwitcher" destination="EIG-c5-7gW" id="89v-gh-zZ1"/>
@@ -689,24 +686,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z00-Ip-Lkb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-464" y="-523"/>
+            <point key="canvasLocation" x="-464.02877697841728" y="-523.02158273381303"/>
         </scene>
         <!--Color Controller-->
         <scene sceneID="XsI-il-wfw">
             <objects>
                 <viewController id="8Xd-ht-gn7" customClass="ColorController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IPH-Gz-feJ" userLabel="ColorCanvas">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frB-po-KZa" userLabel="ColorScroll" customClass="UICustomScrollView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                                <rect key="frame" x="44.333333333333343" y="0.0" width="51" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-ml-oWU" userLabel="ColorStack">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="971"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="971"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNK-kA-WIB" userLabel="White" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.98831622340000003" green="1" blue="0.98348844879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="XTO-Fv-QWT"/>
@@ -725,7 +722,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwP-1Y-qgS" userLabel="Yellow" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="81" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="81" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.95167510060000005" green="0.90647961070000005" blue="0.25808085609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Yellow">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -735,7 +732,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEz-2a-HfP" userLabel="Orange" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="162" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="162" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.94945323469999998" green="0.52491061530000005" blue="0.16892836080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <size key="titleShadowOffset" width="2" height="2"/>
                                                 <state key="normal" title="Orange">
@@ -746,7 +743,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zd-0R-93r" userLabel="Red" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="243" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="243" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.94945323469999998" green="0.2862577563" blue="0.13075624290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Red">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -756,7 +753,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qD-mh-RQe" userLabel="Purple" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="324" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="324" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.90291212929999998" green="0.1957977192" blue="0.85239025450000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Purple">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -766,7 +763,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fa1-om-jQg" userLabel="Blue" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="405" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="405" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.22865229409999999" green="0.1423500778" blue="0.94945323469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Blue">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -776,7 +773,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7H-Lx-4we" userLabel="Teal" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="486" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="486" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.35502169039999998" green="0.62014734019999995" blue="0.96621346470000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Teal">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -786,7 +783,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-Xe-fqX" userLabel="Sky" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="567" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="567" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.43620858289999997" green="0.87528201189999999" blue="0.94945323469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Sky">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -796,7 +793,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-z7-jou" userLabel="Green" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="648" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="648" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.2008671306" green="0.94945323469999998" blue="0.22689194770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Green">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -806,7 +803,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro6-ce-z89" userLabel="Gray" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="729" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="729" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.77189086289999997" green="0.74933358520000004" blue="0.70212143029999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Gray">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -817,7 +814,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRT-fQ-6Pb" userLabel="Brown" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="810" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="810" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.59765107890000002" green="0.45017646779999998" blue="0.27903095779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Brown">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -827,7 +824,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpq-8E-doI" userLabel="Black" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="891" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="891" width="51" height="80"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Black">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -876,11 +873,11 @@
             <objects>
                 <viewController id="dgh-om-tTZ" customClass="ShapeController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UmK-gc-qGT" userLabel="ShapeCanvas">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnE-j9-b4u" userLabel="ShapeScroll">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                                <rect key="frame" x="44" y="0.0" width="80" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-O7-EOq" userLabel="ShapeStack">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
@@ -900,7 +897,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9u-ib-QeC" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="79.5" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="79.666666666666671" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -932,7 +929,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cylinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uB-yt-5i0" userLabel="Label">
-                                                        <rect key="frame" x="0.5" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.6666666666666643" y="80.333333333333343" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -954,7 +951,7 @@
                                                 <rect key="frame" x="0.0" y="200" width="80" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sphere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBL-aA-3Zf" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -998,7 +995,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ramp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8a-Fq-687" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1031,7 +1028,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-BQ-Uw6" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="80.333333333333314" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1079,7 +1076,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-2U-IBU" userLabel="Label">
-                                                        <rect key="frame" x="0.5" y="80" width="80" height="20.5"/>
+                                                        <rect key="frame" x="0.6666666666666643" y="80.333333333333371" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1158,7 +1155,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-D3-lPI">
-                                <rect key="frame" x="11" y="10" width="40" height="40"/>
+                                <rect key="frame" x="9" y="4" width="40" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="exit" image="Door"/>
                                 <connections>
@@ -1174,10 +1171,10 @@
                                     <action selector="stopButto:" destination="jfO-CA-fn3" eventType="touchUpInside" id="vjT-gc-BLb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POy-iw-bx8">
-                                <rect key="frame" x="185" y="15" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POy-iw-bx8">
+                                <rect key="frame" x="194" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Bomba"/>
+                                <state key="normal" image="bomba"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="40p-5Y-EwG"/>
@@ -1189,7 +1186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2G-Fz-QdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="99"/>
+            <point key="canvasLocation" x="-358.27338129496405" y="98.561151079136692"/>
         </scene>
     </scenes>
     <resources>
@@ -1201,7 +1198,10 @@
         <image name="Group" width="400" height="400"/>
         <image name="Hammer" width="148" height="143"/>
         <image name="Hand" width="128" height="129"/>
+        <image name="NUOVA MANO" width="2151" height="2541"/>
+        <image name="Path 2" width="476" height="190"/>
         <image name="Polaroid" width="436" height="394"/>
+        <image name="bomba" width="385" height="361"/>
         <image name="cinepresa" width="511" height="480"/>
         <image name="palla" width="341" height="330"/>
         <image name="rampa" width="718" height="717"/>
