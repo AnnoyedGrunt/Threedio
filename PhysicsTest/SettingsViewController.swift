@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBOutlet weak var icoButton: UIButton!
-    @IBOutlet weak var modifyButton: UIButton!
+    
     @IBOutlet weak var backView: UIView!
     var isInitial = false
     var selectedWorld: Int?
@@ -44,7 +44,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         if isInitial {
             deleteButton.isHidden = true
-            modifyButton.isHidden = true
+           
             self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[0], for: .normal)
             self.nameWorldTextField.text = "New World \(WorldsDataManager.shared.worldCreated)"
         }
@@ -129,11 +129,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    //Modify a world
-    @IBAction func modifyWorld(_ sender: Any) {
-        WorldsDataManager.shared.worlds[selectedWorld!].icoWorld = WorldsDataManager.shared.icons.index(of: self.icoButton.currentBackgroundImage!)
-        WorldsDataManager.shared.worlds[selectedWorld!].nameWorld = nameWorldTextField.text!
-        navigationController?.popViewController(animated: true)
-    }
+
     
 }

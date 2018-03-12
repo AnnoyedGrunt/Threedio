@@ -13,6 +13,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     final let cellSpacing: CGFloat = 20
     var isIphone: Bool = false
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     //to play audio
@@ -34,18 +35,24 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         
         //CollectionView FlowLayout
         let collectionViewFlowLayot = UICollectionViewFlowLayout()
+        
+        
         collectionViewFlowLayot.sectionInset = UIEdgeInsets(top: 0, left: cellSpacing, bottom: 0, right: cellSpacing)
-        collectionViewFlowLayot.minimumLineSpacing = 50
-        collectionViewFlowLayot.headerReferenceSize = CGSize(width: 50, height: 50)
-        collectionViewFlowLayot.footerReferenceSize = CGSize(width: 50, height: 50)
+        collectionViewFlowLayot.minimumLineSpacing = 20
+    
+        
         if isIphone {
             collectionViewFlowLayot.scrollDirection = .horizontal
+            collectionViewFlowLayot.headerReferenceSize = CGSize(width: 10, height: 10)
+            collectionViewFlowLayot.footerReferenceSize = CGSize(width: 10, height: 10)
             
         } else {
             collectionViewFlowLayot.scrollDirection = .vertical
+            collectionViewFlowLayot.headerReferenceSize = CGSize(width: 50, height: 50)
+            collectionViewFlowLayot.footerReferenceSize = CGSize(width: 50, height: 50)
         }
         
-        self.collectionView.setCollectionViewLayout(collectionViewFlowLayot, animated: true)
+    self.collectionView.setCollectionViewLayout(collectionViewFlowLayot, animated: true)
         
     }
     
@@ -70,9 +77,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     
     //Size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenSize: CGRect = UIScreen.main.bounds
         if isIphone {
-            
             //return CGSize(width: screenSize.width / 3, height: screenSize.height / 2 + 50)
             return CGSize(width: 300, height: 300)
         } else {
@@ -114,7 +119,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        self.performSegue(withIdentifier: "levelToSettings", sender: self)
 //    }
-    
+//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = self.collectionView!.indexPathsForSelectedItems![0] as NSIndexPath
         let settingsVC = segue.destination as! SettingsViewController
