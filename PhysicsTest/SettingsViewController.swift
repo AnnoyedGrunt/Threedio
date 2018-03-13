@@ -82,6 +82,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             SaveManager.shared.saveLevel(name: nameWorldTextField.text!, img: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!)
         }
         
+        SaveManager.shared.actualLevel = self.nameWorldTextField.text
+        
         if avPlayer.isPlaying {
             self.avPlayer.stopMusic()
         }

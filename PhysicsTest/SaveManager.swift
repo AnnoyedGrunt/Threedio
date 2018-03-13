@@ -24,6 +24,9 @@ final class SaveManager {
     //setting fileManager to save/load scenes files
     let fileManager = FileManager.default
     
+    //name of the actual level
+    var actualLevel: String?
+    
     
     
     //function to save a level in core data
@@ -101,14 +104,6 @@ final class SaveManager {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
-        
-//        for element in self.levels {
-//            if element.value(forKey: "name") as? String == oldName {
-//                    self.saveLevel(name: newName, img: newIcon)
-//                    self.deleteLevel(name: oldName, edited: true)
-//                    break
-//            }
-//        }
         
         for (index, element) in self.levels.enumerated() {
             if element.value(forKey: "name") as? String == oldName {
@@ -200,7 +195,7 @@ final class SaveManager {
     //function to get scene file url
     func getSceneUrl(levelName: String) -> URL {
         let documentDirUrl = try! self.fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let fileUrl = documentDirUrl.appendingPathComponent(levelName)
+        let fileUrl = documentDirUrl.appendingPathComponent("\(levelName).scn")
         return fileUrl
     }
     
