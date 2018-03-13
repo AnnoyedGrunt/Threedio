@@ -46,6 +46,8 @@
 		A3CA76342040A958007810C7 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CA76332040A958007810C7 /* ShapeController.swift */; };
 		A3DD310D2037461D002639EE /* car.scn in Resources */ = {isa = PBXBuildFile; fileRef = A3DD310C2037461D002639EE /* car.scn */; };
 		A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3C471202EF218005CE743 /* GamePiece.swift */; };
+		B95D5E7A20580DCE0017E13F /* CoreDataDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95D5E7820580DCE0017E13F /* CoreDataDB.xcdatamodeld */; };
+		B95D5E7E20580F7F0017E13F /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D5E7D20580F7F0017E13F /* SaveManager.swift */; };
 		B9DDCE4C2052CE9800112668 /* WorldsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE462052CE9800112668 /* WorldsDataManager.swift */; };
 		B9DDCE4D2052CE9800112668 /* LevelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */; };
 		B9DDCE4E2052CE9800112668 /* WorldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */; };
@@ -121,6 +123,8 @@
 		A3CA76332040A958007810C7 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
 		A3F3C471202EF218005CE743 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		B95D5E7920580DCE0017E13F /* CoreDataDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDB.xcdatamodel; sourceTree = "<group>"; };
+		B95D5E7D20580F7F0017E13F /* SaveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
 		B9DDCE462052CE9800112668 /* WorldsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsDataManager.swift; path = PhysicsTest/WorldsDataManager.swift; sourceTree = SOURCE_ROOT; };
 		B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSelectViewController.swift; path = PhysicsTest/LevelSelectViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldCollectionViewCell.swift; path = PhysicsTest/WorldCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -298,9 +302,11 @@
 				A317026C204450270005DFCA /* 3dio.m4v */,
 				A33A8BA320348BF7001A7209 /* PhysicsTest.entitlements */,
 				A36252A620247682001FCA58 /* AppDelegate.swift */,
+				B95D5E7D20580F7F0017E13F /* SaveManager.swift */,
 				A36252AD20247682001FCA58 /* Assets.xcassets */,
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
+				B95D5E7820580DCE0017E13F /* CoreDataDB.xcdatamodeld */,
 				A31517D32052CD4200BE5E0D /* Utility */,
 				A31517CB2052CC1300BE5E0D /* Sounds */,
 				A315177720528BD100BE5E0D /* ViewControllers */,
@@ -497,9 +503,11 @@
 				A31517C92052CBBE00BE5E0D /* GameToolARDetector.swift in Sources */,
 				B9DDCE4C2052CE9800112668 /* WorldsDataManager.swift in Sources */,
 				A31702B5204B115E0005DFCA /* UINibView.swift in Sources */,
+				B95D5E7A20580DCE0017E13F /* CoreDataDB.xcdatamodeld in Sources */,
 				A3CA76342040A958007810C7 /* ShapeController.swift in Sources */,
 				A31517C42052CBBE00BE5E0D /* GameToolManipulator.swift in Sources */,
 				A3147033203C3C740027EA0C /* ViewController.swift in Sources */,
+				B95D5E7E20580F7F0017E13F /* SaveManager.swift in Sources */,
 				A3453080204F16FA0071447A /* GamePieceSettings.swift in Sources */,
 				A3453082204F17090071447A /* GameMaterial.swift in Sources */,
 				A3CA7628204066EF007810C7 /* ColorController.swift in Sources */,
@@ -803,6 +811,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B95D5E7820580DCE0017E13F /* CoreDataDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B95D5E7920580DCE0017E13F /* CoreDataDB.xcdatamodel */,
+			);
+			currentVersion = B95D5E7920580DCE0017E13F /* CoreDataDB.xcdatamodel */;
+			path = CoreDataDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A362529B20247682001FCA58 /* Project object */;
 }
