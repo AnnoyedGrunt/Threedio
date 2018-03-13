@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5ED81EDD205328B2002F4CD8 /* 3dioIphone.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */; };
+		5EEA9EE320582B2B001FAAEA /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5EEA9EE220582B2B001FAAEA /* Intro.mp4 */; };
 		A3147033203C3C740027EA0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3147032203C3C740027EA0C /* ViewController.swift */; };
 		A3147035203C3CA40027EA0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3147034203C3CA40027EA0C /* Main.storyboard */; };
 		A31517C32052CBBE00BE5E0D /* GameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517BC2052CBBD00BE5E0D /* GameTool.swift */; };
@@ -23,7 +23,6 @@
 		A31517D62052CD7B00BE5E0D /* SCNVectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */; };
 		A31517D72052CD7B00BE5E0D /* GameParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */; };
 		A31517DD2052D67800BE5E0D /* dustCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = A31517DC2052D67700BE5E0D /* dustCloud.png */; };
-		A317026D204450270005DFCA /* 3dio.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A317026C204450270005DFCA /* 3dio.m4v */; };
 		A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B0204974ED0005DFCA /* SolidifyLogic.swift */; };
 		A31702B5204B115E0005DFCA /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B4204B115E0005DFCA /* UINibView.swift */; };
 		A31702B8204B117B0005DFCA /* objectButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31702B7204B117B0005DFCA /* objectButton.xib */; };
@@ -77,7 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dioIphone.m4v; sourceTree = "<group>"; };
+		5EEA9EE220582B2B001FAAEA /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
 		A3147032203C3C740027EA0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3147034203C3CA40027EA0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A31517BC2052CBBD00BE5E0D /* GameTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTool.swift; path = "Game Logic/GameTool.swift"; sourceTree = "<group>"; };
@@ -93,7 +92,6 @@
 		A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCNVectorExtension.swift; path = Utility/SCNVectorExtension.swift; sourceTree = "<group>"; };
 		A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameParticleSystem.swift; path = Utility/GameParticleSystem.swift; sourceTree = "<group>"; };
 		A31517DC2052D67700BE5E0D /* dustCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dustCloud.png; sourceTree = "<group>"; };
-		A317026C204450270005DFCA /* 3dio.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dio.m4v; sourceTree = "<group>"; };
 		A31702B0204974ED0005DFCA /* SolidifyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidifyLogic.swift; sourceTree = "<group>"; };
 		A31702B4204B115E0005DFCA /* UINibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
 		A31702B7204B117B0005DFCA /* objectButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = objectButton.xib; sourceTree = "<group>"; };
@@ -298,8 +296,7 @@
 				A3147034203C3CA40027EA0C /* Main.storyboard */,
 				BDD786B72052D21A00E5A83F /* Menu.storyboard */,
 				BDD786B92052D28F00E5A83F /* Game.storyboard */,
-				5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */,
-				A317026C204450270005DFCA /* 3dio.m4v */,
+				5EEA9EE220582B2B001FAAEA /* Intro.mp4 */,
 				A33A8BA320348BF7001A7209 /* PhysicsTest.entitlements */,
 				A36252A620247682001FCA58 /* AppDelegate.swift */,
 				B95D5E7D20580F7F0017E13F /* SaveManager.swift */,
@@ -453,13 +450,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3DD310D2037461D002639EE /* car.scn in Resources */,
-				5ED81EDD205328B2002F4CD8 /* 3dioIphone.m4v in Resources */,
 				A321B0552043220700845A09 /* ramp.scn in Resources */,
 				A31517DD2052D67800BE5E0D /* dustCloud.png in Resources */,
 				A31517CF2052CC1300BE5E0D /* break.mp3 in Resources */,
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				A36252D520247722001FCA58 /* mys.scn in Resources */,
-				A317026D204450270005DFCA /* 3dio.m4v in Resources */,
+				5EEA9EE320582B2B001FAAEA /* Intro.mp4 in Resources */,
 				C569C2AE20518EB800A807D3 /* Explode.scnp in Resources */,
 				BDD786B82052D21A00E5A83F /* Menu.storyboard in Resources */,
 				A31517D12052CC1300BE5E0D /* create.mp3 in Resources */,
@@ -683,7 +679,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4J698459X;
+				DEVELOPMENT_TEAM = VW836T2T62;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -699,7 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K4J698459X;
+				DEVELOPMENT_TEAM = VW836T2T62;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
