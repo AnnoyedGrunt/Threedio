@@ -13,6 +13,4 @@ class WorldCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var icoCell: UIImageView!
     @IBOutlet weak var labelCell: UILabel!
     
-    
-    
 }

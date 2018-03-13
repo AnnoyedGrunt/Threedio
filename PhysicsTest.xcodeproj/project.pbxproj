@@ -174,12 +174,12 @@
 		A315177720528BD100BE5E0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */,
-				B9DDCE492052CE9800112668 /* MenuController.swift */,
-				B9DDCE4A2052CE9800112668 /* SettingsViewController.swift */,
-				B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */,
-				A3147032203C3C740027EA0C /* ViewController.swift */,
 				A3CA762D2040779D007810C7 /* VideoController.swift */,
+				B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */,
+				B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */,
+				B9DDCE4A2052CE9800112668 /* SettingsViewController.swift */,
+				A3147032203C3C740027EA0C /* ViewController.swift */,
+				B9DDCE492052CE9800112668 /* MenuController.swift */,
 				A3CA7627204066EF007810C7 /* ColorController.swift */,
 				A3CA76332040A958007810C7 /* ShapeController.swift */,
 			);
@@ -683,7 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
+				DEVELOPMENT_TEAM = K4J698459X;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -699,7 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZUZHE8FZA;
+				DEVELOPMENT_TEAM = K4J698459X;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
