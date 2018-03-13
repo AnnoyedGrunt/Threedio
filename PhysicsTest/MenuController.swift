@@ -42,7 +42,7 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
     
     @IBAction func screenButton(_ sender: Any) {
         if let main = parent as? ViewController{
-            var image = main.sceneView.snapshot()
+            let image = main.sceneView.snapshot()
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
     }
