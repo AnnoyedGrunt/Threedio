@@ -73,9 +73,11 @@ class GameToolBuilder: GameTool {
             updatePreview(at: position, from: sceneView.pointOfView!.position, withDirection: direction, withScale: blockSize)
         }
     }
-    
-    func onTap(_ sender: UITapGestureRecognizer) {
+
+    func onTap(_ sender: UITapGestureRecognizer) -> Any? {
         placeBlock()
+        
+        return nil
     }
     
     func onReselect() {
@@ -83,8 +85,10 @@ class GameToolBuilder: GameTool {
     }
     
     
-    func onExit() {
+    func onExit() -> Any? {
         deletePreview()
+        
+        return nil
     }
     
     func action(type: String, value: Any? = nil) {

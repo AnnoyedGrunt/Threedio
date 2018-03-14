@@ -32,18 +32,18 @@ import ARKit
     /**
         called whenever the user taps
      */
-    @objc optional func onTap(_ sender: UITapGestureRecognizer)
+    @objc optional func onTap(_ sender: UITapGestureRecognizer) -> Any?
     
     @objc optional func onPan(_ sender: UIPanGestureRecognizer)
     /**
         Called by newly selected tools.
      */
-    @objc optional func onEnter()
+    @objc optional func onEnter() -> Any?
     
     /**
         Called when a tool is switched out for another.
     */
-    @objc optional func onExit()
+    @objc optional func onExit() -> Any?
     
     @objc optional func onReselect()
     

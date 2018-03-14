@@ -22,7 +22,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     @IBOutlet weak var placerButton: UIButton!
     @IBOutlet weak var manipulatorButton: UIButton!
     @IBOutlet weak var MenuView: UICustomView!
-    
+    @IBOutlet weak var tutorialView: UIImageView!
     
     
     @IBOutlet weak var menuButton2: UIButton!
@@ -46,13 +46,18 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     var manipulatorTool: GameToolManipulator!
     var detectorTool: GameToolARDetector!
     
+    var showARTutorial: Bool = true
+    var showPlacementTutorial: Bool = true
+    var showDestructionTutorial: Bool = true
+    var showManipulationTutorial: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showWorldOrigin)
         //sceneView.debugOptions.update(with: ARSCNDebugOptions.showFeaturePoints)
-        //sceneView.debugOptions.update(with: .showPhysicsShapes)
+        sceneView.debugOptions.update(with: .showPhysicsShapes)
         //sceneView.debugOptions.update(with: .renderAsWireframe)
-        sceneView.debugOptions.update(with: .showBoundingBoxes)
+        //sceneView.debugOptions.update(with: .showBoundingBoxes)
         
         sceneView.isUserInteractionEnabled = true
         //sceneView.showsStatistics = true
@@ -64,8 +69,14 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
         
         
         builderTool = GameToolBuilder(sceneView: sceneView)
+        builderTool.listeners.add(self)
+        
         destroyerTool = GameToolDestroyer(sceneView: sceneView)
+        destroyerTool.listeners.add(self)
+        
         manipulatorTool = GameToolManipulator(sceneView: sceneView)
+        manipulatorTool.listeners.add(self)
+        
         detectorTool = GameToolARDetector(sceneView: sceneView)
         detectorTool.listeners.add(self)
         
@@ -160,10 +171,41 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     }
     
     func onEnter(sender: GameTool, param: Any?) {
-        
+        if sender is GameToolARDetector && showARTutorial {
+            tutorialView.isHidden = false
+            tutorialView.image = #imageLiteral(resourceName: "Floor")
+            showARTutorial = false
+            controller?.toolIsEnabled = false
+            print("Showing AR Tutorial")
+        } else if sender is GameToolBuilder && showPlacementTutorial {
+            tutorialView.isHidden = false
+            tutorialView.image = #imageLiteral(resourceName: "First Block")
+            showPlacementTutorial = false
+            controller?.toolIsEnabled = false
+            print("Showing Placement Tutorial")
+        } else if sender is GameToolDestroyer && showDestructionTutorial {
+            tutorialView.isHidden = false
+            tutorialView.image = #imageLiteral(resourceName: "HammerTutorial")
+            showDestructionTutorial = false
+            controller?.toolIsEnabled = false
+            print("Showing Destruction Tutorial")
+        } else if sender is GameToolManipulator && showManipulationTutorial {
+            tutorialView.isHidden = false
+            tutorialView.image = #imageLiteral(resourceName: "HandTutorial")
+            showManipulationTutorial = false
+            controller?.toolIsEnabled = false
+            print("Showing Manipulation Tutorial")
+        }
     }
     
     func onExit(sender: GameTool, param: Any?) {
         
+    }
+    
+    @IBAction func onUserTap(_ sender: UITapGestureRecognizer) {
+        tutorialView.isHidden = true
+        if sender.state == .ended {
+            controller?.toolIsEnabled = true
+        }
     }
 }

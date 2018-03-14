@@ -56,18 +56,20 @@ class GameToolARDetector: NSObject, GameTool {
         }
     }
     
-    func onEnter() {
+    func onEnter() -> Any? {
         playfloor = sceneView.scene.rootNode.childNode(withName: "Playfloor", recursively: true)!
         origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
+    
+        return nil
     }
     
-    func onTap(_ sender: UITapGestureRecognizer) {
+    func onTap(_ sender: UITapGestureRecognizer) -> Any? {
         if planeDetected {
             plane.removeFromParentNode()
             plane = nil
-            listeners.invokeOnTap(sender: self, param: true)
+            return true
         } else {
-            listeners.invokeOnTap(sender: self, param: false)
+            return false
         }
     }
     
