@@ -697,7 +697,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frB-po-KZa" userLabel="ColorScroll" customClass="UICustomScrollView" customModule="PhysicsTest" customModuleProvider="target">
-                                <rect key="frame" x="44.333333333333343" y="0.0" width="51" height="209"/>
+                                <rect key="frame" x="44" y="0.0" width="0.0" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-ml-oWU" userLabel="ColorStack">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="971"/>
@@ -876,7 +876,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="80" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GnE-j9-b4u" userLabel="ShapeScroll">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnE-j9-b4u" userLabel="ShapeScroll">
                                 <rect key="frame" x="44" y="0.0" width="80" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-O7-EOq" userLabel="ShapeStack">
@@ -1076,7 +1076,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-2U-IBU" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="80.333333333333371" width="80" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.6666666666666643" y="80.333333333333371" width="80" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
