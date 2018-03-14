@@ -18,9 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     //for sound effects and music
-    var musicPlayer = AVAudioPlayer()
     var isPlaying = false
-
+    var musicPlayer = AVAudioPlayer()
     var soundsPlayer = AVAudioPlayer()
     
     //play music
@@ -54,6 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error {
             NSLog(error.localizedDescription)
         }
+    }
+    
+    //stop sound
+    func stopSound() {
+        soundsPlayer.stop()
     }
 
 
