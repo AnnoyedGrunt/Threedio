@@ -18,35 +18,60 @@ import ARKit
 */
 class GameController: NSObject, ARSCNViewDelegate, UIGestureRecognizerDelegate {
     var sceneView : ARSCNView!
-    var tapper : UITapGestureRecognizer!
+    var tapper: UITapGestureRecognizer!
     var panner: UIPanGestureRecognizer!
     
+    var toolIsEnabled: Bool = true
     var tool: GameTool? {
         willSet(newTool) {
-            guard let oldTool = tool else {return}
+            guard let oldTool = tool, toolIsEnabled else {return}
             if newTool != nil && oldTool !== newTool! {
-               oldTool.onExit?()
+                oldTool.listeners.invokeOnExit(sender: oldTool, param: oldTool.onExit?())
             }
         }
         didSet(oldTool) {
-            guard let newTool = tool else {return}
+            guard let newTool = tool, toolIsEnabled else {return}
             if oldTool != nil && newTool === oldTool! {
                 newTool.onReselect?()
             } else {
-                newTool.onEnter?()
+                newTool.listeners.invokeOnEnter(sender: newTool, param: newTool.onEnter?())
             }
         }
     }
     
+    
     init(targetView: ARSCNView) {
+        self.sceneView = targetView
         super.init()
+        self.sceneView.delegate = self
         
-        sceneView = targetView
-        sceneView.delegate = self
-        tapper = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        panner = UIPanGestureRecognizer(target: self, action: #selector(onPan))
-        sceneView.addGestureRecognizer(tapper)
-        sceneView.addGestureRecognizer(panner)
+        var tapGesture: UITapGestureRecognizer?
+        for recognizer in sceneView.gestureRecognizers!.reversed() {
+            if recognizer is UITapGestureRecognizer {
+                tapGesture = recognizer as? UITapGestureRecognizer
+                break
+            }
+        }
+        if tapGesture != nil {
+            tapper = tapGesture
+        } else {
+            tapper = UITapGestureRecognizer()
+        }
+        tapper.addTarget(self, action: #selector(onTap))
+
+        var panGesture: UIPanGestureRecognizer?
+        for recognizer in sceneView.gestureRecognizers!.reversed() {
+            if recognizer is UIPanGestureRecognizer {
+                panGesture = recognizer as! UIPanGestureRecognizer
+                break
+            }
+        }
+        if panGesture != nil {
+            panner = panGesture
+        } else {
+            panner = UIPanGestureRecognizer()
+        }
+        panner.addTarget(self, action: #selector(onPan))
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
@@ -55,22 +80,22 @@ class GameController: NSObject, ARSCNViewDelegate, UIGestureRecognizerDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        guard let tool = self.tool else {return}
+        guard let tool = self.tool, toolIsEnabled else {return}
         tool.onUpdate?(renderer, updateAtTime: time)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let tool = self.tool else {return}
+        guard let tool = self.tool, toolIsEnabled else {return}
         tool.ARRenderer?(renderer, didUpdate: node, for: anchor)
     }
     
     @objc func onTap(_ sender: UITapGestureRecognizer) {
-        guard let tool = self.tool else {return}
-        tool.onTap?(sender)
+        guard let tool = self.tool, toolIsEnabled else {return}
+        tool.listeners.invokeOnTap(sender: tool, param: tool.onTap?(sender))
     }
     
     @objc func onPan(_ sender: UIPanGestureRecognizer ) {
-        guard let tool = self.tool else {return}
+        guard let tool = self.tool, toolIsEnabled else {return}
         tool.onPan?(sender)
     }
 }

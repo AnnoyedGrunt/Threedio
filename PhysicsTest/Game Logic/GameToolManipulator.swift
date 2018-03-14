@@ -38,9 +38,6 @@ class GameToolManipulator: GameTool {
         origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)
     }
     
-    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {}
-    func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {}
-    
     func onTap(_ sender: UITapGestureRecognizer) {
         manipulate()
     }
@@ -53,6 +50,11 @@ class GameToolManipulator: GameTool {
         dropObject()
     }
     
+    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        if heldObject != nil {
+            heldObject?.physicsBody?.resetTransform()
+        }
+    }
     func action(type: String, value: Any? = nil) {
         if type == "throwObject" {
             throwObject()

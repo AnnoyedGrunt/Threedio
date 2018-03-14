@@ -50,17 +50,21 @@ class GameToolDestroyer: GameTool {
         }
     }
     
-    func onTap(_ sender: UITapGestureRecognizer) {
+    func onTap(_ sender: UITapGestureRecognizer) -> Any? {
         destroyBlock()
+        
+        return nil
     }
     
     func onReselect() {
         destroyBlock()
     }
     
-    func onExit() {
+    func onExit() -> Any? {
         resetMaterial()
         currentNode = nil
+        
+        return nil
     }
     
     private func destroyBlock() {
