@@ -106,7 +106,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         if indexPath.item == 0 {
             //AddNewWorld cell
             cell.icoCell.image = #imageLiteral(resourceName: "add")
-            cell.labelCell.text = " "
+            cell.labelCell.text = "New Level"
             
         }
         else {
