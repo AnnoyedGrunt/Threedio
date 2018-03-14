@@ -36,6 +36,7 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         
         if let load = SaveManager.shared.actualLevel {
             let sceneViewController = self.parent as! ViewController
+            sceneViewController.builderTool.action(type: "deletePreview")
             SaveManager.shared.saveSceneFile(name: load, scene: sceneViewController.sceneView.scene)
         }
         
@@ -108,7 +109,8 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         } else {
             self.isExploding = false
             self.timer.invalidate()
-            self.avPlayer.stopSound()
+//            self.avPlayer.stopSound()
+            self.avPlayer.playSound(file: "abort", ext: "wav")
             self.bombOutlet.setImage(#imageLiteral(resourceName: "bomb"), for: .normal)
         }
     }

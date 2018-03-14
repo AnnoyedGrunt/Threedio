@@ -35,8 +35,6 @@ class GameToolARDetector: NSObject, GameTool {
         plane = SCNNode()
         let planeGeometry = SCNPlane(width: globalWidth, height: globalHeight)
         planeGeometry.materials = [createGridMaterial(plane: planeGeometry)]
-        self.origin?.isHidden = true
-        plane.isHidden = true
         plane.geometry = planeGeometry
         sceneView.scene.rootNode.addChildNode(plane)
         plane.eulerAngles.x = -.pi / 2
@@ -61,7 +59,9 @@ class GameToolARDetector: NSObject, GameTool {
     func onEnter() -> Any? {
         playfloor = sceneView.scene.rootNode.childNode(withName: "Playfloor", recursively: true)!
         origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)!
-    
+        self.origin?.isHidden = true
+        plane.isHidden = true
+        
         return nil
     }
     
