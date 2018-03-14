@@ -19,6 +19,8 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         super.viewDidLoad()
     }
     
+    //to play audio
+    let avPlayer = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var stop: UIButton!
     @IBOutlet weak var start: UIButton!
@@ -52,6 +54,7 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         if let main = parent as? ViewController{
             let image = main.sceneView.snapshot()
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            self.avPlayer.playSound(file: "camera", ext: "wav")
         }
     }
         
