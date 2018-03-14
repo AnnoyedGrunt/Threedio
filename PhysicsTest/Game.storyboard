@@ -1190,12 +1190,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POy-iw-bx8">
                                 <rect key="frame" x="194" y="10" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="bomba"/>
+                                <state key="normal" image="bomb"/>
+                                <connections>
+                                    <action selector="bombButton:" destination="jfO-CA-fn3" eventType="touchUpInside" id="BU6-qd-lCw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="40p-5Y-EwG"/>
                     </view>
                     <connections>
+                        <outlet property="bombOutlet" destination="POy-iw-bx8" id="ZWb-C6-eEg"/>
                         <outlet property="start" destination="Ntz-ef-nak" id="MVW-mw-nDy"/>
                         <outlet property="stop" destination="caS-04-AUA" id="dWI-JL-m2t"/>
                     </connections>
@@ -1212,12 +1216,12 @@
         <image name="Cube" width="390" height="390"/>
         <image name="Door" width="92" height="164"/>
         <image name="Group" width="400" height="400"/>
-        <image name="Hammer" width="783" height="481"/>
+        <image name="Hammer" width="148" height="143"/>
         <image name="Hand" width="783" height="481"/>
         <image name="NUOVA MANO" width="2151" height="2541"/>
         <image name="Path 2" width="476" height="190"/>
         <image name="Polaroid" width="436" height="394"/>
-        <image name="bomba" width="385" height="361"/>
+        <image name="bomb" width="1071" height="1056"/>
         <image name="cinepresa" width="511" height="480"/>
         <image name="palla" width="341" height="330"/>
         <image name="rampa" width="718" height="717"/>
