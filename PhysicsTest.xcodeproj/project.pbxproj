@@ -50,6 +50,7 @@
 		B95D5E80205961CD0017E13F /* camera.wav in Resources */ = {isa = PBXBuildFile; fileRef = B95D5E7F205961CD0017E13F /* camera.wav */; };
 		B95D5E82205973430017E13F /* bomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = B95D5E81205973430017E13F /* bomb.wav */; };
 		B95D5E842059734A0017E13F /* countdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = B95D5E832059734A0017E13F /* countdown.wav */; };
+		B95D5E862059815E0017E13F /* abort.wav in Resources */ = {isa = PBXBuildFile; fileRef = B95D5E852059815E0017E13F /* abort.wav */; };
 		B9DDCE4C2052CE9800112668 /* WorldsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE462052CE9800112668 /* WorldsDataManager.swift */; };
 		B9DDCE4D2052CE9800112668 /* LevelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */; };
 		B9DDCE4E2052CE9800112668 /* WorldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */; };
@@ -129,6 +130,7 @@
 		B95D5E7F205961CD0017E13F /* camera.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = camera.wav; sourceTree = "<group>"; };
 		B95D5E81205973430017E13F /* bomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bomb.wav; sourceTree = "<group>"; };
 		B95D5E832059734A0017E13F /* countdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdown.wav; sourceTree = "<group>"; };
+		B95D5E852059815E0017E13F /* abort.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = abort.wav; sourceTree = "<group>"; };
 		B9DDCE462052CE9800112668 /* WorldsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsDataManager.swift; path = PhysicsTest/WorldsDataManager.swift; sourceTree = SOURCE_ROOT; };
 		B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSelectViewController.swift; path = PhysicsTest/LevelSelectViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldCollectionViewCell.swift; path = PhysicsTest/WorldCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -217,6 +219,7 @@
 		A31517CB2052CC1300BE5E0D /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				B95D5E852059815E0017E13F /* abort.wav */,
 				B95D5E81205973430017E13F /* bomb.wav */,
 				B95D5E7F205961CD0017E13F /* camera.wav */,
 				B95D5E832059734A0017E13F /* countdown.wav */,
@@ -459,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3DD310D2037461D002639EE /* car.scn in Resources */,
+				B95D5E862059815E0017E13F /* abort.wav in Resources */,
 				B95D5E842059734A0017E13F /* countdown.wav in Resources */,
 				B95D5E80205961CD0017E13F /* camera.wav in Resources */,
 				A321B0552043220700845A09 /* ramp.scn in Resources */,

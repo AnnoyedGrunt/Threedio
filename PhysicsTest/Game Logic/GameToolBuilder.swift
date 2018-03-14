@@ -98,6 +98,8 @@ class GameToolBuilder: GameTool {
         } else if type == "setMaterial" {
             guard let materialName = value as? String else {return}
             setMaterial(named: materialName)
+        } else if type == "deletePreview" {
+            self.deletePreview()
         }
     }
 }
