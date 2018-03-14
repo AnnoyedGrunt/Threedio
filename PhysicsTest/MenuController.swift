@@ -29,7 +29,15 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         start.isHidden = !start.isHidden
        
     }
+    
+    //save scene and exit
     @IBAction func backButton(_ sender: Any) {
+        
+        if let load = SaveManager.shared.actualLevel {
+            let sceneViewController = self.parent as! ViewController
+            SaveManager.shared.saveSceneFile(name: load, scene: sceneViewController.sceneView.scene)
+        }
+        
         navigationController?.popViewController(animated: true)
     }
     
@@ -42,7 +50,7 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
     
     @IBAction func screenButton(_ sender: Any) {
         if let main = parent as? ViewController{
-            var image = main.sceneView.snapshot()
+            let image = main.sceneView.snapshot()
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
     }
