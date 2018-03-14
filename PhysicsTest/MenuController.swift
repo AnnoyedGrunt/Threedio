@@ -19,8 +19,6 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         super.viewDidLoad()
     }
     
-    //to play audio
-    let avPlayer = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var stop: UIButton!
     @IBOutlet weak var start: UIButton!
@@ -31,15 +29,7 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
         start.isHidden = !start.isHidden
        
     }
-    
-    //save scene and exit
     @IBAction func backButton(_ sender: Any) {
-        
-        if let load = SaveManager.shared.actualLevel {
-            let sceneViewController = self.parent as! ViewController
-            SaveManager.shared.saveSceneFile(name: load, scene: sceneViewController.sceneView.scene)
-        }
-        
         navigationController?.popViewController(animated: true)
     }
     
@@ -52,9 +42,8 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
     
     @IBAction func screenButton(_ sender: Any) {
         if let main = parent as? ViewController{
-            let image = main.sceneView.snapshot()
+            var image = main.sceneView.snapshot()
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-            self.avPlayer.playSound(file: "camera", ext: "wav")
         }
     }
         

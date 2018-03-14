@@ -13,8 +13,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //to play audio
     let avPlayer = UIApplication.shared.delegate as! AppDelegate
     
-    var oldName: String?
     
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var playOrAddButton: UIButton!
@@ -42,18 +44,38 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         if isInitial {
             deleteButton.isHidden = true
+           
             self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[0], for: .normal)
-            self.nameWorldTextField.text = "New World \(SaveManager.shared.levels.count + 1)"
-        } else {
-            self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[SaveManager.shared.levels[selectedWorld!].value(forKey: "icon") as! Int], for: .normal)
+            self.nameWorldTextField.text = "New World \(WorldsDataManager.shared.worldCreated)"
+        }
+        else {
+            self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[WorldsDataManager.shared.worlds[selectedWorld!].icoWorld!], for: .normal)
             self.view.backgroundColor = WorldsDataManager.shared.colorBackground
-            self.nameWorldTextField.text = SaveManager.shared.levels[selectedWorld!].value(forKey: "name") as? String
-            self.oldName = self.nameWorldTextField.text!
+            self.nameWorldTextField.text = WorldsDataManager.shared.worlds[selectedWorld!].nameWorld
         }
         
         self.view.backgroundColor = WorldsDataManager.shared.colorBackground
         self.backView.layer.cornerRadius = 50
         self.backView.backgroundColor = .white
+        
+    
+//        self.playOrAddButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.playOrAddButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+//        self.playOrAddButton.frame.size = CGSize(width: Int(self.view.bounds.width / 10), height: Int(self.view.bounds.height / 7))
+//        self.playOrAddButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -50).isActive = true
+//        self.playOrAddButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -75).isActive = true
+//
+//        self.deleteButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.deleteButton.currentBackgroundImage.contentMode = UIViewContentMode.scaleAspectFit
+//        self.deleteButton.frame.size = CGSize(width: Int(50), height: Int(75))
+//        self.deleteButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 50).isActive = true
+//        self.deleteButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -75).isActive = true
+//
+//        self.modifyButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.modifyButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+//        self.modifyButton.frame.size = CGSize(width: Int(self.view.bounds.width / 10), height: Int(self.view.bounds.height / 7))
+//        self.modifyButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -50).isActive = true
+//        self.modifyButton.bottomAnchor.constraint(equalTo: self.view.topAnchor, constant: 300).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,12 +83,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //show keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    //hide keyboard
     func textFieldShouldReturn (_ texField: UITextField) -> Bool {
         self.nameWorldTextField.resignFirstResponder()
         return true
@@ -76,13 +96,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func playOrAddWorld(_ sender: Any) {
         
         if isInitial {
-//            WorldsDataManager.shared.addWorld(name: nameWorldTextField.text!, ico: WorldsDataManager.shared.icons.index(of: self.icoButton.currentBackgroundImage!)!)
-//            WorldsDataManager.shared.worldCreated += 1
-
-            SaveManager.shared.saveLevel(name: nameWorldTextField.text!, img: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!)
+            WorldsDataManager.shared.addWorld(name: nameWorldTextField.text!, ico: WorldsDataManager.shared.icons.index(of: self.icoButton.currentBackgroundImage!)!)
+            WorldsDataManager.shared.worldCreated += 1
+            
+//            self.performSegue(withIdentifier: "game", sender: self)
         }
-        
-        SaveManager.shared.actualLevel = self.nameWorldTextField.text
+//        else {
+//            self.performSegue(withIdentifier: "game", sender: self)
+//        }
         
         if avPlayer.isPlaying {
             self.avPlayer.stopMusic()
@@ -104,16 +125,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     //Delete a world
     @IBAction func deleteWorld(_ sender: Any) {
-//        WorldsDataManager.shared.worlds.remove(at: selectedWorld!)
-        SaveManager.shared.deleteLevel(name: nameWorldTextField.text!, edited: false)
-        navigationController?.popViewController(animated: true)
-    }
-    
-    //back Button
-    @IBAction func backAction(_ sender: Any) {
-        if !isInitial {
-           SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!)
-        }
+        WorldsDataManager.shared.worlds.remove(at: selectedWorld!)
         navigationController?.popViewController(animated: true)
     }
     

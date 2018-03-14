@@ -59,9 +59,6 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        SaveManager.shared.loadLevels()
-        
         self.collectionView.reloadData()
         
         //hides the navigation controller
@@ -73,16 +70,15 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         }
     }
     
-    //number of cells
+    //Number of items
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return WorldsDataManager.shared.worlds.count + 1
-        return SaveManager.shared.levels.count + 1
+        return WorldsDataManager.shared.worlds.count + 1
     }
     
     //Size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if isIphone {
-//            return CGSize(width: screenSize.width / 3, height: screenSize.height / 2 + 50)
+            //return CGSize(width: screenSize.width / 3, height: screenSize.height / 2 + 50)
             return CGSize(width: 300, height: 300)
         } else {
             return CGSize(width: 300, height: 300)
@@ -106,15 +102,13 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         if indexPath.item == 0 {
             //AddNewWorld cell
             cell.icoCell.image = #imageLiteral(resourceName: "add")
-            cell.labelCell.text = " "
+            cell.labelCell.text = "Add"
             
         }
         else {
             //World cell
-//            cell.labelCell.text = WorldsDataManager.shared.worlds[indexPath.item - 1].nameWorld
-//            cell.icoCell.image = WorldsDataManager.shared.icons[WorldsDataManager.shared.worlds[indexPath.item - 1].icoWorld!]
-            cell.labelCell.text = SaveManager.shared.levels[indexPath.item - 1].value(forKey: "name") as? String
-            cell.icoCell.image = WorldsDataManager.shared.icons[SaveManager.shared.levels[indexPath.item - 1].value(forKey: "icon") as! Int]
+            cell.labelCell.text = WorldsDataManager.shared.worlds[indexPath.item - 1].nameWorld
+            cell.icoCell.image = WorldsDataManager.shared.icons[WorldsDataManager.shared.worlds[indexPath.item - 1].icoWorld!]
         }
         
         return cell
