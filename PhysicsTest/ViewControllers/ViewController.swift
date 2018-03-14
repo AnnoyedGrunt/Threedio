@@ -62,7 +62,16 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
         sceneView.isUserInteractionEnabled = true
         //sceneView.showsStatistics = true
         
-        sceneView.scene = SCNScene(named: "mys.scn")!
+        
+        do {
+            let loadedScene = try SCNScene(url: SaveManager.shared.getSceneUrl(levelName: SaveManager.shared.actualLevel!), options: nil)
+            sceneView.scene = loadedScene
+            print("caricata!!!")
+        } catch let error as NSError {
+            print("Could not load. \(error), \(error.userInfo)")
+            sceneView.scene = SCNScene(named: "mys.scn")!
+        }
+        
         sceneView.session.delegate = self
         
         generateColors()

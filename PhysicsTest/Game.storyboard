@@ -714,6 +714,8 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frB-po-KZa" userLabel="ColorScroll" customClass="UICustomScrollView" customModule="PhysicsTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frB-po-KZa" userLabel="ColorScroll" customClass="UICustomScrollView" customModule="PhysicsTest" customModuleProvider="target">
+                                <rect key="frame" x="44" y="0.0" width="0.0" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-ml-oWU" userLabel="ColorStack">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="971"/>

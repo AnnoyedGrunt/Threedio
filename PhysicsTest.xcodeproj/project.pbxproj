@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5ED81EDD205328B2002F4CD8 /* 3dioIphone.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */; };
+		5EEA9EE320582B2B001FAAEA /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5EEA9EE220582B2B001FAAEA /* Intro.mp4 */; };
 		A3147033203C3C740027EA0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3147032203C3C740027EA0C /* ViewController.swift */; };
 		A3147035203C3CA40027EA0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3147034203C3CA40027EA0C /* Main.storyboard */; };
 		A31517C32052CBBE00BE5E0D /* GameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517BC2052CBBD00BE5E0D /* GameTool.swift */; };
@@ -23,7 +23,6 @@
 		A31517D62052CD7B00BE5E0D /* SCNVectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */; };
 		A31517D72052CD7B00BE5E0D /* GameParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */; };
 		A31517DD2052D67800BE5E0D /* dustCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = A31517DC2052D67700BE5E0D /* dustCloud.png */; };
-		A317026D204450270005DFCA /* 3dio.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A317026C204450270005DFCA /* 3dio.m4v */; };
 		A31702B1204974ED0005DFCA /* SolidifyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B0204974ED0005DFCA /* SolidifyLogic.swift */; };
 		A31702B5204B115E0005DFCA /* UINibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31702B4204B115E0005DFCA /* UINibView.swift */; };
 		A31702B8204B117B0005DFCA /* objectButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31702B7204B117B0005DFCA /* objectButton.xib */; };
@@ -46,6 +45,9 @@
 		A3CA76342040A958007810C7 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CA76332040A958007810C7 /* ShapeController.swift */; };
 		A3DD310D2037461D002639EE /* car.scn in Resources */ = {isa = PBXBuildFile; fileRef = A3DD310C2037461D002639EE /* car.scn */; };
 		A3F3C472202EF218005CE743 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3C471202EF218005CE743 /* GamePiece.swift */; };
+		B95D5E7A20580DCE0017E13F /* CoreDataDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95D5E7820580DCE0017E13F /* CoreDataDB.xcdatamodeld */; };
+		B95D5E7E20580F7F0017E13F /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D5E7D20580F7F0017E13F /* SaveManager.swift */; };
+		B95D5E80205961CD0017E13F /* camera.wav in Resources */ = {isa = PBXBuildFile; fileRef = B95D5E7F205961CD0017E13F /* camera.wav */; };
 		B9DDCE4C2052CE9800112668 /* WorldsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE462052CE9800112668 /* WorldsDataManager.swift */; };
 		B9DDCE4D2052CE9800112668 /* LevelSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */; };
 		B9DDCE4E2052CE9800112668 /* WorldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */; };
@@ -75,7 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dioIphone.m4v; sourceTree = "<group>"; };
+		5EEA9EE220582B2B001FAAEA /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
 		A3147032203C3C740027EA0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3147034203C3CA40027EA0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A31517BC2052CBBD00BE5E0D /* GameTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTool.swift; path = "Game Logic/GameTool.swift"; sourceTree = "<group>"; };
@@ -91,7 +93,6 @@
 		A31517D42052CD7B00BE5E0D /* SCNVectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCNVectorExtension.swift; path = Utility/SCNVectorExtension.swift; sourceTree = "<group>"; };
 		A31517D52052CD7B00BE5E0D /* GameParticleSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameParticleSystem.swift; path = Utility/GameParticleSystem.swift; sourceTree = "<group>"; };
 		A31517DC2052D67700BE5E0D /* dustCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dustCloud.png; sourceTree = "<group>"; };
-		A317026C204450270005DFCA /* 3dio.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3dio.m4v; sourceTree = "<group>"; };
 		A31702B0204974ED0005DFCA /* SolidifyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidifyLogic.swift; sourceTree = "<group>"; };
 		A31702B4204B115E0005DFCA /* UINibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINibView.swift; sourceTree = "<group>"; };
 		A31702B7204B117B0005DFCA /* objectButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = objectButton.xib; sourceTree = "<group>"; };
@@ -121,6 +122,9 @@
 		A3CA76332040A958007810C7 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		A3DD310C2037461D002639EE /* car.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = car.scn; sourceTree = "<group>"; };
 		A3F3C471202EF218005CE743 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		B95D5E7920580DCE0017E13F /* CoreDataDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDB.xcdatamodel; sourceTree = "<group>"; };
+		B95D5E7D20580F7F0017E13F /* SaveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
+		B95D5E7F205961CD0017E13F /* camera.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = camera.wav; sourceTree = "<group>"; };
 		B9DDCE462052CE9800112668 /* WorldsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsDataManager.swift; path = PhysicsTest/WorldsDataManager.swift; sourceTree = SOURCE_ROOT; };
 		B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSelectViewController.swift; path = PhysicsTest/LevelSelectViewController.swift; sourceTree = SOURCE_ROOT; };
 		B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldCollectionViewCell.swift; path = PhysicsTest/WorldCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -170,12 +174,12 @@
 		A315177720528BD100BE5E0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */,
-				B9DDCE492052CE9800112668 /* MenuController.swift */,
-				B9DDCE4A2052CE9800112668 /* SettingsViewController.swift */,
-				B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */,
-				A3147032203C3C740027EA0C /* ViewController.swift */,
 				A3CA762D2040779D007810C7 /* VideoController.swift */,
+				B9DDCE482052CE9800112668 /* WorldCollectionViewCell.swift */,
+				B9DDCE472052CE9800112668 /* LevelSelectViewController.swift */,
+				B9DDCE4A2052CE9800112668 /* SettingsViewController.swift */,
+				A3147032203C3C740027EA0C /* ViewController.swift */,
+				B9DDCE492052CE9800112668 /* MenuController.swift */,
 				A3CA7627204066EF007810C7 /* ColorController.swift */,
 				A3CA76332040A958007810C7 /* ShapeController.swift */,
 			);
@@ -209,6 +213,7 @@
 		A31517CB2052CC1300BE5E0D /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				B95D5E7F205961CD0017E13F /* camera.wav */,
 				A31517CC2052CC1300BE5E0D /* break.mp3 */,
 				A31517CD2052CC1300BE5E0D /* menuMusic.wav */,
 				A31517CE2052CC1300BE5E0D /* create.mp3 */,
@@ -294,13 +299,14 @@
 				A3147034203C3CA40027EA0C /* Main.storyboard */,
 				BDD786B72052D21A00E5A83F /* Menu.storyboard */,
 				BDD786B92052D28F00E5A83F /* Game.storyboard */,
-				5ED81EDC205328B2002F4CD8 /* 3dioIphone.m4v */,
-				A317026C204450270005DFCA /* 3dio.m4v */,
+				5EEA9EE220582B2B001FAAEA /* Intro.mp4 */,
 				A33A8BA320348BF7001A7209 /* PhysicsTest.entitlements */,
 				A36252A620247682001FCA58 /* AppDelegate.swift */,
+				B95D5E7D20580F7F0017E13F /* SaveManager.swift */,
 				A36252AD20247682001FCA58 /* Assets.xcassets */,
 				A36252AF20247682001FCA58 /* LaunchScreen.storyboard */,
 				A36252B220247682001FCA58 /* Info.plist */,
+				B95D5E7820580DCE0017E13F /* CoreDataDB.xcdatamodeld */,
 				A31517D32052CD4200BE5E0D /* Utility */,
 				A31517CB2052CC1300BE5E0D /* Sounds */,
 				A315177720528BD100BE5E0D /* ViewControllers */,
@@ -447,13 +453,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3DD310D2037461D002639EE /* car.scn in Resources */,
-				5ED81EDD205328B2002F4CD8 /* 3dioIphone.m4v in Resources */,
+				B95D5E80205961CD0017E13F /* camera.wav in Resources */,
 				A321B0552043220700845A09 /* ramp.scn in Resources */,
 				A31517DD2052D67800BE5E0D /* dustCloud.png in Resources */,
 				A31517CF2052CC1300BE5E0D /* break.mp3 in Resources */,
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
 				A36252D520247722001FCA58 /* mys.scn in Resources */,
-				A317026D204450270005DFCA /* 3dio.m4v in Resources */,
+				5EEA9EE320582B2B001FAAEA /* Intro.mp4 in Resources */,
 				C569C2AE20518EB800A807D3 /* Explode.scnp in Resources */,
 				BDD786B82052D21A00E5A83F /* Menu.storyboard in Resources */,
 				A31517D12052CC1300BE5E0D /* create.mp3 in Resources */,
@@ -497,9 +503,11 @@
 				A31517C92052CBBE00BE5E0D /* GameToolARDetector.swift in Sources */,
 				B9DDCE4C2052CE9800112668 /* WorldsDataManager.swift in Sources */,
 				A31702B5204B115E0005DFCA /* UINibView.swift in Sources */,
+				B95D5E7A20580DCE0017E13F /* CoreDataDB.xcdatamodeld in Sources */,
 				A3CA76342040A958007810C7 /* ShapeController.swift in Sources */,
 				A31517C42052CBBE00BE5E0D /* GameToolManipulator.swift in Sources */,
 				A3147033203C3C740027EA0C /* ViewController.swift in Sources */,
+				B95D5E7E20580F7F0017E13F /* SaveManager.swift in Sources */,
 				A3453080204F16FA0071447A /* GamePieceSettings.swift in Sources */,
 				A3453082204F17090071447A /* GameMaterial.swift in Sources */,
 				A3CA7628204066EF007810C7 /* ColorController.swift in Sources */,
@@ -803,6 +811,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B95D5E7820580DCE0017E13F /* CoreDataDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B95D5E7920580DCE0017E13F /* CoreDataDB.xcdatamodel */,
+			);
+			currentVersion = B95D5E7920580DCE0017E13F /* CoreDataDB.xcdatamodel */;
+			path = CoreDataDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A362529B20247682001FCA58 /* Project object */;
 }
