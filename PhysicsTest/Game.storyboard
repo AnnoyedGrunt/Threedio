@@ -1049,7 +1049,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hand" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-al-mGL" userLabel="PhysicsSymbol">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NUOVA MANO" translatesAutoresizingMaskIntoConstraints="NO" id="8XA-al-mGL" userLabel="PhysicsSymbol">
                                                         <rect key="frame" x="4" y="4" width="16" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="8XA-al-mGL" secondAttribute="height" multiplier="1:1" id="Z7M-Jy-APv"/>
@@ -1085,7 +1085,7 @@
                                                             <action selector="selectColor:" destination="dgh-om-tTZ" eventType="touchUpInside" id="z0q-wg-Jem"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hand" translatesAutoresizingMaskIntoConstraints="NO" id="fUD-EN-uDw" userLabel="PhysicsSymbol">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NUOVA MANO" translatesAutoresizingMaskIntoConstraints="NO" id="fUD-EN-uDw" userLabel="PhysicsSymbol">
                                                         <rect key="frame" x="4" y="4" width="16" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="fUD-EN-uDw" secondAttribute="height" multiplier="1:1" id="EID-ED-AAS"/>
@@ -1217,7 +1217,6 @@
         <image name="Door" width="92" height="164"/>
         <image name="Group" width="400" height="400"/>
         <image name="Hammer" width="148" height="143"/>
-        <image name="Hand" width="783" height="481"/>
         <image name="NUOVA MANO" width="2151" height="2541"/>
         <image name="Path 2" width="476" height="190"/>
         <image name="Polaroid" width="436" height="394"/>
