@@ -38,16 +38,18 @@ class GameToolManipulator: GameTool {
         origin = sceneView.scene.rootNode.childNode(withName: "Origin", recursively: true)
     }
     
-    func onTap(_ sender: UITapGestureRecognizer) {
+    func onTap(_ sender: UITapGestureRecognizer) -> Any? {
         manipulate()
+        return nil
     }
     
     func onReselect() {
         manipulate()
     }
     
-    func onExit() {
+    func onExit() -> Any? {
         dropObject()
+        return nil
     }
     
     func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
