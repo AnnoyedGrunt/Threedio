@@ -176,7 +176,7 @@
                                     <action selector="deleteWorld:" destination="IfS-bD-Ept" eventType="touchUpInside" id="KR6-8a-4fo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJC-Gy-RQ1">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJC-Gy-RQ1">
                                 <rect key="frame" x="20" y="52" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3bR-RK-6gE"/>
@@ -184,7 +184,7 @@
                                     <constraint firstAttribute="height" constant="60" id="GaK-eM-j41"/>
                                     <constraint firstAttribute="width" constant="60" id="otw-HT-aYS"/>
                                 </constraints>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back" image="TriangleBack"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="GaK-eM-j41"/>
@@ -397,5 +397,6 @@
     <resources>
         <image name="Garbage" width="380" height="538"/>
         <image name="Play" width="161" height="202"/>
+        <image name="TriangleBack" width="189" height="210"/>
     </resources>
 </document>
