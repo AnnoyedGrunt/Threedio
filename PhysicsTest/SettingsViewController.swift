@@ -23,8 +23,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             nameWorldTextField.delegate = self
         }
     }
-    @IBOutlet weak var icoButton: UIButton!
     
+    @IBOutlet weak var icoButton: UIButton!
     @IBOutlet weak var backView: UIView!
     var isInitial = false
     var selectedWorld: Int?
@@ -74,6 +74,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     //Button for add a new world or play
     @IBAction func playOrAddWorld(_ sender: Any) {
+        
+        SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!)
         
         if isInitial {
 //            WorldsDataManager.shared.addWorld(name: nameWorldTextField.text!, ico: WorldsDataManager.shared.icons.index(of: self.icoButton.currentBackgroundImage!)!)
