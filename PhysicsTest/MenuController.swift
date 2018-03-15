@@ -40,7 +40,8 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
             SaveManager.shared.saveSceneFile(name: load, scene: sceneViewController.sceneView.scene)
         }
         
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     //start recording
