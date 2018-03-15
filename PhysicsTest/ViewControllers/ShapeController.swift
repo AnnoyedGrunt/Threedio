@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
+var azzurro = UIColor(red: 122/255, green: 176/255, blue: 240/255, alpha: 1.0)
+
 class ShapeController: UIViewController {
     @IBOutlet weak var shapeStack: UIStackView!
-    let selectionThickness: CGFloat = 4
-    let selectionColor: CGColor = UIColor.red.cgColor
+    
+    let selectionThickness: CGFloat = 3
+    let selectionColor: CGColor = azzurro.cgColor
     
     @IBAction func selectColor(_ sender: UIColorButton) {
         for container in shapeStack.subviews {
