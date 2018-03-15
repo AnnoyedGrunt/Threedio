@@ -246,7 +246,7 @@
                                         <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderThickness">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -295,7 +295,7 @@
                                         <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderThickness">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -386,7 +386,7 @@
                                         <real key="value" value="35"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderThickness">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -888,7 +888,7 @@
         <scene sceneID="Nd7-bO-e6H">
             <objects>
                 <viewController id="dgh-om-tTZ" customClass="ShapeController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UmK-gc-qGT" userLabel="ShapeCanvas">
+                    <view key="view" alpha="0.69999999999999996" contentMode="scaleToFill" id="UmK-gc-qGT" userLabel="ShapeCanvas">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -898,7 +898,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-O7-EOq" userLabel="ShapeStack">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-Ph-wPr" userLabel="Block">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-Ph-wPr" userLabel="Block">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffJ-QA-9kn" userLabel="ObjectButton" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
@@ -919,7 +919,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="3eN-D2-cOs"/>
                                                     <constraint firstItem="ffJ-QA-9kn" firstAttribute="top" secondItem="rBX-Ph-wPr" secondAttribute="top" id="CCO-4h-jWR"/>
@@ -930,7 +930,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="F9u-ib-QeC" secondAttribute="bottom" id="sbQ-WP-BW4"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPt-dM-dc6" userLabel="Cylinder">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPt-dM-dc6" userLabel="Cylinder">
                                                 <rect key="frame" x="0.0" y="100" width="80" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-Ug-Q1d" userLabel="ObjectButton" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
@@ -963,7 +963,7 @@
                                                     <constraint firstItem="5uB-yt-5i0" firstAttribute="centerX" secondItem="cPt-dM-dc6" secondAttribute="centerX" id="h9d-TA-7iD"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W6-mD-72B" userLabel="Sphere">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W6-mD-72B" userLabel="Sphere">
                                                 <rect key="frame" x="0.0" y="200" width="80" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sphere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBL-aA-3Zf" userLabel="Label">
@@ -996,7 +996,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="IBL-aA-3Zf" secondAttribute="bottom" id="tMw-rp-evE"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQT-MX-KnV" userLabel="Ramp">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQT-MX-KnV" userLabel="Ramp">
                                                 <rect key="frame" x="0.0" y="300" width="80" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i40-B2-4Xu" userLabel="ObjectButton" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
@@ -1029,7 +1029,7 @@
                                                     <constraint firstItem="y8a-Fq-687" firstAttribute="centerX" secondItem="IQT-MX-KnV" secondAttribute="centerX" id="z4H-uc-7E5"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9g-vC-yFN" userLabel="Ball">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9g-vC-yFN" userLabel="Ball">
                                                 <rect key="frame" x="0.0" y="400" width="80" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sH-us-KQ7" userLabel="ObjectButton" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
@@ -1071,7 +1071,7 @@
                                                     <constraint firstAttribute="height" constant="100" id="s1Z-my-ubz"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdg-OI-oUa" userLabel="Tile">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdg-OI-oUa" userLabel="Tile">
                                                 <rect key="frame" x="0.0" y="500" width="80" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVm-km-CnT" userLabel="ObjectButton" customClass="UIColorButton" customModule="PhysicsTest" customModuleProvider="target">
