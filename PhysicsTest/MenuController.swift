@@ -129,6 +129,7 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
             node.removeFromParentNode() }
         self.avPlayer.playSound(file: "bomb", ext: "wav")
         self.bombOutlet.setImage(#imageLiteral(resourceName: "bomb"), for: .normal)
+        self.isExploding = false
     }
 
 }
