@@ -68,9 +68,10 @@ class GameToolBuilder: GameTool {
             }
             lastPositions.append(root.convertPosition(hit.worldCoordinates, to: origin))
             lastPositions = Array(lastPositions.suffix(positionCacheCount))
+            let camera = sceneView.pointOfView!
             let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
             let direction = root.convertVector(hit.localNormal, to: origin)
-            let originPos = root.convertVector(sceneView.pointOfView!.position, to: origin)
+            let originPos = root.convertPosition(camera.position, to: origin)
             updatePreview(at: position, from: originPos, withDirection: direction, withScale: blockSize)
         }
         return nil
@@ -175,7 +176,7 @@ private extension GameToolBuilder {
         } else if piece.orientation == .fullHorizontal {
             let dir: SCNVector3 = position - origin
             let angle = atan2(dir.x, dir.z)
-            node.eulerAngles.y = angle//+ Float.pi/2
+            node.eulerAngles.y = angle // + Float.pi/2
         }
     }
     
