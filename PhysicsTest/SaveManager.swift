@@ -94,7 +94,6 @@ final class SaveManager {
     
     //function to update a level (both core data and scene file)
     func updateLevel(oldName: String, newName: String, newIcon: Int) -> Bool {
-        
         if oldName != newName {
             for l in self.levels {
                 if l.value(forKey: "name") as! String == newName {
@@ -102,7 +101,7 @@ final class SaveManager {
                     return false
                 }
             }
-        
+            
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
             let managedContext = appDelegate.persistentContainer.viewContext
             
@@ -130,30 +129,8 @@ final class SaveManager {
                 let oldUrl = self.getSceneUrl(levelName: oldName)
                 let newUrl = self.getSceneUrl(levelName: newName)
                 try fileManager.moveItem(at: oldUrl, to: newUrl)
-                try fileManager.removeItem(at: oldUrl)
             } catch let error as NSError {
                 print("Could not update file name or delete old file. \(error), \(error.userInfo)")
-                return false
-            }
-        } else {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
-            let managedContext = appDelegate.persistentContainer.viewContext
-            
-            for (index, element) in self.levels.enumerated() {
-                if element.value(forKey: "name") as? String == oldName {
-                    let l = element
-                    l.setValue(newIcon, forKey: "icon")
-                    self.levels.insert(l, at: 0)
-                    self.levels.remove(at: index)
-                    break
-                }
-            }
-            
-            do {
-                try managedContext.save()
-                print("Updated on core data!")
-            } catch let error as NSError {
-                print("Could not update. \(error), \(error.userInfo)")
                 return false
             }
         }

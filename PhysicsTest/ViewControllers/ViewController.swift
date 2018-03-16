@@ -214,7 +214,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     }
     
     func onUpdate(sender: GameTool, param: Any?) {
-        print("On Update")
+//        print("On Update")
         if sender is GameToolManipulator {
             print("Is manip")
             let message = param as! Bool
