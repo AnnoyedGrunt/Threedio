@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NQF-3M-QVN">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="elv-Hs-P3Q" customClass="LevelSelectViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qex-lO-wwK">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xp-GK-Jyb">
-                                <rect key="frame" x="0.0" y="32" width="647" height="323"/>
+                                <rect key="frame" x="0.0" y="32" width="716" height="362"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ltg-mx-15a">
                                     <size key="itemSize" width="300" height="300"/>
@@ -97,7 +97,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NQF-3M-QVN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y0N-CG-ZZ1">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -114,11 +114,11 @@
             <objects>
                 <viewController id="IfS-bD-Ept" customClass="SettingsViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tG6-vR-I6U">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmz-Q7-ei9">
-                                <rect key="frame" x="587" y="295" width="60" height="60"/>
+                                <rect key="frame" x="616" y="239" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="53I-aI-OYz"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="XJ4-eU-B7q"/>
@@ -148,35 +148,8 @@
                                     <action selector="playOrAddWorld:" destination="IfS-bD-Ept" eventType="touchUpInside" id="aeH-pD-X11"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFm-51-LMx">
-                                <rect key="frame" x="20" y="275" width="60" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="0r1-rE-v7H"/>
-                                    <constraint firstAttribute="width" constant="100" id="6w5-Tg-KQt"/>
-                                    <constraint firstAttribute="height" constant="80" id="A5f-Xw-CBo"/>
-                                    <constraint firstAttribute="height" constant="140" id="lCT-U6-iQF"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Garbage"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0r1-rE-v7H"/>
-                                        <exclude reference="A5f-Xw-CBo"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="0r1-rE-v7H"/>
-                                        <exclude reference="6w5-Tg-KQt"/>
-                                        <include reference="A5f-Xw-CBo"/>
-                                        <exclude reference="lCT-U6-iQF"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="deleteWorld:" destination="IfS-bD-Ept" eventType="touchUpInside" id="KR6-8a-4fo"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJC-Gy-RQ1">
-                                <rect key="frame" x="20" y="52" width="60" height="60"/>
+                                <rect key="frame" x="20" y="107" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3bR-RK-6gE"/>
                                     <constraint firstAttribute="width" constant="100" id="DcW-3u-mgg"/>
@@ -203,10 +176,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-Ox-FXk">
-                                <rect key="frame" x="173.5" y="37" width="320" height="300"/>
+                                <rect key="frame" x="48" y="-321" width="640" height="660"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJb-Kb-fqg">
-                                        <rect key="frame" x="85" y="116" width="150" height="150"/>
+                                        <rect key="frame" x="135" y="194" width="370" height="376"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="6sg-ew-w2Y"/>
                                             <constraint firstAttribute="height" constant="200" id="Gkq-nI-07O"/>
@@ -242,7 +215,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJV-Uh-bLN">
-                                        <rect key="frame" x="70" y="16" width="180" height="60"/>
+                                        <rect key="frame" x="80" y="70" width="501" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="Kyf-2h-wdS"/>
                                             <constraint firstAttribute="height" constant="60" id="YKN-qq-W1F"/>
@@ -318,6 +291,35 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFm-51-LMx">
+                                <rect key="frame" x="20" y="239" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0r1-rE-v7H"/>
+                                    <constraint firstAttribute="width" constant="100" id="6w5-Tg-KQt"/>
+                                    <constraint firstAttribute="height" constant="80" id="A5f-Xw-CBo">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="60"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="100" id="lCT-U6-iQF"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Garb"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0r1-rE-v7H"/>
+                                        <exclude reference="A5f-Xw-CBo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0r1-rE-v7H"/>
+                                        <exclude reference="6w5-Tg-KQt"/>
+                                        <include reference="A5f-Xw-CBo"/>
+                                        <exclude reference="lCT-U6-iQF"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="deleteWorld:" destination="IfS-bD-Ept" eventType="touchUpInside" id="KR6-8a-4fo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -329,8 +331,8 @@
                             <constraint firstItem="q2V-Ox-FXk" firstAttribute="centerX" secondItem="tG6-vR-I6U" secondAttribute="centerX" id="Lz8-ut-qyh"/>
                             <constraint firstItem="oJC-Gy-RQ1" firstAttribute="leading" secondItem="yIy-zm-GWO" secondAttribute="leading" constant="20" id="Oi6-dX-Aim"/>
                             <constraint firstItem="oJC-Gy-RQ1" firstAttribute="top" secondItem="yIy-zm-GWO" secondAttribute="top" constant="75" id="Oww-wS-KoW"/>
+                            <constraint firstItem="RFm-51-LMx" firstAttribute="leading" secondItem="yIy-zm-GWO" secondAttribute="leading" constant="20" id="WiI-Rl-yY0"/>
                             <constraint firstItem="yIy-zm-GWO" firstAttribute="bottom" secondItem="q2V-Ox-FXk" secondAttribute="bottom" constant="75" id="XX4-cR-2rf"/>
-                            <constraint firstItem="q2V-Ox-FXk" firstAttribute="leading" secondItem="RFm-51-LMx" secondAttribute="trailing" constant="86" id="ZYF-jt-qid"/>
                             <constraint firstItem="yIy-zm-GWO" firstAttribute="trailing" secondItem="nmz-Q7-ei9" secondAttribute="trailing" constant="20" id="aPU-dd-OSt"/>
                             <constraint firstItem="oJC-Gy-RQ1" firstAttribute="top" secondItem="yIy-zm-GWO" secondAttribute="top" constant="20" id="eTc-Sp-mbs"/>
                             <constraint firstItem="yIy-zm-GWO" firstAttribute="trailing" secondItem="nmz-Q7-ei9" secondAttribute="trailing" constant="20" id="fd2-wg-h5m"/>
@@ -365,7 +367,6 @@
                                 <exclude reference="Oww-wS-KoW"/>
                                 <include reference="eTc-Sp-mbs"/>
                                 <include reference="KY4-sj-c1h"/>
-                                <exclude reference="ZYF-jt-qid"/>
                                 <include reference="i4V-3f-kRr"/>
                             </mask>
                         </variation>
@@ -383,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSf-3L-d5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="-1228"/>
+            <point key="canvasLocation" x="1136.5817091454273" y="-1229.5999999999999"/>
         </scene>
         <!--Game-->
         <scene sceneID="raE-Wv-owH">
@@ -395,7 +396,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Garbage" width="380" height="538"/>
+        <image name="Garb" width="401" height="389"/>
         <image name="Play2" width="229" height="222"/>
         <image name="back2" width="229" height="222"/>
     </resources>
