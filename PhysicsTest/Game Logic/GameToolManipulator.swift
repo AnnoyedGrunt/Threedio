@@ -52,10 +52,15 @@ class GameToolManipulator: GameTool {
         return nil
     }
     
-    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) -> Any? {
         if heldObject != nil {
             heldObject?.physicsBody?.resetTransform()
+        } else {
+            if raycast(filter: .dynamic) != nil {
+                return true
+            }
         }
+        return false
     }
     func action(type: String, value: Any? = nil) {
         if type == "throwObject" {

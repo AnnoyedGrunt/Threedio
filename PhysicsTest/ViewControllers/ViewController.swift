@@ -23,7 +23,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     @IBOutlet weak var manipulatorButton: UIButton!
     @IBOutlet weak var MenuView: UICustomView!
     @IBOutlet weak var tutorialView: UIImageView!
-    
+    @IBOutlet weak var crosshair: UIImageView!
     
     @IBOutlet weak var menuButton2: UIButton!
     
@@ -37,8 +37,6 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
         }
         
     }
-    
-    
     
     var controller: GameController?
     var builderTool: GameToolBuilder!
@@ -209,6 +207,21 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     
     func onExit(sender: GameTool, param: Any?) {
         
+    }
+    
+    func onUpdate(sender: GameTool, param: Any?) {
+        print("On Update")
+        if sender is GameToolManipulator {
+            print("Is manip")
+            let message = param as! Bool
+            if message {
+                print("is hand")
+                crosshair.image = #imageLiteral(resourceName: "NUOVA MANO")
+            } else {
+                crosshair.image = #imageLiteral(resourceName: "Crosshair")
+                print("is crosshair")
+            }
+        }
     }
     
     @IBAction func onUserTap(_ sender: UITapGestureRecognizer) {

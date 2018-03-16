@@ -40,7 +40,7 @@ class GameToolARDetector: NSObject, GameTool {
         plane.eulerAngles.x = -.pi / 2
     }
     
-    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) -> Any? {
         let point = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
         if let hit =  sceneView.hitTest(point, types: .existingPlaneUsingExtent).first {
             let camera = sceneView.pointOfView!
@@ -54,6 +54,8 @@ class GameToolARDetector: NSObject, GameTool {
             origin?.eulerAngles.y = plane.eulerAngles.y
             planeDetected = true
         }
+        
+        return nil
     }
     
     func onEnter() -> Any? {

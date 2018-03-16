@@ -26,6 +26,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="nUH-sS-k4H" appends="YES" id="qD3-13-IeS"/>
+                                    <outletCollection property="gestureRecognizers" destination="TUq-xo-PBw" appends="YES" id="C1v-NZ-qbD"/>
                                 </connections>
                             </arscnView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80l-44-6b5" userLabel="Hammer">
@@ -685,6 +686,7 @@
                         <outlet property="ShapeView" destination="v5o-E0-jea" id="kHo-6d-7UH"/>
                         <outlet property="colorPicker" destination="sXl-he-tON" id="2QM-nE-fHQ"/>
                         <outlet property="colorView" destination="6nf-k6-z3n" id="CiU-N1-OA5"/>
+                        <outlet property="crosshair" destination="x8x-8Z-9Tl" id="TLn-04-sMY"/>
                         <outlet property="deleterButton" destination="80l-44-6b5" id="OZN-5F-xXF"/>
                         <outlet property="manipulatorButton" destination="f91-t1-bCi" id="Bvr-6P-4TF"/>
                         <outlet property="menuButton2" destination="OVU-OX-AGS" id="I2S-S3-KW1"/>
@@ -701,6 +703,7 @@
                         <action selector="onUserTap:" destination="rXP-p4-xpa" id="xjS-ca-siG"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="TUq-xo-PBw"/>
             </objects>
             <point key="canvasLocation" x="-464.02877697841728" y="-523.02158273381303"/>
         </scene>
