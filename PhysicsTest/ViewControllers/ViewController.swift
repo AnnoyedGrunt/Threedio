@@ -27,6 +27,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     
     @IBOutlet weak var menuButton2: UIButton!
     
+    var isInitial = false
     
     @IBAction func menu2(_ sender: Any) {
         MenuView.isHidden = !MenuView.isHidden
@@ -179,30 +180,32 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
     }
     
     func onEnter(sender: GameTool, param: Any?) {
-        if sender is GameToolARDetector && showARTutorial {
-            tutorialView.isHidden = false
-            tutorialView.image = #imageLiteral(resourceName: "Floor")
-            showARTutorial = false
-            controller?.toolIsEnabled = false
-            print("Showing AR Tutorial")
-        } else if sender is GameToolBuilder && showPlacementTutorial {
-            tutorialView.isHidden = false
-            tutorialView.image = #imageLiteral(resourceName: "First Block")
-            showPlacementTutorial = false
-            controller?.toolIsEnabled = false
-            print("Showing Placement Tutorial")
-        } else if sender is GameToolDestroyer && showDestructionTutorial {
-            tutorialView.isHidden = false
-            tutorialView.image = #imageLiteral(resourceName: "HammerTutorial")
-            showDestructionTutorial = false
-            controller?.toolIsEnabled = false
-            print("Showing Destruction Tutorial")
-        } else if sender is GameToolManipulator && showManipulationTutorial {
-            tutorialView.isHidden = false
-            tutorialView.image = #imageLiteral(resourceName: "HandTutorial")
-            showManipulationTutorial = false
-            controller?.toolIsEnabled = false
-            print("Showing Manipulation Tutorial")
+        if self.isInitial {
+            if sender is GameToolARDetector && showARTutorial {
+                tutorialView.isHidden = false
+                tutorialView.image = #imageLiteral(resourceName: "Floor")
+                showARTutorial = false
+                controller?.toolIsEnabled = false
+                print("Showing AR Tutorial")
+            } else if sender is GameToolBuilder && showPlacementTutorial {
+                tutorialView.isHidden = false
+                tutorialView.image = #imageLiteral(resourceName: "First Block")
+                showPlacementTutorial = false
+                controller?.toolIsEnabled = false
+                print("Showing Placement Tutorial")
+            } else if sender is GameToolDestroyer && showDestructionTutorial {
+                tutorialView.isHidden = false
+                tutorialView.image = #imageLiteral(resourceName: "HammerTutorial")
+                showDestructionTutorial = false
+                controller?.toolIsEnabled = false
+                print("Showing Destruction Tutorial")
+            } else if sender is GameToolManipulator && showManipulationTutorial {
+                tutorialView.isHidden = false
+                tutorialView.image = #imageLiteral(resourceName: "HandTutorial")
+                showManipulationTutorial = false
+                controller?.toolIsEnabled = false
+                print("Showing Manipulation Tutorial")
+            }
         }
     }
     

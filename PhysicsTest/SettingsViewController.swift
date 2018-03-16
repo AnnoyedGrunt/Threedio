@@ -117,14 +117,25 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //back Button
     @IBAction func backAction(_ sender: Any) {
         if !isInitial {
+            print(self.oldName! + "   " + self.nameWorldTextField.text!)
             if SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
                 navigationController?.popViewController(animated: true)
             } else {
                 self.avPlayer.playSound(file: "quack", ext: "wav")
             }
+        } else {
+            navigationController?.popViewController(animated: true)
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mainViewController = segue.destination as! ViewController
+        
+        if self.isInitial {
+            mainViewController.isInitial = true
+        }
+    }
 
     
 }

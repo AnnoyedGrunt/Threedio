@@ -39,7 +39,9 @@ class MenuController : UIViewController , RPPreviewViewControllerDelegate {
             sceneViewController.builderTool.action(type: "deletePreview")
             SaveManager.shared.saveSceneFile(name: load, scene: sceneViewController.sceneView.scene)
         }
-        self.avPlayer.stopSound()
+        if self.isExploding {
+            self.avPlayer.stopSound()
+        }
         self.timer.invalidate()
         navigationController?.popToRootViewController(animated: true)
     }
