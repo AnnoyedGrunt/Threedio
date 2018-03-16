@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NQF-3M-QVN">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="elv-Hs-P3Q" customClass="LevelSelectViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qex-lO-wwK">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xp-GK-Jyb">
-                                <rect key="frame" x="0.0" y="32" width="716" height="362"/>
+                                <rect key="frame" x="44" y="32" width="704" height="302"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ltg-mx-15a">
                                     <size key="itemSize" width="300" height="300"/>
@@ -37,13 +37,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yAD-9u-yJ3">
-                                                    <rect key="frame" x="50" y="21" width="200" height="200"/>
+                                                    <rect key="frame" x="94" y="21" width="200" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="5Mm-kY-YPq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQK-Fk-yJ8">
-                                                    <rect key="frame" x="75" y="246" width="150" height="23"/>
+                                                    <rect key="frame" x="119" y="246" width="150" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="LmM-wE-89p"/>
                                                     </constraints>
@@ -97,7 +97,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NQF-3M-QVN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y0N-CG-ZZ1">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="32"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -114,11 +114,11 @@
             <objects>
                 <viewController id="IfS-bD-Ept" customClass="SettingsViewController" customModule="PhysicsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tG6-vR-I6U">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmz-Q7-ei9">
-                                <rect key="frame" x="616" y="239" width="100" height="100"/>
+                                <rect key="frame" x="688" y="274" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="53I-aI-OYz"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="XJ4-eU-B7q"/>
@@ -149,7 +149,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJC-Gy-RQ1">
-                                <rect key="frame" x="20" y="107" width="100" height="100"/>
+                                <rect key="frame" x="64" y="52" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3bR-RK-6gE"/>
                                     <constraint firstAttribute="width" constant="100" id="DcW-3u-mgg"/>
@@ -176,10 +176,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-Ox-FXk">
-                                <rect key="frame" x="48" y="-321" width="640" height="660"/>
+                                <rect key="frame" x="246" y="37" width="320" height="300"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJb-Kb-fqg">
-                                        <rect key="frame" x="135" y="194" width="370" height="376"/>
+                                        <rect key="frame" x="85" y="116" width="150" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="6sg-ew-w2Y"/>
                                             <constraint firstAttribute="height" constant="200" id="Gkq-nI-07O"/>
@@ -215,7 +215,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJV-Uh-bLN">
-                                        <rect key="frame" x="80" y="70" width="501" height="65"/>
+                                        <rect key="frame" x="70" y="16" width="180" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="Kyf-2h-wdS"/>
                                             <constraint firstAttribute="height" constant="60" id="YKN-qq-W1F"/>
@@ -242,15 +242,36 @@
                                             </mask>
                                         </variation>
                                     </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Duplicated" translatesAutoresizingMaskIntoConstraints="NO" id="iyH-wk-Ee1">
+                                        <rect key="frame" x="-40" y="75" width="400" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="Mul-xN-gFj"/>
+                                            <constraint firstAttribute="height" constant="150" id="NFc-i1-KAc"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Mul-xN-gFj"/>
+                                                <exclude reference="NFc-i1-KAc"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Mul-xN-gFj"/>
+                                                <include reference="NFc-i1-KAc"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="3cd-fj-fuq"/>
                                     <constraint firstItem="iJb-Kb-fqg" firstAttribute="centerY" secondItem="q2V-Ox-FXk" secondAttribute="centerY" id="4M7-Hq-4tR">
                                         <variation key="heightClass=compact-widthClass=compact" constant="41"/>
                                     </constraint>
+                                    <constraint firstItem="iyH-wk-Ee1" firstAttribute="centerY" secondItem="q2V-Ox-FXk" secondAttribute="centerY" id="8YS-eX-Xgb"/>
                                     <constraint firstItem="iJb-Kb-fqg" firstAttribute="centerX" secondItem="q2V-Ox-FXk" secondAttribute="centerX" id="EeY-R4-rWf"/>
                                     <constraint firstItem="cJV-Uh-bLN" firstAttribute="leading" secondItem="q2V-Ox-FXk" secondAttribute="leading" constant="80" id="Jjd-0i-oQJ"/>
                                     <constraint firstAttribute="width" constant="640" id="TIo-jM-BAG"/>
+                                    <constraint firstItem="iyH-wk-Ee1" firstAttribute="centerX" secondItem="q2V-Ox-FXk" secondAttribute="centerX" id="b41-in-ona"/>
                                     <constraint firstItem="cJV-Uh-bLN" firstAttribute="top" secondItem="iJb-Kb-fqg" secondAttribute="bottom" constant="98" id="dFa-FN-fcb"/>
                                     <constraint firstAttribute="width" constant="320" id="dWQ-4Z-Q7e"/>
                                     <constraint firstAttribute="height" constant="660" id="eL8-pB-YXf"/>
@@ -292,7 +313,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFm-51-LMx">
-                                <rect key="frame" x="20" y="239" width="100" height="100"/>
+                                <rect key="frame" x="64" y="274" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="0r1-rE-v7H"/>
                                     <constraint firstAttribute="width" constant="100" id="6w5-Tg-KQt"/>
@@ -379,6 +400,7 @@
                         <outlet property="icoButton" destination="iJb-Kb-fqg" id="pTf-sA-qMP"/>
                         <outlet property="nameWorldTextField" destination="cJV-Uh-bLN" id="gEj-ug-1nF"/>
                         <outlet property="playOrAddButton" destination="nmz-Q7-ei9" id="34c-1q-cXX"/>
+                        <outlet property="warningImageView" destination="iyH-wk-Ee1" id="PPK-54-zJT"/>
                         <segue destination="8ay-8V-BeS" kind="show" identifier="toAction" id="lGa-i5-jhf"/>
                     </connections>
                 </viewController>
@@ -392,10 +414,11 @@
                 <viewControllerPlaceholder storyboardIdentifier="menu" storyboardName="Game" id="8ay-8V-BeS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fv0-Bg-Eww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="-1194"/>
+            <point key="canvasLocation" x="1669" y="-1229"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Duplicated" width="610" height="197"/>
         <image name="Garb" width="401" height="389"/>
         <image name="Play2" width="229" height="222"/>
         <image name="back2" width="229" height="222"/>
