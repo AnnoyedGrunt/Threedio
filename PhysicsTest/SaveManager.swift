@@ -102,6 +102,7 @@ final class SaveManager {
                     return false
                 }
             }
+        }
             
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
             let managedContext = appDelegate.persistentContainer.viewContext
@@ -126,6 +127,7 @@ final class SaveManager {
             }
             
             //updating scene file
+        if oldName != newName {
             do {
                 let oldUrl = self.getSceneUrl(levelName: oldName)
                 let newUrl = self.getSceneUrl(levelName: newName)
@@ -141,7 +143,7 @@ final class SaveManager {
     
     
     //function to delete a level (both core data and scene file)
-    func deleteLevel(name: String, edited: Bool) {
+    func deleteLevel(name: String) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -161,8 +163,6 @@ final class SaveManager {
             print("Could not delete from core data. \(error), \(error.userInfo)")
         }
         
-        
-        if !edited {
             //deleting scene file
             let fileUrl = self.getSceneUrl(levelName: name)
             do {
@@ -171,7 +171,7 @@ final class SaveManager {
             } catch let error as NSError {
                 print("Error deleting scene file. \(error), \(error.userInfo)")
             }
-        }
+        
     }
     
     
