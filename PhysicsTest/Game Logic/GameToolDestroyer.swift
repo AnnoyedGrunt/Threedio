@@ -36,7 +36,7 @@ class GameToolDestroyer: GameTool {
         self.sceneView = sceneView
     }
     
-    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) -> Any? {
         if let hit = raycast(filter: .deletable ) {
             if hit.node != currentNode {
                 resetMaterial()
@@ -48,6 +48,7 @@ class GameToolDestroyer: GameTool {
             resetMaterial()
             currentNode = nil
         }
+        return nil
     }
     
     func onTap(_ sender: UITapGestureRecognizer) -> Any? {

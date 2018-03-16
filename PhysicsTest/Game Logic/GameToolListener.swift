@@ -12,6 +12,7 @@ protocol GameToolListener: AnyObject {
     func onTap(sender: GameTool, param: Any?)
     func onEnter(sender: GameTool, param: Any?)
     func onExit(sender: GameTool, param: Any?)
+    func onUpdate(sender: GameTool, param: Any?)
 }
 
 class GameToolListenerList: NSObject {
@@ -51,6 +52,12 @@ class GameToolListenerList: NSObject {
     func invokeOnExit(sender: GameTool, param: Any?) {
         for element in listeners {
             element.onExit(sender: sender, param: param)
+        }
+    }
+    
+    func invokeOnUpdate(sender: GameTool, param: Any?) {
+        for element in listeners {
+            element.onUpdate(sender: sender, param: param)
         }
     }
 }

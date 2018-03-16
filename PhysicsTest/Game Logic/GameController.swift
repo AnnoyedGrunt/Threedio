@@ -56,6 +56,7 @@ class GameController: NSObject, ARSCNViewDelegate, UIGestureRecognizerDelegate {
             tapper = tapGesture
         } else {
             tapper = UITapGestureRecognizer()
+            sceneView.addGestureRecognizer(tapper)
         }
         tapper.addTarget(self, action: #selector(onTap))
 
@@ -63,13 +64,16 @@ class GameController: NSObject, ARSCNViewDelegate, UIGestureRecognizerDelegate {
         for recognizer in sceneView.gestureRecognizers!.reversed() {
             if recognizer is UIPanGestureRecognizer {
                 panGesture = recognizer as! UIPanGestureRecognizer
+                print("finding recognizer")
                 break
             }
         }
         if panGesture != nil {
             panner = panGesture
         } else {
+            print("creating pan recogznier")
             panner = UIPanGestureRecognizer()
+            sceneView.addGestureRecognizer(panner)
         }
         panner.addTarget(self, action: #selector(onPan))
     }
@@ -81,7 +85,7 @@ class GameController: NSObject, ARSCNViewDelegate, UIGestureRecognizerDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let tool = self.tool, toolIsEnabled else {return}
-        tool.onUpdate?(renderer, updateAtTime: time)
+        tool.listeners.invokeOnUpdate(sender: tool, param: tool.onUpdate?(renderer, updateAtTime: time))
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -97,5 +101,6 @@ class GameController: NSObject, ARSCNViewDelegate, UIGestureRecognizerDelegate {
     @objc func onPan(_ sender: UIPanGestureRecognizer ) {
         guard let tool = self.tool, toolIsEnabled else {return}
         tool.onPan?(sender)
+        print("hello")
     }
 }

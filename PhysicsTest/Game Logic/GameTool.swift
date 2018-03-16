@@ -25,7 +25,7 @@ import ARKit
     /**
         called once every frame.
     */
-    @objc optional func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval)
+    @objc optional func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) -> Any?
     
     @objc optional func ARRenderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor)
     

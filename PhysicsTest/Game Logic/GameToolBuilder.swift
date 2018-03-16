@@ -61,7 +61,7 @@ class GameToolBuilder: GameTool {
         setGamePiece(named: "Block")
     }
     
-    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    func onUpdate(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) -> Any? {
         if let hit = raycast(filter: .hittable) {
             if blockPreview == nil {
                 createPreview()
@@ -70,8 +70,10 @@ class GameToolBuilder: GameTool {
             lastPositions = Array(lastPositions.suffix(positionCacheCount))
             let position = lastPositions.reduce(SCNVector3(0,0,0), {$0 + $1}) / Float(lastPositions.count)
             let direction = root.convertVector(hit.localNormal, to: origin)
-            updatePreview(at: position, from: sceneView.pointOfView!.position, withDirection: direction, withScale: blockSize)
+            let originPos = root.convertVector(sceneView.pointOfView!.position, to: origin)
+            updatePreview(at: position, from: originPos, withDirection: direction, withScale: blockSize)
         }
+        return nil
     }
 
     func onTap(_ sender: UITapGestureRecognizer) -> Any? {
