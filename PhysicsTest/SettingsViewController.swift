@@ -122,6 +122,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             } else {
                 self.avPlayer.playSound(file: "quack", ext: "wav")
             }
+        } else {
+            navigationController?.popViewController(animated: true)
         }
     }
     
