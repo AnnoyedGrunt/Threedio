@@ -25,8 +25,6 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-//        self.view.backgroundColor = WorldsDataManager.shared.colorBackground
-//        self.collectionView.backgroundColor = WorldsDataManager.shared.colorBackground
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPNG.png")!)
         self.collectionView.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0)
         
@@ -77,18 +75,15 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     
     //number of cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return WorldsDataManager.shared.worlds.count + 1
         return SaveManager.shared.levels.count + 1
     }
     
     //Size of the cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if isIphone {
-//            return CGSize(width: screenSize.width / 3, height: screenSize.height / 2 + 50)
             return CGSize(width: 300, height: 300)
         } else {
             return CGSize(width: 300, height: 300)
-        //     return CGSize(width: screenSize.width / 4, height: screenSize.height / 3)
         }
     }
     
@@ -107,15 +102,12 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         
         if indexPath.item == 0 {
             //AddNewWorld cell
-//            cell.icoCell.image = #imageLiteral(resourceName: "add")
             cell.icoCell.image = #imageLiteral(resourceName: "addNEW")
             cell.labelCell.text = "New Level"
             
         }
         else {
             //World cell
-//            cell.labelCell.text = WorldsDataManager.shared.worlds[indexPath.item - 1].nameWorld
-//            cell.icoCell.image = WorldsDataManager.shared.icons[WorldsDataManager.shared.worlds[indexPath.item - 1].icoWorld!]
             cell.labelCell.text = SaveManager.shared.levels[indexPath.item - 1].value(forKey: "name") as? String
             cell.icoCell.image = WorldsDataManager.shared.icons[SaveManager.shared.levels[indexPath.item - 1].value(forKey: "icon") as! Int]
         }
@@ -125,10 +117,6 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     //Segue to SettingsCollectionView
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: "levelToSettings", sender: self)
-//    }
-//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = self.collectionView!.indexPathsForSelectedItems![0] as NSIndexPath
         let settingsVC = segue.destination as! SettingsViewController
