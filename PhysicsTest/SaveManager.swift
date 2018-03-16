@@ -30,16 +30,16 @@ final class SaveManager {
     
     
     //function to save a level in core data
-    func saveLevel(name: String, img: Int) {
+    func saveLevel(name: String, img: Int) -> Bool {
         
         for l in self.levels {
             if l.value(forKey: "name") as! String == name {
                 print("name already exists, choose another name!")
-                return
+                return false
             }
         }
                 
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Level", in: managedContext)!
         let level = NSManagedObject(entity: entity, insertInto: managedContext)
@@ -51,8 +51,10 @@ final class SaveManager {
             print("Saved!")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
-            return
+            return false
         }
+        
+        return true
     }
     
     
@@ -91,18 +93,18 @@ final class SaveManager {
     
     
     //function to update a level (both core data and scene file)
-    func updateLevel(oldName: String, newName: String, newIcon: Int) {
+    func updateLevel(oldName: String, newName: String, newIcon: Int) -> Bool {
         
         if oldName != newName {
             for l in self.levels {
                 if l.value(forKey: "name") as! String == newName {
                     print("name already exists, choose another name!")
-                    return
+                    return false
                 }
             }
         }
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
         let managedContext = appDelegate.persistentContainer.viewContext
         
         for (index, element) in self.levels.enumerated() {
@@ -121,7 +123,7 @@ final class SaveManager {
             print("Updated on core data!")
         } catch let error as NSError {
             print("Could not update. \(error), \(error.userInfo)")
-            return
+            return false
         }
         
         //updating scene file
@@ -132,8 +134,10 @@ final class SaveManager {
             try fileManager.removeItem(at: oldUrl)
         } catch let error as NSError {
             print("Could not update file name or delete old file. \(error), \(error.userInfo)")
-            return
+            return false
         }
+        
+        return true
     }
     
     

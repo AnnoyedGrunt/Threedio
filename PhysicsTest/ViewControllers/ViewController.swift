@@ -62,6 +62,7 @@ class ViewController: UIViewController, GameToolListener, ARSessionDelegate, RPP
         
         
         do {
+            print(SaveManager.shared.actualLevel == nil)
             let loadedScene = try SCNScene(url: SaveManager.shared.getSceneUrl(levelName: SaveManager.shared.actualLevel!), options: nil)
             sceneView.scene = loadedScene
             print("caricata!!!")

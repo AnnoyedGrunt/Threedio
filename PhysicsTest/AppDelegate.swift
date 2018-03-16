@@ -38,8 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //stop music
     func stopMusic() {
-        musicPlayer.stop()
-        isPlaying = false
+        if self.isPlaying {
+            musicPlayer.stop()
+            isPlaying = false
+        }
     }
     
     

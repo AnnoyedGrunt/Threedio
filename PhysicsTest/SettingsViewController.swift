@@ -12,7 +12,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     //to play audio
     let avPlayer = UIApplication.shared.delegate as! AppDelegate
-    
+    let secondPlayer = UIApplication.shared.delegate as! AppDelegate
+
     var oldName: String?
     
     @IBOutlet weak var backButton: UIButton!
@@ -74,21 +75,24 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     //Button for add a new world or play
     @IBAction func playOrAddWorld(_ sender: Any) {
-        
-        SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!)
-        
         if isInitial {
-//            WorldsDataManager.shared.addWorld(name: nameWorldTextField.text!, ico: WorldsDataManager.shared.icons.index(of: self.icoButton.currentBackgroundImage!)!)
-//            WorldsDataManager.shared.worldCreated += 1
-
-            SaveManager.shared.saveLevel(name: nameWorldTextField.text!, img: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!)
+            SaveManager.shared.actualLevel = self.nameWorldTextField.text
+            if SaveManager.shared.saveLevel(name: nameWorldTextField.text!, img: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
+                self.performSegue(withIdentifier: "toAction", sender: self)
+                self.avPlayer.stopMusic()
+            } else {
+                self.secondPlayer.playSound(file: "quack", ext: "wav")
+            }
+        } else {
+            SaveManager.shared.actualLevel = self.nameWorldTextField.text
+            if SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
+                self.performSegue(withIdentifier: "toAction", sender: self)
+                self.avPlayer.stopMusic()
+            } else {
+                self.secondPlayer.playSound(file: "quack", ext: "wav")
+            }
         }
         
-        SaveManager.shared.actualLevel = self.nameWorldTextField.text
-        
-        if avPlayer.isPlaying {
-            self.avPlayer.stopMusic()
-        }
     }
     
     //Change the world's ico
@@ -106,7 +110,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     //Delete a world
     @IBAction func deleteWorld(_ sender: Any) {
-//        WorldsDataManager.shared.worlds.remove(at: selectedWorld!)
         SaveManager.shared.deleteLevel(name: nameWorldTextField.text!, edited: false)
         navigationController?.popViewController(animated: true)
     }
@@ -114,9 +117,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //back Button
     @IBAction func backAction(_ sender: Any) {
         if !isInitial {
-           SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!)
+            if SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
+                navigationController?.popViewController(animated: true)
+            } else {
+                self.avPlayer.playSound(file: "quack", ext: "wav")
+            }
         }
-        navigationController?.popViewController(animated: true)
     }
     
 

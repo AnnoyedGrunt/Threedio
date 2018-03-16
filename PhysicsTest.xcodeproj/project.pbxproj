@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E23F556205ACE8B001C1AB8 /* quack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E23F555205ACE8B001C1AB8 /* quack.wav */; };
 		5EEA9EE320582B2B001FAAEA /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5EEA9EE220582B2B001FAAEA /* Intro.mp4 */; };
 		A3147033203C3C740027EA0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3147032203C3C740027EA0C /* ViewController.swift */; };
 		A3147035203C3CA40027EA0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3147034203C3CA40027EA0C /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E23F555205ACE8B001C1AB8 /* quack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = quack.wav; sourceTree = "<group>"; };
 		5EEA9EE220582B2B001FAAEA /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
 		A3147032203C3C740027EA0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3147034203C3CA40027EA0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				B95D5E832059734A0017E13F /* countdown.wav */,
 				A31517CC2052CC1300BE5E0D /* break.mp3 */,
 				A31517CD2052CC1300BE5E0D /* menuMusic.wav */,
+				5E23F555205ACE8B001C1AB8 /* quack.wav */,
 				A31517CE2052CC1300BE5E0D /* create.mp3 */,
 			);
 			path = Sounds;
@@ -466,6 +469,7 @@
 				B95D5E842059734A0017E13F /* countdown.wav in Resources */,
 				B95D5E80205961CD0017E13F /* camera.wav in Resources */,
 				A321B0552043220700845A09 /* ramp.scn in Resources */,
+				5E23F556205ACE8B001C1AB8 /* quack.wav in Resources */,
 				A31517DD2052D67800BE5E0D /* dustCloud.png in Resources */,
 				A31517CF2052CC1300BE5E0D /* break.mp3 in Resources */,
 				A36252B120247682001FCA58 /* LaunchScreen.storyboard in Resources */,
