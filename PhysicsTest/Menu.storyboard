@@ -146,7 +146,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="playOrAddWorld:" destination="IfS-bD-Ept" eventType="touchUpInside" id="aeH-pD-X11"/>
-                                    <segue destination="8ay-8V-BeS" kind="show" id="7s5-oB-PYZ"/>
+                                    <segue destination="8ay-8V-BeS" kind="show" identifier="toAction" id="a9Q-uA-i4p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFm-51-LMx">
@@ -383,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSf-3L-d5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255.5755395683454" y="-1228.0575539568347"/>
+            <point key="canvasLocation" x="1137" y="-1228"/>
         </scene>
         <!--Game-->
         <scene sceneID="raE-Wv-owH">
