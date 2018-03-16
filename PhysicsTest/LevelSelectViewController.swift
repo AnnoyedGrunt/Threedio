@@ -25,8 +25,10 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.view.backgroundColor = WorldsDataManager.shared.colorBackground
-        self.collectionView.backgroundColor = WorldsDataManager.shared.colorBackground
+//        self.view.backgroundColor = WorldsDataManager.shared.colorBackground
+//        self.collectionView.backgroundColor = WorldsDataManager.shared.colorBackground
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPNG.png")!)
+        self.collectionView.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0)
         
         //Size Check se è un iphone o è un ipad!
         if self.view.bounds.width < 1000 {
@@ -105,7 +107,8 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         
         if indexPath.item == 0 {
             //AddNewWorld cell
-            cell.icoCell.image = #imageLiteral(resourceName: "add")
+//            cell.icoCell.image = #imageLiteral(resourceName: "add")
+            cell.icoCell.image = #imageLiteral(resourceName: "addNEW")
             cell.labelCell.text = "New Level"
             
         }

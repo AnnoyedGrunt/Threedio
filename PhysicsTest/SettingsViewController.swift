@@ -47,12 +47,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             self.nameWorldTextField.text = "New World \(SaveManager.shared.levels.count + 1)"
         } else {
             self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[SaveManager.shared.levels[selectedWorld!].value(forKey: "icon") as! Int], for: .normal)
-            self.view.backgroundColor = WorldsDataManager.shared.colorBackground
+//            self.view.backgroundColor = WorldsDataManager.shared.colorBackground
             self.nameWorldTextField.text = SaveManager.shared.levels[selectedWorld!].value(forKey: "name") as? String
             self.oldName = self.nameWorldTextField.text!
         }
         
-        self.view.backgroundColor = WorldsDataManager.shared.colorBackground
+//        self.view.backgroundColor = WorldsDataManager.shared.colorBackground
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPNG.png")!)
+
         self.backView.layer.cornerRadius = 50
         self.backView.backgroundColor = .white
     }
