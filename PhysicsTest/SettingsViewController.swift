@@ -13,12 +13,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //to play audio
     let avPlayer = UIApplication.shared.delegate as! AppDelegate
     let secondPlayer = UIApplication.shared.delegate as! AppDelegate
+    
+    //for warning disappear
+    var timer = Timer()
 
     var oldName: String?
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var playOrAddButton: UIButton!
+    @IBOutlet weak var warningImageView: UIImageView!
     @IBOutlet weak var nameWorldTextField: UITextField! {
         didSet {
             nameWorldTextField.delegate = self
@@ -41,6 +45,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.warningImageView.isHidden = true
+        
         if isInitial {
             deleteButton.isHidden = true
             self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[0], for: .normal)
@@ -51,7 +57,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             self.oldName = self.nameWorldTextField.text!
         }
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPNG.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backALPHA.png")!)
 
         self.backView.layer.cornerRadius = 50
         self.backView.backgroundColor = .white
@@ -82,6 +88,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.avPlayer.stopMusic()
             } else {
                 self.secondPlayer.playSound(file: "quack", ext: "wav")
+                self.warningImageView.isHidden = false
+                self.runTimer()
             }
         } else {
             SaveManager.shared.actualLevel = self.nameWorldTextField.text
@@ -90,6 +98,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.avPlayer.stopMusic()
             } else {
                 self.secondPlayer.playSound(file: "quack", ext: "wav")
+                self.warningImageView.isHidden = false
+                self.runTimer()
             }
         }
         
@@ -121,6 +131,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 navigationController?.popViewController(animated: true)
             } else {
                 self.avPlayer.playSound(file: "quack", ext: "wav")
+                self.warningImageView.isHidden = false
+                self.runTimer()
             }
         } else {
             navigationController?.popViewController(animated: true)
@@ -133,6 +145,17 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         if self.isInitial {
             mainViewController.isInitial = true
         }
+    }
+    
+    
+    //starts timer
+    func runTimer() {
+        self.timer = Timer.scheduledTimer(timeInterval: 2, target: self,   selector: (#selector(self.warningDisappear)), userInfo: nil, repeats: false)
+    }
+    
+    //delete everything except the plane
+    @objc func warningDisappear() {
+        self.warningImageView.isHidden = true
     }
 
     

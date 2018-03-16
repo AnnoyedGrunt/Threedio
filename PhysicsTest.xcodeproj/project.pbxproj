@@ -700,6 +700,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2JJPC79E9;
+				DEVELOPMENT_TEAM = K4J698459X;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;
@@ -716,6 +717,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z2JJPC79E9;
+				DEVELOPMENT_TEAM = K4J698459X;
 				INFOPLIST_FILE = PhysicsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnnoyedGrunt.Threedio;

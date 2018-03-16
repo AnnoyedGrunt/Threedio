@@ -25,7 +25,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPNG.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backALPHA.png")!)
         self.collectionView.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0)
         
         //Size Check se è un iphone o è un ipad!
