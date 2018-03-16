@@ -94,6 +94,7 @@ final class SaveManager {
     
     //function to update a level (both core data and scene file)
     func updateLevel(oldName: String, newName: String, newIcon: Int) -> Bool {
+        
         if oldName != newName {
             for l in self.levels {
                 if l.value(forKey: "name") as! String == newName {
