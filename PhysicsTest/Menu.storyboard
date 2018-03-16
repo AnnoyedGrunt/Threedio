@@ -127,7 +127,7 @@
                                     <constraint firstAttribute="height" constant="60" id="wGA-eG-cDw"/>
                                     <constraint firstAttribute="height" constant="100" id="yUA-Yy-IhA"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Play"/>
+                                <state key="normal" backgroundImage="Play2"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="53I-aI-OYz"/>
@@ -183,7 +183,7 @@
                                     <constraint firstAttribute="height" constant="60" id="GaK-eM-j41"/>
                                     <constraint firstAttribute="width" constant="60" id="otw-HT-aYS"/>
                                 </constraints>
-                                <state key="normal" title="Back" image="TriangleBack"/>
+                                <state key="normal" title="Back" image="back2"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="GaK-eM-j41"/>
@@ -396,7 +396,7 @@
     </scenes>
     <resources>
         <image name="Garbage" width="380" height="538"/>
-        <image name="Play" width="161" height="202"/>
-        <image name="TriangleBack" width="189" height="210"/>
+        <image name="Play2" width="229" height="222"/>
+        <image name="back2" width="229" height="222"/>
     </resources>
 </document>
