@@ -50,11 +50,10 @@ class GameToolARDetector: NSObject, GameTool {
             plane.position = position + SCNVector3(0, 0.01, 0)
             plane.isHidden = false
             self.origin?.isHidden = false
-            playfloor?.eulerAngles.y = plane.eulerAngles.y
-            origin?.eulerAngles.y = plane.eulerAngles.y
             planeDetected = true
         }
-        
+        playfloor?.eulerAngles.y = plane.eulerAngles.y
+        origin?.eulerAngles.y = plane.eulerAngles.y
         return nil
     }
     
