@@ -104,20 +104,27 @@ final class SaveManager {
             }
         }
             
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
-            let managedContext = appDelegate.persistentContainer.viewContext
-            
-            for (index, element) in self.levels.enumerated() {
-                if element.value(forKey: "name") as? String == oldName {
-                    let l = element
-                    l.setValue(newName, forKey: "name")
-                    l.setValue(newIcon, forKey: "icon")
-                    self.levels.insert(l, at: 0)
-                    self.levels.remove(at: index)
-                    break
-                }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+//            for (index, element) in self.levels.enumerated() {
+//                if element.value(forKey: "name") as? String == oldName {
+//                    let l = element
+//                    l.setValue(newName, forKey: "name")
+//                    l.setValue(newIcon, forKey: "icon")
+//                    self.levels.remove(at: index)
+//                    self.levels.insert(l, at: 0)
+//                    break
+//                }
+//            }
+        
+        for l in self.levels {
+            if l.value(forKey: "name") as? String == oldName {
+                self.deleteLevel(name: oldName, forUpdate: true)
+                let _ = self.saveLevel(name: newName, img: newIcon)
             }
-            
+        }
+        
             do {
                 try managedContext.save()
                 print("Updated on core data!")
@@ -126,7 +133,7 @@ final class SaveManager {
                 return false
             }
             
-            //updating scene file
+        //updating scene file
         if oldName != newName {
             do {
                 let oldUrl = self.getSceneUrl(levelName: oldName)
@@ -143,7 +150,7 @@ final class SaveManager {
     
     
     //function to delete a level (both core data and scene file)
-    func deleteLevel(name: String) {
+    func deleteLevel(name: String, forUpdate: Bool) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -163,6 +170,8 @@ final class SaveManager {
             print("Could not delete from core data. \(error), \(error.userInfo)")
         }
         
+        
+        if !forUpdate {
             //deleting scene file
             let fileUrl = self.getSceneUrl(levelName: name)
             do {
@@ -171,7 +180,7 @@ final class SaveManager {
             } catch let error as NSError {
                 print("Error deleting scene file. \(error), \(error.userInfo)")
             }
-        
+        }
     }
     
     

@@ -124,7 +124,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     //Delete a world
     @IBAction func deleteWorld(_ sender: Any) {
-        SaveManager.shared.deleteLevel(name: nameWorldTextField.text!)
+        SaveManager.shared.deleteLevel(name: nameWorldTextField.text!, forUpdate: false)
         navigationController?.popViewController(animated: true)
     }
     
