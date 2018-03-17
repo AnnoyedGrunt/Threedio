@@ -165,7 +165,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    //trim last spaces from the string
+    //trim first and last spaces from the string
     func stringTrim(string: String) {
         let pattern: String = "(^\\s+)|(\\s+)$"
         let trimmmed = string.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
