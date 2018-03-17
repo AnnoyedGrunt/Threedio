@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     var timer = Timer()
 
     var oldName: String?
+    var oldIcon: UIImage?
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
@@ -54,9 +55,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[0], for: .normal)
             self.nameWorldTextField.text = "New World \(SaveManager.shared.levels.count + 1)"
         } else {
-            self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[SaveManager.shared.levels[selectedWorld!].value(forKey: "icon") as! Int], for: .normal)
+        self.icoButton.setBackgroundImage(WorldsDataManager.shared.icons[SaveManager.shared.levels[selectedWorld!].value(forKey: "icon") as! Int], for: .normal)
             self.nameWorldTextField.text = SaveManager.shared.levels[selectedWorld!].value(forKey: "name") as? String
             self.oldName = self.nameWorldTextField.text!
+            self.oldIcon = self.icoButton.backgroundImage(for: .normal)!
         }
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backALPHA.png")!)
@@ -83,6 +85,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     //Button for add a new world or play
     @IBAction func playOrAddWorld(_ sender: Any) {
+        //check on void name
+        if self.nameWorldTextField.text == "" {
+            self.secondPlayer.playSound(file: "quack", ext: "wav")
+            return
+        }
+        
         if isInitial {
             self.stringTrim(string: self.nameWorldTextField.text!)
             SaveManager.shared.actualLevel = self.nameWorldTextField.text
@@ -122,16 +130,43 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     //Delete a world
     @IBAction func deleteWorld(_ sender: Any) {
-        SaveManager.shared.deleteLevel(name: nameWorldTextField.text!, forUpdate: false)
-        navigationController?.popViewController(animated: true)
+        let deleteAlert = UIAlertController(title: "Delete Level", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        deleteAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            print("delete action confirmed!")
+            SaveManager.shared.deleteLevel(name: self.nameWorldTextField.text!, forUpdate: false)
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        deleteAlert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction!) in
+            print("delete action aborted!")
+        }))
+        
+        present(deleteAlert, animated: true, completion: nil)
     }
+    
     
     //back Button
     @IBAction func backAction(_ sender: Any) {
         if !isInitial {
+            //check on void name
+            if self.nameWorldTextField.text == "" {
+                self.secondPlayer.playSound(file: "quack", ext: "wav")
+                return
+            }
+            
+            
+            //check if modified
+            if self.oldName! == self.nameWorldTextField.text! && self.oldIcon! == self.icoButton.backgroundImage(for: .normal)! {
+                navigationController?.popViewController(animated: true)
+                return
+            }
+            
             self.stringTrim(string: self.nameWorldTextField.text!)
+
             if SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
                 navigationController?.popViewController(animated: true)
             } else {
@@ -140,7 +175,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.runTimer()
             }
         } else {
-            self.stringTrim(string: self.nameWorldTextField.text!)
             navigationController?.popViewController(animated: true)
         }
     }
