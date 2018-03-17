@@ -31,6 +31,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var icoButton: UIButton!
     @IBOutlet weak var backView: UIView!
+    
+    
     var isInitial = false
     var selectedWorld: Int?
     
@@ -82,6 +84,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //Button for add a new world or play
     @IBAction func playOrAddWorld(_ sender: Any) {
         if isInitial {
+            self.stringTrim(string: self.nameWorldTextField.text!)
             SaveManager.shared.actualLevel = self.nameWorldTextField.text
             if SaveManager.shared.saveLevel(name: nameWorldTextField.text!, img: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
                 self.performSegue(withIdentifier: "toAction", sender: self)
@@ -92,6 +95,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.runTimer()
             }
         } else {
+            self.stringTrim(string: self.nameWorldTextField.text!)
             SaveManager.shared.actualLevel = self.nameWorldTextField.text
             if SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
                 self.performSegue(withIdentifier: "toAction", sender: self)
@@ -127,6 +131,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //back Button
     @IBAction func backAction(_ sender: Any) {
         if !isInitial {
+            self.stringTrim(string: self.nameWorldTextField.text!)
             if SaveManager.shared.updateLevel(oldName: self.oldName!, newName: self.nameWorldTextField.text!, newIcon: WorldsDataManager.shared.icons.index(of: icoButton.currentBackgroundImage!)!) {
                 navigationController?.popViewController(animated: true)
             } else {
@@ -135,6 +140,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 self.runTimer()
             }
         } else {
+            self.stringTrim(string: self.nameWorldTextField.text!)
             navigationController?.popViewController(animated: true)
         }
     }
@@ -153,10 +159,17 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self,   selector: (#selector(self.warningDisappear)), userInfo: nil, repeats: false)
     }
     
-    //delete everything except the plane
+    //delete warning message
     @objc func warningDisappear() {
         self.warningImageView.isHidden = true
     }
 
+    
+    //trim last spaces from the string
+    func stringTrim(string: String) {
+        let pattern: String = "(^\\s+)|(\\s+)$"
+        let trimmmed = string.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
+        self.nameWorldTextField.text = trimmmed
+    }
     
 }

@@ -23,12 +23,8 @@ class VideoController: AVPlayerViewController {
         
         var videoPath: String
         
-//        if UIDevice().userInterfaceIdiom == .pad {
-//            videoPath = Bundle.main.path(forResource: "IntroneroIphoneUltimo", ofType: "mp4")!
-//        }else{
-            videoPath = Bundle.main.path(forResource: "Intro", ofType: "mp4")!
-//        }
-        
+        videoPath = Bundle.main.path(forResource: "Intro", ofType: "mp4")!
+
         let movieurl: NSURL = NSURL.fileURL(withPath: videoPath) as NSURL
         
         showsPlaybackControls = false
